@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SignUp | Widai</title>
+  <title>Widai</title>
 
   <!-- <link rel="icon" type="image/png" href="/">
   <link rel="apple-touch-icon" href="/"> -->
@@ -16,41 +16,37 @@
 
 <body>
   <div id="wrap" class="g-wrap">
-    <!-- 헤더 영역 -->
-    <header id="header">
-      <!-- 헤더 컨텐츠 영역 -->
-      <div class="header-in">
-        <img src="../assets/img/bg_header.png" alt="">
-        <img src="../assets/img/logo_large.png" alt="">
-        <img src="../assets/img/logo.png" alt="">
-      </div>
-      <!-- //헤더 컨텐츠 영역 -->
-    </header>
-    <!-- //헤더 영역 -->
+
     <!-- 컨테이너 영역 -->
     <div id="container">
       <div class="contents">
 
         <!--  -->
         <div class="memb-wrap">
-          <div class="memb-form">
-            <div class="logo-large">logo</div>
-            <p class="form-title"></p>
-            <div class="form-body">
-
+          <div class="memb-head">
+            <h1 class="logo"><a href="#"><span class="sr-only">Widai</span></a></h1>
+          </div>
+          <div class="memb-body">
+            <div class="memb-logo"></div>
+            <div class="memb-title">
+              <h2 class="title">Create Account</h2>
+            </div>
+            <div class="memb-form">
               <div class="form-group">
-                <label for="email" class="form-label">Email</label>
-                <input type="text" id="email" placeholder="email address">
+                <input type="text" class="input-text" id="form_email" placeholder="email address">
+                <label for="form_email" class="form-label">Email</label>
               </div>
 
               <div class="form-group">
+                <input type="password" class="input-text is-error" id="pw1" placeholder="password">
+                <label for="pw1" class="sr-only">password</label>
+                <input type="password" class="input-text" id="pw2" placeholder="Confirm password">
+                <label for="pw2" class="sr-only">Confirm password</label>
                 <span class="form-label">Password</span>
-                <input type="password" id="pw1" placeholder="password">
-                <input type="password" id="pw2" placeholder="Confirm password">
               </div>
 
               <div class="btn-actions">
-                버튼영역
+                <button class="btn-type01">Next</button>
               </div>
             </div>
           </div>
@@ -64,7 +60,10 @@
     <footer id="footer">
       <!-- 푸터 컨텐츠 영역 -->
       <div class="footer-in">
-        foot
+        <ul class="foot-links">
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
       </div>
       <!-- //푸터 컨텐츠 영역 -->
     </footer>

@@ -11,6 +11,8 @@
   --color-black: #000;
   --color-gray: #666;
 
+  --color-error: #ff4242;
+
   --color-bg: #fff;
   --color-focus: var(--color-black);
 
@@ -22,10 +24,7 @@
 }
 
 *:focus-visible {
-  outline: 0.2rem solid var(--color-white);
-  outline-offset: 0;
-  box-shadow: 0 0 0 0.4rem var(--color-focus);
-  transition: outline 0s, box-shadow 0s !important;
+  /* outline: 0.2rem solid var(--color-black); */
 }
 
 body {
@@ -40,6 +39,7 @@ input,
 select,
 textarea,
 button {
+  color: var(--color-black);
   font-family: var(--font-family);
   font-size: inherit;
   line-height: 1.5;
@@ -686,34 +686,180 @@ button {
   flex-direction: column;
   justify-content: flex-start;
   align-items: normal;
-  min-height: 100%;
+  min-height: 100vh;
 }
 #header {
-  padding: 1.6rem;
-}
-.header-in {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  flex: none;
   position: relative;
-  min-height: 2.7rem;
-  padding: 0 6.4rem;
-}
-.inner {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 1.6rem;
+  padding: 1.3rem 2.4rem;
 }
 #container {
+  flex: 1;
+  display: flex;
+}
+.contents {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  min-height: calc(100vh - 5.9rem);
 }
 #footer {
-  padding: 2.4rem;
-  text-align: center;
-  background-color: var(--color-gray3);
+  flex: none;
+  position: relative;
+  padding: 0.8rem;
+}
+.foot-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
+  font-size: 1.3rem;
+  line-height: 1.38;
+}
+.foot-links a {
+  color: #37383c9c;
 }
 
-/* 메인메뉴 */
+/* member */
+.memb-wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.memb-head {
+  flex: none;
+  padding: 2rem;
+  background: url(../img/bg_header.png) no-repeat 0 0;
+}
+.memb-head .logo {
+  position: relative;
+  width: 4.8rem;
+  height: 4.8rem;
+}
+.memb-head .logo::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6.4rem;
+  height: 6.4rem;
+  background: url(../img/logo.png) no-repeat center/contain;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.memb-head .logo a {
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
+}
+.memb-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5.6rem;
+  max-width: 42rem;
+  padding: 2rem 2rem 10% 2rem;
+  margin: 0 auto;
+}
+.memb-logo {
+  position: relative;
+  width: 9.6rem;
+  height: 9.6rem;
+  margin: 0 auto;
+}
+.memb-logo::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14.4rem;
+  height: 14.4rem;
+  background: url(../img/logo_large.png) no-repeat center/contain;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.memb-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  text-align: center;
+}
+.memb-title .title {
+  font-size: 4rem;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: -0.0282em;
+}
+.memb-title .desc {
+  color: #6d6d6d;
+  font-size: 2rem;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: -0.012em;
+}
+.memb-title .desc a {
+  color: #171719;
+}
+.memb-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.form-group *:not(.form-label) {
+  order: 1;
+}
+.form-group *:not(.form-label) ~ *:not(.form-label) {
+  margin-top: 0.3rem;
+}
+.form-group .form-label {
+  order: 0;
+  color: var(--color-black);
+  font-size: 1.2rem;
+  line-height: 1.33;
+  font-weight: 500;
+  letter-spacing: 0.0252em;
+}
+.form-group .is-error ~ .form-label {
+  color: var(--color-error);
+}
+
+/* form */
+*::placeholder {
+  color: #666;
+}
+.is-error {
+  border-color: var(--color-error) !important;
+}
+.input-text {
+  width: 100%;
+  height: 4rem;
+  padding: 0 1.5rem;
+  border: 0.1rem solid #cccccc80;
+  border-radius: 0.4rem;
+  background-color: #f6f6f6;
+  font-size: 1.4rem;
+  line-height: 1.43;
+  letter-spacing: 0.0145em;
+  box-shadow: 0 0.2rem 0.1rem #1a1a1a0d;
+}
+
+.btn-type01 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  border: 0.1rem solid var(--color-black);
+  border-radius: 0.4rem;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-size: 1.5rem;
+  line-height: 1.47;
+  font-weight: 500;
+  letter-spacing: 0.0096em;
+}
