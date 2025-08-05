@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Widai 화면목록</title>
+  <!-- <link rel="stylesheet" href="" /> -->
+  <style>
+    :root {
+      font-size: 11px;
+    }
+
+    body {
+      padding: 1rem;
+    }
+
+    .ia_flex {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1.6rem;
+      margin-bottom: 5px;
+    }
+
+    .ia_h1 {
+      margin-right: auto;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .ia_line {
+      border-top: 1px double #000;
+    }
+
+    .ia_style {
+      font-size: 1.4rem;
+    }
+
+    .ia_style:hover {
+      text-decoration: underline;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 2px solid #000;
+    }
+
+    table tr:hover {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    table thead tr th {
+      background-color: #f1f1f1;
+    }
+
+    table thead tr th[rowspan],
+    table thead tr:last-child th {
+      border-bottom: 1px solid #000;
+    }
+
+    table th,
+    table td {
+      padding: 0.7rem 0.5rem;
+      font-size: 1.2rem;
+      border: 1px solid #ddd;
+    }
+
+    table td a {
+      display: block;
+      color: #999;
+    }
+
+    table td a.active {
+      font-weight: 700;
+      color: #000 !important;
+    }
+
+    table td.tac {
+      color: #999;
+      text-align: center;
+    }
+
+    table td.tac.active {
+      color: #000;
+    }
+
+    a {
+      color: #999 !important;
+    }
+
+    #root a:visited {
+      color: #5b11d0 !important;
+    }
+
+    #root a.on {
+      text-decoration: underline;
+    }
+
+    tr.add td {
+      background-color: #f3e8f5;
+    }
+
+    #root .xd {
+      display: inline-block;
+      margin-left: 5px;
+      font-weight: 700;
+      color: #366cc3 !important;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <div class="container" style="padding-top: 2rem">
+      <div class="ia_flex">
+        <div class="ia_h1">Widai 화면목록</div>
+        <a href="sample-guide.html" class="ia_style" target="_blank">퍼블리싱 가이드</a>
+      </div>
+
+      <div style="margin-bottom: 0.5rem; font-size: 1.3rem; text-align: right">
+        <span class="page_total" style="margin-right: 20px"></span>
+        <b>D</b>: 디자인, <b>L</b>: 레이어거나 페이지안에 레이어가 있는 경우
+      </div>
+
+      <div class="menutarget">
+        <table>
+          <colgroup>
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col style="width: 6rem; background-color: #f1f1f1" />
+            <col style="width: 7rem; background-color: #f1f1f1" />
+            <col style="width: 7rem; background-color: #e3fdc8" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>1depth</th>
+              <th>2depth</th>
+              <th>3depth</th>
+              <th>화면명</th>
+              <th>화면ID</th>
+              <th>디자인</th>
+              <th>레이어유무</th>
+              <th>퍼블여부</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- <tr class="ia_line">
+                <td>메인</td>
+                <td></td>
+                <td></td>
+                <td>메인</td>
+                <td>
+                  <a href="#" class="active" target="_blank">index</a>
+                </td>
+                <td class="tac active">○</td>
+                <td class="tac"></td>
+                <td class="tac active"></td>
+              </tr> -->
+
+            <tr class="ia_line">
+              <td></td>
+              <td>SignUp</td>
+              <td></td>
+              <td></td>
+              <td>
+                <a href="SignUp.html" class="active" target="_blank">SignUp</a>
+              </td>
+              <td class="tac active">○</td>
+              <td class="tac"></td>
+              <td class="tac active">○</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script>
+    // 모든 a 태그 요소를 선택합니다.
+    var links = document.querySelectorAll("a");
+
+    // 각각의 요소에 대해 클릭 이벤트를 처리합니다.
+    links.forEach(function (link) {
+      link.addEventListener("click", function () {
+        // 모든 a 태그에서 'on' 클래스를 제거합니다.
+        links.forEach(function (otherLink) {
+          otherLink.classList.remove("on");
+        });
+
+        // 클릭한 요소에 'on' 클래스를 추가합니다.
+        this.classList.add("on");
+      });
+    });
+
+    document.querySelector(".page_total").textContent = "총:" + document.querySelectorAll("#root a.active").length + "페이지";
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,719 @@
+@import url(fonts.css);
+@import url(reset.css);
+
+/* common.css: 프로젝트 공통 변수 및 클래스 */
+:root {
+  /* 루트 폰트 크기: 디자인 px 단위 매핑 */
+  font-size: 62.5%; /* 1rem = 10px (16px * 0.625) */
+
+  /* 색상 */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-gray: #666;
+
+  --color-bg: #fff;
+  --color-focus: var(--color-black);
+
+  /* 폰트 */
+  --font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+
+  /* 기타 */
+  --transition-base: 0.4s ease-in-out;
+}
+
+*:focus-visible {
+  outline: 0.2rem solid var(--color-white);
+  outline-offset: 0;
+  box-shadow: 0 0 0 0.4rem var(--color-focus);
+  transition: outline 0s, box-shadow 0s !important;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-black);
+  font-size: 1.2rem;
+  font-family: var(--font-family);
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+input,
+select,
+textarea,
+button {
+  font-family: var(--font-family);
+  font-size: inherit;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+/* 마진 유틸리티 클래스: 전체 (mg-) */
+.mg-0 {
+  margin: 0 !important;
+}
+.mg-04 {
+  margin: 0.4rem !important;
+}
+.mg-08 {
+  margin: 0.8rem !important;
+}
+.mg-12 {
+  margin: 1.2rem !important;
+}
+.mg-16 {
+  margin: 1.6rem !important;
+}
+.mg-20 {
+  margin: 2rem !important;
+}
+.mg-24 {
+  margin: 2.4rem !important;
+}
+.mg-28 {
+  margin: 2.8rem !important;
+}
+.mg-32 {
+  margin: 3.2rem !important;
+}
+.mg-36 {
+  margin: 3.6rem !important;
+}
+.mg-40 {
+  margin: 4rem !important;
+}
+.mg-auto {
+  margin: auto !important;
+}
+
+/* 마진 유틸리티 클래스: x축 (mx-) */
+.mx-0 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.mx-04 {
+  margin-left: 0.4rem !important;
+  margin-right: 0.4rem !important;
+}
+.mx-08 {
+  margin-left: 0.8rem !important;
+  margin-right: 0.8rem !important;
+}
+.mx-12 {
+  margin-left: 1.2rem !important;
+  margin-right: 1.2rem !important;
+}
+.mx-16 {
+  margin-left: 1.6rem !important;
+  margin-right: 1.6rem !important;
+}
+.mx-20 {
+  margin-left: 2rem !important;
+  margin-right: 2rem !important;
+}
+.mx-24 {
+  margin-left: 2.4rem !important;
+  margin-right: 2.4rem !important;
+}
+.mx-28 {
+  margin-left: 2.8rem !important;
+  margin-right: 2.8rem !important;
+}
+.mx-32 {
+  margin-left: 3.2rem !important;
+  margin-right: 3.2rem !important;
+}
+.mx-36 {
+  margin-left: 3.6rem !important;
+  margin-right: 3.6rem !important;
+}
+.mx-40 {
+  margin-left: 4rem !important;
+  margin-right: 4rem !important;
+}
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* 마진 유틸리티 클래스: y축 (my-) */
+.my-0 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.my-04 {
+  margin-top: 0.4rem !important;
+  margin-bottom: 0.4rem !important;
+}
+.my-08 {
+  margin-top: 0.8rem !important;
+  margin-bottom: 0.8rem !important;
+}
+.my-12 {
+  margin-top: 1.2rem !important;
+  margin-bottom: 1.2rem !important;
+}
+.my-16 {
+  margin-top: 1.6rem !important;
+  margin-bottom: 1.6rem !important;
+}
+.my-20 {
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+}
+.my-24 {
+  margin-top: 2.4rem !important;
+  margin-bottom: 2.4rem !important;
+}
+.my-28 {
+  margin-top: 2.8rem !important;
+  margin-bottom: 2.8rem !important;
+}
+.my-32 {
+  margin-top: 3.2rem !important;
+  margin-bottom: 3.2rem !important;
+}
+.my-36 {
+  margin-top: 3.6rem !important;
+  margin-bottom: 3.6rem !important;
+}
+.my-40 {
+  margin-top: 4rem !important;
+  margin-bottom: 4rem !important;
+}
+.my-auto {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
+/* 마진 유틸리티 클래스: 방향별 */
+.mt-0 {
+  margin-top: 0 !important;
+}
+.mt-04 {
+  margin-top: 0.4rem !important;
+}
+.mt-08 {
+  margin-top: 0.8rem !important;
+}
+.mt-12 {
+  margin-top: 1.2rem !important;
+}
+.mt-16 {
+  margin-top: 1.6rem !important;
+}
+.mt-20 {
+  margin-top: 2rem !important;
+}
+.mt-24 {
+  margin-top: 2.4rem !important;
+}
+.mt-28 {
+  margin-top: 2.8rem !important;
+}
+.mt-32 {
+  margin-top: 3.2rem !important;
+}
+.mt-40 {
+  margin-top: 4rem !important;
+}
+.mt-auto {
+  margin-top: auto !important;
+}
+
+.mr-0 {
+  margin-right: 0 !important;
+}
+.mr-04 {
+  margin-right: 0.4rem !important;
+}
+.mr-08 {
+  margin-right: 0.8rem !important;
+}
+.mr-12 {
+  margin-right: 1.2rem !important;
+}
+.mr-16 {
+  margin-right: 1.6rem !important;
+}
+.mr-20 {
+  margin-right: 2rem !important;
+}
+.mr-24 {
+  margin-right: 2.4rem !important;
+}
+.mr-28 {
+  margin-right: 2.8rem !important;
+}
+.mr-32 {
+  margin-right: 3.2rem !important;
+}
+.mr-40 {
+  margin-right: 4rem !important;
+}
+.mr-auto {
+  margin-right: auto !important;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+.mb-04 {
+  margin-bottom: 0.4rem !important;
+}
+.mb-08 {
+  margin-bottom: 0.8rem !important;
+}
+.mb-12 {
+  margin-bottom: 1.2rem !important;
+}
+.mb-16 {
+  margin-bottom: 1.6rem !important;
+}
+.mb-20 {
+  margin-bottom: 2rem !important;
+}
+.mb-24 {
+  margin-bottom: 2.4rem !important;
+}
+.mb-28 {
+  margin-bottom: 2.8rem !important;
+}
+.mb-32 {
+  margin-bottom: 3.2rem !important;
+}
+.mb-40 {
+  margin-bottom: 4rem !important;
+}
+.mb-auto {
+  margin-bottom: auto !important;
+}
+
+.ml-0 {
+  margin-left: 0 !important;
+}
+.ml-04 {
+  margin-left: 0.4rem !important;
+}
+.ml-08 {
+  margin-left: 0.8rem !important;
+}
+.ml-12 {
+  margin-left: 1.2rem !important;
+}
+.ml-16 {
+  margin-left: 1.6rem !important;
+}
+.ml-20 {
+  margin-left: 2rem !important;
+}
+.ml-24 {
+  margin-left: 2.4rem !important;
+}
+.ml-28 {
+  margin-left: 2.8rem !important;
+}
+.ml-32 {
+  margin-left: 3.2rem !important;
+}
+.ml-40 {
+  margin-left: 4rem !important;
+}
+.ml-auto {
+  margin-left: auto !important;
+}
+
+/* 패딩 유틸리티 클래스: 전체 (pd-) */
+.pd-0 {
+  padding: 0 !important;
+}
+.pd-04 {
+  padding: 0.4rem !important;
+}
+.pd-08 {
+  padding: 0.8rem !important;
+}
+.pd-12 {
+  padding: 1.2rem !important;
+}
+.pd-16 {
+  padding: 1.6rem !important;
+}
+.pd-20 {
+  padding: 2rem !important;
+}
+.pd-24 {
+  padding: 2.4rem !important;
+}
+.pd-28 {
+  padding: 2.8rem !important;
+}
+.pd-32 {
+  padding: 3.2rem !important;
+}
+.pd-40 {
+  padding: 4rem !important;
+}
+
+/* 패딩 유틸리티 클래스: x축 (px-) */
+.px-0 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.px-04 {
+  padding-left: 0.4rem !important;
+  padding-right: 0.4rem !important;
+}
+.px-08 {
+  padding-left: 0.8rem !important;
+  padding-right: 0.8rem !important;
+}
+.px-12 {
+  padding-left: 1.2rem !important;
+  padding-right: 1.2rem !important;
+}
+.px-16 {
+  padding-left: 1.6rem !important;
+  padding-right: 1.6rem !important;
+}
+.px-20 {
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+.px-24 {
+  padding-left: 2.4rem !important;
+  padding-right: 2.4rem !important;
+}
+.px-28 {
+  padding-left: 2.8rem !important;
+  padding-right: 2.8rem !important;
+}
+.px-32 {
+  padding-left: 3.2rem !important;
+  padding-right: 3.2rem !important;
+}
+.px-40 {
+  padding-left: 4rem !important;
+  padding-right: 4rem !important;
+}
+
+/* 패딩 유틸리티 클래스: y축 (py-) */
+.py-0 {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.py-04 {
+  padding-top: 0.4rem !important;
+  padding-bottom: 0.4rem !important;
+}
+.py-08 {
+  padding-top: 0.8rem !important;
+  padding-bottom: 0.8rem !important;
+}
+.py-12 {
+  padding-top: 1.2rem !important;
+  padding-bottom: 1.2rem !important;
+}
+.py-16 {
+  padding-top: 1.6rem !important;
+  padding-bottom: 1.6rem !important;
+}
+.py-20 {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+.py-24 {
+  padding-top: 2.4rem !important;
+  padding-bottom: 2.4rem !important;
+}
+.py-28 {
+  padding-top: 2.8rem !important;
+  padding-bottom: 2.8rem !important;
+}
+.py-32 {
+  padding-top: 3.2rem !important;
+  padding-bottom: 3.2rem !important;
+}
+.py-40 {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
+/* 패딩 유틸리티 클래스: 방향별 */
+.pt-0 {
+  padding-top: 0 !important;
+}
+.pt-04 {
+  padding-top: 0.4rem !important;
+}
+.pt-08 {
+  padding-top: 0.8rem !important;
+}
+.pt-12 {
+  padding-top: 1.2rem !important;
+}
+.pt-16 {
+  padding-top: 1.6rem !important;
+}
+.pt-20 {
+  padding-top: 2rem !important;
+}
+.pt-24 {
+  padding-top: 2.4rem !important;
+}
+.pt-28 {
+  padding-top: 2.8rem !important;
+}
+.pt-32 {
+  padding-top: 3.2rem !important;
+}
+.pt-40 {
+  padding-top: 4rem !important;
+}
+
+.pr-0 {
+  padding-right: 0 !important;
+}
+.pr-04 {
+  padding-right: 0.4rem !important;
+}
+.pr-08 {
+  padding-right: 0.8rem !important;
+}
+.pr-12 {
+  padding-right: 1.2rem !important;
+}
+.pr-16 {
+  padding-right: 1.6rem !important;
+}
+.pr-20 {
+  padding-right: 2rem !important;
+}
+.pr-24 {
+  padding-right: 2.4rem !important;
+}
+.pr-28 {
+  padding-right: 2.8rem !important;
+}
+.pr-32 {
+  padding-right: 3.2rem !important;
+}
+.pr-40 {
+  padding-right: 4rem !important;
+}
+
+.pb-0 {
+  padding-bottom: 0 !important;
+}
+.pb-04 {
+  padding-bottom: 0.4rem !important;
+}
+.pb-08 {
+  padding-bottom: 0.8rem !important;
+}
+.pb-12 {
+  padding-bottom: 1.2rem !important;
+}
+.pb-16 {
+  padding-bottom: 1.6rem !important;
+}
+.pb-20 {
+  padding-bottom: 2rem !important;
+}
+.pb-24 {
+  padding-bottom: 2.4rem !important;
+}
+.pb-28 {
+  padding-bottom: 2.8rem !important;
+}
+.pb-32 {
+  padding-bottom: 3.2rem !important;
+}
+.pb-40 {
+  padding-bottom: 4rem !important;
+}
+
+.pl-0 {
+  padding-left: 0 !important;
+}
+.pl-04 {
+  padding-left: 0.4rem !important;
+}
+.pl-08 {
+  padding-left: 0.8rem !important;
+}
+.pl-12 {
+  padding-left: 1.2rem !important;
+}
+.pl-16 {
+  padding-left: 1.6rem !important;
+}
+.pl-20 {
+  padding-left: 2rem !important;
+}
+.pl-24 {
+  padding-left: 2.4rem !important;
+}
+.pl-28 {
+  padding-left: 2.8rem !important;
+}
+.pl-32 {
+  padding-left: 3.2rem !important;
+}
+.pl-40 {
+  padding-left: 4rem !important;
+}
+
+/* gap */
+.gap-04 {
+  gap: 0.4rem !important;
+}
+.gap-06 {
+  gap: 0.6rem !important;
+}
+.gap-08 {
+  gap: 0.8rem !important;
+}
+.gap-10 {
+  gap: 1rem !important;
+}
+.gap-12 {
+  gap: 1.2rem !important;
+}
+.gap-16 {
+  gap: 1.6rem !important;
+}
+.gap-20 {
+  gap: 2rem !important;
+}
+.gap-24 {
+  gap: 2.4rem !important;
+}
+.gap-32 {
+  gap: 3.2rem !important;
+}
+.gap-36 {
+  gap: 3.6rem !important;
+}
+.gap-40 {
+  gap: 4rem !important;
+}
+
+/* 추가 유틸리티 클래스 */
+.scroll-no {
+  overflow: hidden !important;
+}
+.w-full {
+  width: 100% !important;
+}
+.w-auto {
+  width: auto !important;
+}
+.text-center {
+  text-align: center !important;
+}
+.text-left {
+  text-align: left !important;
+}
+.text-right {
+  text-align: right !important;
+}
+.hidden {
+  display: none !important;
+}
+.bg-none {
+  background: none !important;
+}
+
+.blind,
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* flex grid */
+.flex {
+  display: flex !important;
+}
+.flex-1 {
+  flex: 1 !important;
+}
+.flex-none {
+  flex: none !important;
+}
+.flex-column {
+  flex-direction: column !important;
+}
+.flex-row {
+  flex-direction: row !important;
+}
+.items-start {
+  align-items: flex-end !important;
+}
+.items-center {
+  align-items: center !important;
+}
+.items-end {
+  align-items: flex-end !important;
+}
+.justify-start {
+  justify-content: flex-start !important;
+}
+.justify-center {
+  justify-content: center !important;
+}
+.justify-end {
+  justify-content: flex-end !important;
+}
+.justify-around {
+  justify-content: space-around !important;
+}
+.justify-between {
+  justify-content: space-between !important;
+}
+.justify-evenly {
+  justify-content: space-evenly !important;
+}
+
+/* layout */
+#wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: normal;
+  min-height: 100%;
+}
+#header {
+  padding: 1.6rem;
+}
+.header-in {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 2.7rem;
+  padding: 0 6.4rem;
+}
+.inner {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.6rem;
+}
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: calc(100vh - 5.9rem);
+}
+#footer {
+  padding: 2.4rem;
+  text-align: center;
+  background-color: var(--color-gray3);
+}
+
+/* 메인메뉴 */
