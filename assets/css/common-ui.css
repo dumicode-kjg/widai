@@ -1080,3 +1080,47 @@ button {
   height: 2.4rem;
   background: url(../img/icon/icon_google_color.svg) no-repeat center/contain;
 }
+
+/* contents */
+.tab {
+  display: flex;
+  align-items: center;
+  height: 4.8rem;
+  padding: 0 2rem;
+  border-bottom: 0.1rem solid #d9d9d9;
+  background: url(../img/bg_tab.png) no-repeat 0 0 #f6f6f6;
+}
+.tab a {
+  display: inline-flex;
+  align-items: center;
+  height: 3.6rem;
+  padding: 0 1.6rem;
+  border-radius: 1.8rem;
+  color: var(--color-black);
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+.tab a.active {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-weight: 600;
+}
+.inner-content {
+  padding: 2rem;
+}
+.title-wrap {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 0;
+}
+.title-17 {
+  font-size: 1.7rem;
+  line-height: 1.412;
+  font-weight: 700;
+}
+.title-wrap .btn-arrow-down {
+  width: 1.6rem;
+  height: 1.6rem;
+  background: url(../img/icon/icon_arrow_down.svg) no-repeat center/contain;
+  margin-left: auto;
+}
