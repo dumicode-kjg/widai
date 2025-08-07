@@ -813,6 +813,9 @@ button {
   border-radius: 0.2rem;
   background-color: #ebebeb;
 }
+.lnb .lnb-menu > li > a.active .icon {
+  background-color: #000;
+}
 .lnb .lnb-menu > li > a .text {
   color: #171719;
   font-size: 1.4rem;
