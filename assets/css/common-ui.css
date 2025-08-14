@@ -17,7 +17,7 @@
   --color-focus: var(--color-black);
 
   /* 폰트 */
-  --font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  --font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
 
   /* 기타 */
   --transition-fast: 0.2s ease-in-out;
@@ -713,7 +713,7 @@ button {
   height: 2.4rem;
 }
 .header-in .logo .logo-img::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -741,7 +741,7 @@ button {
   align-items: center;
 }
 .header-in .utilbox .user-on::before {
-  content: "";
+  content: '';
   width: 0.1rem;
   height: 1.6rem;
   margin: 0 1.6rem;
@@ -762,7 +762,7 @@ button {
   box-shadow: 0 0.3rem 0.1rem -0.1rem #1a1a1a12;
 }
 .header-in .utilbox .user-on .user::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -817,7 +817,7 @@ button {
   background-color: #ebebeb;
 }
 .lnb .lnb-menu > li > a .icon::after {
-  content: "";
+  content: '';
   width: 2.4rem;
   height: 2.4rem;
 
@@ -851,7 +851,7 @@ button {
   background-color: transparent;
 }
 .lnb .lnb-menu > li > a.active .icon::before {
-  content: "";
+  content: '';
   position: absolute;
   right: -0.4rem;
   bottom: -0.4rem;
@@ -925,7 +925,7 @@ button {
   height: 4.8rem;
 }
 .memb-head .logo::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -958,7 +958,7 @@ button {
   margin: 0 auto;
 }
 .memb-logo::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -975,7 +975,7 @@ button {
   margin: 0 auto;
 }
 .memb-success::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1049,24 +1049,70 @@ button {
 }
 
 /* form el */
-*::placeholder {
-  color: #666;
+*:disabled::placeholder {
+  color: #a7a7a7;
 }
+
 .is-error {
   border-color: var(--color-error) !important;
 }
+
 .input-text {
   width: 100%;
-  height: 4rem;
+  height: 3.2rem;
   padding: 0 1.5rem;
-  border: 0.1rem solid #cccccc80;
+  border: 0.1rem solid #e1e2e4;
   border-radius: 0.4rem;
   background-color: #f6f6f6;
+  font-size: 1.3rem;
+  line-height: 1.38;
+  letter-spacing: 0;
+  transition: var(--transition-fast);
+  outline: none;
+}
+.input-text:hover {
+  border-color: #c2c4c8;
+}
+.input-text:focus-visible {
+  border-color: var(--color-black);
+  background-color: var(--color-white);
+  box-shadow: 0 0 0 0.3rem #0000000d;
+}
+.input-text:active {
+  border-color: #e1e2e4;
+  background-color: var(--color-white);
+  box-shadow: 0 0 0 0.3rem #0000000d;
+}
+.input-text:disabled {
+  border-color: #e1e2e4;
+  background-color: #f6f6f6;
+  color: #a7a7a7;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.input-text[readonly] {
+  border-color: #e1e2e4;
+  background-color: #f6f6f6;
+  color: var(--color-black);
+  box-shadow: none;
+}
+.input-text.size-lg {
+  height: 4rem;
   font-size: 1.4rem;
   line-height: 1.43;
   letter-spacing: 0.0145em;
-  box-shadow: 0 0.2rem 0.1rem -0.1rem #1a1a1a0d;
-  transition: var(--transition-base);
+}
+.input-text.size-rg {
+  height: 3.2rem;
+  font-size: 1.3rem;
+  line-height: 1.38;
+  letter-spacing: 0;
+}
+.input-text.size-sm {
+  height: 2.8rem;
+  font-size: 1.2rem;
+  line-height: 1.33;
+  letter-spacing: 0.0252em;
 }
 
 .input-checkbox {
@@ -1077,7 +1123,7 @@ button {
   font-size: 2rem;
   line-height: 2.4rem;
 }
-.input-checkbox input[type="checkbox"] {
+.input-checkbox input[type='checkbox'] {
   width: 2.4rem;
   height: 2.4rem;
   border: none;
@@ -1085,7 +1131,7 @@ button {
   appearance: none;
   cursor: pointer;
 }
-.input-checkbox input[type="checkbox"]:checked {
+.input-checkbox input[type='checkbox']:checked {
   background-image: url(../img/icon/icon_checkbox_on.svg);
 }
 
@@ -1113,15 +1159,15 @@ button {
   border-color: #70737c38;
   background-color: #2e2f33e0;
 }
-.btn-style:active {
-  border-color: #70737c38;
-  background-color: var(--color-black);
-  box-shadow: 0 0 0 0.3rem #0000000d;
-}
 .btn-style:focus-visible {
   border-color: #3385ff;
   background-color: var(--color-black);
   box-shadow: 0 0 0 0.1rem #3385ff;
+}
+.btn-style:active {
+  border-color: #70737c38;
+  background-color: var(--color-black);
+  box-shadow: 0 0 0 0.3rem #0000000d;
 }
 .btn-style:disabled {
   border-color: #70737c38;

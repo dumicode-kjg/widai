@@ -93,12 +93,46 @@
         <div class="contents">
           <!--  -->
           <ul class="tab">
-            <li><a href="#" class="active">Generation</a></li>
-            <li><a href="#">Albums</a></li>
+            <li><a href="#" class="active">Tab01</a></li>
+            <li><a href="#">Tab02</a></li>
           </ul>
           <div class="inner-content">
+            <!-- button -->
             <div class="title-wrap">
-              <h3 class="title-17">Guide</h3>
+              <h3 class="title-17">button</h3>
+            </div>
+            <div class="flex items-center gap-08">
+              <button type="button" class="btn-style size-lg" disabled>disabled</button>
+              <button type="button" class="btn-style size-lg">size-sm</button>
+              <button type="button" class="btn-style size-rg">size-rg</button>
+              <button type="button" class="btn-style size-sm">size-sm</button>
+            </div>
+            <div class="mt-16"></div>
+            <div class="flex items-center gap-08">
+              <button type="button" class="btn-style size-lg outline" disabled>disabled</button>
+              <button type="button" class="btn-style size-lg outline">size-sm</button>
+              <button type="button" class="btn-style size-rg outline">size-rg</button>
+              <button type="button" class="btn-style size-sm outline">size-sm</button>
+            </div>
+            <!-- //button -->
+
+            <div class="mt-16"></div>
+
+            <!-- input-text -->
+            <div class="title-wrap">
+              <h3 class="title-17">input-text</h3>
+            </div>
+            <div class="flex items-center gap-08">
+              <input type="text" class="input-text size-lg" placeholder="placeholder" value="disabled" disabled />
+              <input type="text" class="input-text size-lg" placeholder="placeholder" value="readonly" readonly />
+              <input type="text" class="input-text size-lg" placeholder="placeholder" />
+              <input type="text" class="input-text size-rg" placeholder="placeholder" />
+              <input type="text" class="input-text size-sm" placeholder="placeholder" />
+            </div>
+            <!-- input-text -->
+
+            <div class="title-wrap">
+              <h3 class="title-17">Grid</h3>
               <button type="button" class="btn-arrow-down"></button>
             </div>
             <!-- grid -->
@@ -139,10 +173,10 @@
             </style>
             <script src="../assets/js/masonry.pkgd.min.js"></script>
             <script>
-              $(".image-grid").masonry({
+              $('.image-grid').masonry({
                 columnWidth: 236,
                 gutter: 2,
-                itemSelector: ".grid-item",
+                itemSelector: '.grid-item',
               });
             </script>
             <!-- //grid -->
@@ -155,7 +189,7 @@
             <div id="slider"></div>
             <script>
               $(function () {
-                $("#slider").slider();
+                $('#slider').slider();
               });
             </script>
             <!-- //slide -->
@@ -176,7 +210,7 @@
               <label for="color">Color</label>
             </div>
             <script>
-              $("#radio").controlgroup();
+              $('#radio').controlgroup();
             </script>
             <!-- //radio group -->
           </div>
