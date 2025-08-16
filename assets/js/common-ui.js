@@ -1,6 +1,6 @@
 $(function () {
+  // select
   const $customSelects = $('.custom-select');
-
   if ($customSelects.length) {
     // 커스텀 위젯 정의
     $.widget('custom.iconselectmenu', $.ui.selectmenu, {
@@ -52,8 +52,33 @@ $(function () {
         .addClass('custom-selectmenu-menu');
     });
   }
+  // tooltip
+  $("[data-geo]").tooltip({
+    items: "[data-geo]", // 생략 가능하지만 명확하게 지정
+    content: function () {
+      var element = $(this);
+      var targetSelector = element.data("geo");
+
+      if (targetSelector) {
+        var contentHtml = $(targetSelector).html();
+        return contentHtml || "내용이 없습니다.";
+      }
+
+      return "잘못된 참조입니다.";
+    },
+    classes: {
+      "ui-tooltip": "custom-tooltip"
+    },
+    track: false // 마우스를 따라다니지 않음
+  });
+
 });
 
 function lnbToggle() {
   $('.lnb').toggleClass('close');
+}
+
+function toggleAcc(btn, targetSelector) {
+  $(btn).toggleClass('open');
+  $(targetSelector).stop().slideToggle();
 }
