@@ -908,6 +908,7 @@ button {
 }
 
 .lob {
+  flex: none;
   width: 28rem;
   border-right: 0.1rem solid #d9d9d9;
   background-color: var(--color-white);
@@ -997,6 +998,7 @@ button {
   flex: 1;
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 #footer {
   flex: none;
