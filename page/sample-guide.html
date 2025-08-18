@@ -46,6 +46,7 @@
       <!-- //헤더 영역 -->
       <!-- 컨테이너 영역 -->
       <div id="container">
+        <!-- lnb -->
         <div class="lnb">
           <div class="top-toggle">
             <button type="button" class="btn-toggle" onclick="lnbToggle()"><span class="sr-only">메뉴 확장/축소</span></button>
@@ -89,6 +90,8 @@
             </li>
           </ul>
         </div>
+        <!-- //lnb -->
+        <!-- lob -->
         <div class="lob">
           <div class="lob-head">
             <h2 class="lob-title">Create Shorts<span class="btn-tooltip" tabindex="0" data-geo="#tooltipContent1"></span></h2>
@@ -110,7 +113,125 @@
                 <li><a href="#tabs-3">Element</a></li>
                 <li><a href="#tabs-4">Audio</a></li>
               </ul>
-              <div id="tabs-1">1</div>
+              <div id="tabs-1">
+                <!-- lob-menu -->
+                <div class="lob-menu">
+                  <div class="lob-menu-item">
+                    <div class="lob-menu-item-head">
+                      <div class="lob-menu-item-title">Select Model<span class="btn-tooltip" tabindex="0" data-geo="#tooltipContent1"></span></div>
+                      <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_1_1')"></button>
+                    </div>
+                    <div class="lob-menu-item-body" id="sec_lob_1_1" style="display: block">
+                      <select class="custom-select">
+                        <option value="">Select Model</option>
+                        <option value="">Select Model2</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="lob-menu-item">
+                    <div class="lob-menu-item-head">
+                      <div class="lob-menu-item-title">Prompt<span class="btn-tooltip" tabindex="0" data-geo="#tooltipContent1"></span></div>
+                      <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_1_2')"></button>
+                    </div>
+                    <div class="lob-menu-item-body" id="sec_lob_1_2" style="display: block">
+                      <textarea class="input-text">
+Swedish male model, late 20s, youthful but intense masculine features, platinum blonde hair styled in slicked-back pomade, sharp narrow nose, defined cheekbones, chiseled jawline, symmetrical and refined face, clear skin, no freckles, faintly raised corners of the mouth, subtle enigmatic expression, intense gaze, inspired by Penn Badgley in YOU, front-facing ID photo style, head level, squared shoulders, looking directly at the camera, no tilt, no movement, white background, studio lighting, in full natural color, realistic skin tone, no black and w</textarea
+                      >
+                      <div class="ctrl-switch">
+                        <div class="switch-col">
+                          <label class="toggle-switch size-sm">
+                            <input type="checkbox" name="checkbox1" checked />
+                            <div class="toogle-text">
+                              <span class="on">Auto Sound</span>
+                              <span class="off">Auto Sound</span>
+                            </div>
+                            <div class="val"></div>
+                          </label>
+                        </div>
+                        <div class="switch-col">
+                          <label class="toggle-switch size-sm">
+                            <input type="checkbox" name="checkbox2" />
+                            <div class="toogle-text">
+                              <span class="on">Auto Speech</span>
+                              <span class="off">Auto Speech</span>
+                            </div>
+                            <div class="val"></div>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="lob-menu-item">
+                    <div class="lob-menu-item-head">
+                      <div class="lob-menu-item-title">Settings<span class="btn-tooltip" tabindex="0" data-geo="#tooltipContent1"></span></div>
+                      <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_1_3')"></button>
+                    </div>
+                    <div class="lob-menu-item-body" id="sec_lob_1_3" style="display: block">
+                      <div class="dl-form">
+                        <dl class="dl-form-item">
+                          <dt>Quality Mode</dt>
+                          <dd>
+                            <div class="radio-group">
+                              <label class="radio-label">
+                                <input type="radio" name="qMode" checked="" />
+                                <span class="radio-text">Lite</span>
+                              </label>
+                              <label class="radio-label">
+                                <input type="radio" name="qMode" />
+                                <span class="radio-text">Pro</span>
+                              </label>
+                            </div>
+                          </dd>
+                        </dl>
+                        <dl class="dl-form-item">
+                          <dt>Duration</dt>
+                          <dd>
+                            <div class="radio-group">
+                              <label class="radio-label">
+                                <input type="radio" name="Duration" checked="" />
+                                <span class="radio-text">5s</span>
+                              </label>
+                              <label class="radio-label">
+                                <input type="radio" name="Duration" />
+                                <span class="radio-text">10s</span>
+                              </label>
+                            </div>
+                          </dd>
+                        </dl>
+                        <dl class="dl-form-item">
+                          <dt>Resolution</dt>
+                          <dd>
+                            <div class="radio-group">
+                              <label class="radio-label">
+                                <input type="radio" name="Resolution" checked="" />
+                                <span class="radio-text">480p</span>
+                              </label>
+                              <label class="radio-label">
+                                <input type="radio" name="Resolution" />
+                                <span class="radio-text">720p</span>
+                              </label>
+                              <label class="radio-label">
+                                <input type="radio" name="Resolution" />
+                                <span class="radio-text">1080p</span>
+                              </label>
+                            </div>
+                          </dd>
+                        </dl>
+                        <dl class="dl-form-item">
+                          <dt>Resolution</dt>
+                          <dd>
+                            <select class="custom-select">
+                              <option value="">Cinema (16:9)</option>
+                              <option value="">Cinema (16:9)</option>
+                            </select>
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //lob-menu -->
+              </div>
               <div id="tabs-2">22</div>
               <div id="tabs-3">333</div>
               <div id="tabs-4">4444</div>
@@ -125,6 +246,8 @@
             <!-- //tabs -->
           </div>
         </div>
+        <!-- //lob -->
+        <!-- contents -->
         <div class="contents">
           <!--  -->
           <ul class="tab">
@@ -362,6 +485,7 @@
           </div>
           <!-- // -->
         </div>
+        <!-- //contents -->
       </div>
       <!-- //컨테이너 영역 -->
     </div>
