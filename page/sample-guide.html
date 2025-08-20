@@ -477,6 +477,120 @@ Swedish male model, late 20s, youthful but intense masculine features, platinum 
               });
             </script>
             <!-- //grid -->
+
+            <div class="mt-16"></div>
+
+            <!-- dropdown -->
+            <style>
+              .inner-content .ui-menu {
+                position: absolute !important;
+                display: none;
+                border: 1px solid #ddd;
+                border-radius: 3px;
+                font-size: 13px;
+                width: 200px;
+                z-index: 1000;
+                text-align: left;
+              }
+              .inner-content .ui-dropdown {
+                position: absolute !important;
+                display: none;
+                border: 1px solid #ddd;
+                border-radius: 3px;
+                font-size: 13px;
+                width: 230px;
+                z-index: 1000;
+                text-align: left;
+              }
+              .inner-content .ui-dropdown .ui-state-focus,
+              .inner-content .ui-dropdown .ui-state-active {
+                margin: 0px;
+                background: #eee !important;
+                border: none !important;
+              }
+              .inner-content .ui-dropdown li {
+                padding: 0 !important;
+              }
+              .inner-content .ui-dropdown li a {
+                display: block;
+                padding: 10px 15px !important;
+                text-shadow: none !important;
+                color: #333 !important;
+                text-decoration: none;
+                font-size: 13px;
+              }
+              .inner-content .ui-dropdown li p {
+                white-space: normal;
+                font-size: 13px;
+                font-weight: normal;
+                text-shadow: none;
+                color: #888 !important;
+                padding: 10px;
+                margin: 0;
+              }
+              .inner-content .button.ui-button {
+                padding: 0 !important;
+                display: block !important;
+                height: 36px !important;
+                width: 36px !important;
+                line-height: 34px !important;
+                color: #333;
+              }
+              .inner-content .button.ui-button.ui-state-hover .fa,
+              .inner-content .button.ui-button.ui-state-focus .fa,
+              .inner-content .button.ui-button.ui-state-active .fa {
+                color: #777 !important;
+              }
+              .inner-content .button.button.ui-button .ui-button-text {
+                padding: 0px !important;
+                display: block;
+                width: 35px;
+                line-height: 34px !important;
+                height: 35px;
+                text-align: center !important;
+              }
+            </style>
+            <div class="title-wrap">
+              <h3 class="title-17">dropdown</h3>
+            </div>
+            <a href="#" class="button action ui-dropper" data-drop="select_drop"><i class="fa fa-cog"></i></a>
+            <ul id="select_drop" class="ui-dropdown action-dropdown">
+              <li><a href="javascript:void(0);">Open...</a></li>
+              <li><a href="javascript:void(0);">Save</a></li>
+              <li><a href="javascript:void(0);">Delete</a></li>
+            </ul>
+            <script>
+              $(function () {
+                $('.ui-dropdown').menu().hide();
+
+                $('.inner-content .ui-dropper')
+                  .button()
+                  .click(function () {
+                    // data-drop value and create ID to target dropdown
+                    var menu = $('#' + $(this).attr('data-drop'));
+
+                    // hide all OTHER dropdowns when we open one
+                    $('.ui-menu:visible')
+                      .not('#' + $(this).attr('data-drop'))
+                      .hide();
+
+                    // position the dropdown to the right, so it works on all buttons
+                    // buttons at far right of screen will have menus flipped inward to avoid viewport collision
+                    menu.toggle().position({
+                      my: 'left top',
+                      at: 'right top',
+                      of: this,
+                    });
+                    // on click of the document, close the menus
+                    $(document).one('click', function () {
+                      //menu.hide();
+                      $('.ui-menu:visible').hide();
+                    });
+                    return false;
+                  });
+              });
+            </script>
+            <!-- //dropdown -->
             <br />
             <br />
             <br />
