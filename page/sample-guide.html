@@ -1,607 +1,616 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Guide | Widai</title>
 
-    <!-- <link rel="icon" type="image/png" href="/">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guide | Widai</title>
+
+  <!-- <link rel="icon" type="image/png" href="/">
   <link rel="apple-touch-icon" href="/"> -->
 
-    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
-    <link rel="stylesheet" href="../assets/css/common-ui.css" />
-    <script src="../assets/js/jquery-3.7.1.min.js"></script>
-    <script src="../assets/js/jquery-ui.min.js"></script>
-    <script src="../assets/js/common-ui.js"></script>
-  </head>
+  <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../assets/css/common-ui.css" />
+  <script src="../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../assets/js/jquery-ui.min.js"></script>
+  <script src="../assets/js/common-ui.js"></script>
+</head>
 
-  <body>
-    <div id="wrap" class="g-wrap">
-      <!-- 헤더 영역 -->
-      <header id="header">
-        <!-- 헤더 컨텐츠 영역 -->
-        <div class="header-in">
-          <h1 class="logo">
-            <a href="#">
-              <i class="logo-img"></i>
-              <span class="logo-text"></span>
-            </a>
-          </h1>
-
-          <div class="utilbox">
-            <button type="button" class="btn-style size-sm outline">Create</button>
-            <button type="button" class="btn-style size-sm">Upgrade</button>
-            <div class="user-on">
-              <button type="button" class="notify">
-                <span class="sr-only">알림글</span>
-              </button>
-              <button type="button" class="user">
-                <span class="sr-only">mypage</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- //헤더 컨텐츠 영역 -->
-      </header>
-      <!-- //헤더 영역 -->
-      <!-- 컨테이너 영역 -->
-      <div id="container">
-        <!-- lnb -->
-        <div class="lnb">
-          <div class="top-toggle">
-            <button type="button" class="btn-toggle" onclick="lnbToggle()"><span class="sr-only">메뉴 확장/축소</span></button>
-          </div>
-          <ul class="lnb-menu">
-            <li>
-              <a href="#" class="active">
-                <i class="icon icon-home"></i>
-                <span class="text">Home</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="icon icon-image"></i>
-                <span class="text">Image</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="icon icon-video"></i>
-                <span class="text">Video</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="icon icon-shorts"></i>
-                <span class="text">Shorts</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="icon icon-k-art"></i>
-                <span class="text">K-Art</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="icon icon-others"></i>
-                <span class="text">Others</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <!-- //lnb -->
-        <!-- lob -->
-        <div class="lob">
-          <div class="lob-head">
-            <h2 class="lob-title">Create Shorts<span class="btn-tooltip" tabindex="0" data-geo="#tooltipContent1"></span></h2>
-            <!-- 숨겨진 툴팁 콘텐츠 -->
-            <div id="tooltipContent1" style="display: none">
-              <div style="font-size: 16px; color: #333">
-                <strong>툴팁 타이틀</strong><br />
-                이건 툴팁에 표시될 HTML입니다.
-              </div>
-            </div>
-            <!-- //숨겨진 툴팁 콘텐츠 -->
-          </div>
-          <div class="lob-body">
-            <!-- tabs -->
-            <div id="lobTabs" class="lob-tabs">
-              <ul>
-                <li><a href="#tabs-1">Text</a></li>
-                <li><a href="#tabs-2">Image</a></li>
-                <li><a href="#tabs-3">Element</a></li>
-                <li><a href="#tabs-4">Audio</a></li>
-              </ul>
-              <div id="tabs-1">
-                <!-- lob-menu -->
-                <div class="lob-menu">
-                  <div class="lob-menu-item">
-                    <div class="lob-menu-item-head">
-                      <div class="lob-menu-item-title">Select Model<span class="btn-tooltip" tabindex="0" data-geo="#tooltipContent1"></span></div>
-                      <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_1_1')"></button>
-                    </div>
-                    <div class="lob-menu-item-body" id="sec_lob_1_1" style="display: block">
-                      <select class="custom-select">
-                        <option value="">Select Model</option>
-                        <option value="">Select Model2</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="lob-menu-item">
-                    <div class="lob-menu-item-head">
-                      <div class="lob-menu-item-title">Prompt<span class="btn-tooltip" tabindex="0" data-geo="#tooltipContent1"></span></div>
-                      <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_1_2')"></button>
-                    </div>
-                    <div class="lob-menu-item-body" id="sec_lob_1_2" style="display: block">
-                      <textarea class="input-text">
-Swedish male model, late 20s, youthful but intense masculine features, platinum blonde hair styled in slicked-back pomade, sharp narrow nose, defined cheekbones, chiseled jawline, symmetrical and refined face, clear skin, no freckles, faintly raised corners of the mouth, subtle enigmatic expression, intense gaze, inspired by Penn Badgley in YOU, front-facing ID photo style, head level, squared shoulders, looking directly at the camera, no tilt, no movement, white background, studio lighting, in full natural color, realistic skin tone, no black and w</textarea
-                      >
-                      <div class="ctrl-switch">
-                        <div class="switch-col">
-                          <label class="toggle-switch size-sm">
-                            <input type="checkbox" name="checkbox1" checked />
-                            <div class="toogle-text">
-                              <span class="on">Auto Sound</span>
-                              <span class="off">Auto Sound</span>
-                            </div>
-                            <div class="val"></div>
-                          </label>
-                        </div>
-                        <div class="switch-col">
-                          <label class="toggle-switch size-sm">
-                            <input type="checkbox" name="checkbox2" />
-                            <div class="toogle-text">
-                              <span class="on">Auto Speech</span>
-                              <span class="off">Auto Speech</span>
-                            </div>
-                            <div class="val"></div>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="lob-menu-item">
-                    <div class="lob-menu-item-head">
-                      <div class="lob-menu-item-title">Settings<span class="btn-tooltip" tabindex="0" data-geo="#tooltipContent1"></span></div>
-                      <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_1_3')"></button>
-                    </div>
-                    <div class="lob-menu-item-body" id="sec_lob_1_3" style="display: block">
-                      <div class="dl-form">
-                        <dl class="dl-form-item">
-                          <dt>Quality Mode</dt>
-                          <dd>
-                            <div class="radio-group">
-                              <label class="radio-label">
-                                <input type="radio" name="qMode" checked="" />
-                                <span class="radio-text">Lite</span>
-                              </label>
-                              <label class="radio-label">
-                                <input type="radio" name="qMode" />
-                                <span class="radio-text">Pro</span>
-                              </label>
-                            </div>
-                          </dd>
-                        </dl>
-                        <dl class="dl-form-item">
-                          <dt>Duration</dt>
-                          <dd>
-                            <div class="radio-group">
-                              <label class="radio-label">
-                                <input type="radio" name="Duration" checked="" />
-                                <span class="radio-text">5s</span>
-                              </label>
-                              <label class="radio-label">
-                                <input type="radio" name="Duration" />
-                                <span class="radio-text">10s</span>
-                              </label>
-                            </div>
-                          </dd>
-                        </dl>
-                        <dl class="dl-form-item">
-                          <dt>Resolution</dt>
-                          <dd>
-                            <div class="radio-group">
-                              <label class="radio-label">
-                                <input type="radio" name="Resolution" checked="" />
-                                <span class="radio-text">480p</span>
-                              </label>
-                              <label class="radio-label">
-                                <input type="radio" name="Resolution" />
-                                <span class="radio-text">720p</span>
-                              </label>
-                              <label class="radio-label">
-                                <input type="radio" name="Resolution" />
-                                <span class="radio-text">1080p</span>
-                              </label>
-                            </div>
-                          </dd>
-                        </dl>
-                        <dl class="dl-form-item">
-                          <dt>Resolution</dt>
-                          <dd>
-                            <select class="custom-select">
-                              <option value="">Cinema (16:9)</option>
-                              <option value="">Cinema (16:9)</option>
-                            </select>
-                          </dd>
-                        </dl>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- //lob-menu -->
-              </div>
-              <div id="tabs-2">22</div>
-              <div id="tabs-3">333</div>
-              <div id="tabs-4">4444</div>
-            </div>
-            <script>
-              $(function () {
-                $('#lobTabs').tabs({
-                  active: 0, // 0부터 시작
-                });
-              });
-            </script>
-            <!-- //tabs -->
-          </div>
-        </div>
-        <!-- //lob -->
-        <!-- contents -->
-        <div class="contents">
-          <!--  -->
-          <ul class="tab">
-            <li><a href="#" class="active">Tab01</a></li>
-            <li><a href="#">Tab02</a></li>
-          </ul>
-          <div class="inner-content">
-            <!-- button -->
-            <div class="title-wrap">
-              <h3 class="title-17">button</h3>
-            </div>
-            <div class="flex items-center gap-08">
-              <button type="button" class="btn-style size-lg" disabled>disabled</button>
-              <button type="button" class="btn-style size-lg">size-sm</button>
-              <button type="button" class="btn-style size-rg">size-rg</button>
-              <button type="button" class="btn-style size-sm">size-sm</button>
-            </div>
-            <div class="mt-16"></div>
-            <div class="flex items-center gap-08">
-              <button type="button" class="btn-style size-lg outline" disabled>disabled</button>
-              <button type="button" class="btn-style size-lg outline">size-sm</button>
-              <button type="button" class="btn-style size-rg outline">size-rg</button>
-              <button type="button" class="btn-style size-sm outline">size-sm</button>
-            </div>
-            <!-- //button -->
-
-            <div class="mt-16"></div>
-
-            <!-- input-text -->
-            <div class="title-wrap">
-              <h3 class="title-17">input-text</h3>
-            </div>
-            <div class="flex items-center gap-08">
-              <input type="text" class="input-text size-lg" placeholder="placeholder" value="disabled" disabled />
-              <input type="text" class="input-text size-lg" placeholder="placeholder" value="readonly" readonly />
-              <input type="text" class="input-text size-lg" placeholder="placeholder" />
-              <input type="text" class="input-text size-rg" placeholder="placeholder" />
-              <input type="text" class="input-text size-sm" placeholder="placeholder" />
-            </div>
-            <br />
-            <div class="flex items-center gap-08">
-              <textarea class="input-text"></textarea>
-            </div>
-            <!-- input-text -->
-
-            <div class="mt-16"></div>
-
-            <!-- select -->
-            <div class="title-wrap">
-              <h3 class="title-17">select</h3>
-            </div>
-            <div class="flex items-center gap-08">
-              <select class="custom-select size-lg" disabled>
-                <option value="1">disabled</option>
-                <option value="2">disabled2</option>
-              </select>
-              <select class="custom-select size-lg">
-                <option value="1">size-lg</option>
-                <option value="2">size-lg2</option>
-              </select>
-              <select class="custom-select size-rg">
-                <option value="1" data-class="icon" data-style="background-image: url(../assets/img/icon/icon_r_1_1.svg)">Auto (Default)</option>
-                <option value="2" data-class="icon" data-style="background-image: url(../assets/img/icon/icon_r_1_1.svg)">Square 1:1</option>
-                <option value="2" data-class="icon" data-style="background-image: url(../assets/img/icon/icon_r_16_9.svg)">Widescreen 16:9</option>
-              </select>
-              <select class="custom-select size-sm">
-                <option value="1">size-sm</option>
-                <option value="1">size-sm2</option>
-                <option value="1">size-sm3</option>
-                <option value="1">size-sm4</option>
-                <option value="1">size-sm5</option>
-                <option value="1">size-sm6</option>
-                <option value="1">size-sm7</option>
-                <option value="1">size-sm8</option>
-                <option value="1">size-sm9</option>
-                <option value="1">size-sm10</option>
-                <option value="1">size-sm11</option>
-                <option value="1">size-sm12</option>
-              </select>
-            </div>
-            <!-- //select -->
-
-            <div class="mt-16"></div>
-
-            <!-- radio-group -->
-            <div class="title-wrap">
-              <h3 class="title-17">radio-group</h3>
-            </div>
-            <div class="radio-group">
-              <label class="radio-label">
-                <input type="radio" name="radio" checked />
-                <span class="radio-text">x1</span>
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="radio" />
-                <span class="radio-text">x2</span>
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="radio" />
-                <span class="radio-text">x3</span>
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="radio" />
-                <span class="radio-text">x4</span>
-              </label>
-            </div>
-            <!-- //radio-group -->
-
-            <div class="mt-16"></div>
-
-            <!-- toggle-switch -->
-            <div class="title-wrap">
-              <h3 class="title-17">toggle-switch</h3>
-            </div>
-            <div class="flex items-center gap-08">
-              <label class="toggle-switch">
-                <input type="checkbox" name="checkbox" />
-                <div class="val"></div>
-              </label>
-              <label class="toggle-switch size-sm">
-                <input type="checkbox" name="checkbox" />
-                <div class="val"></div>
-              </label>
-
-              <label class="toggle-switch ml-auto">
-                <input type="checkbox" name="checkbox" />
-                <div class="toogle-text">
-                  <span class="on">On</span>
-                  <span class="off">OFF</span>
-                </div>
-                <div class="val"></div>
-              </label>
-            </div>
-            <!-- //toggle-switch -->
-
-            <div class="mt-16"></div>
-
-            <!-- slide -->
-            <div class="title-wrap">
-              <h3 class="title-17">slider</h3>
-            </div>
-            <div id="slider" class="custom-slider"></div>
-            <script>
-              $(function () {
-                $('#slider').slider({
-                  value: 60,
-                  orientation: 'horizontal',
-                  range: 'min',
-                  animate: true,
-                });
-              });
-            </script>
-            <!-- //slide -->
-
-            <div class="mt-16"></div>
-
-            <!-- slide -->
-            <div class="title-wrap">
-              <h3 class="title-17">아코디언</h3>
-              <button type="button" class="btn-toggle-acc" onclick="toggleAcc(this, '#sec_acc')"></button>
-            </div>
-            <div id="sec_acc" style="display: none">
-              아코디언 닫겼을 상태입니다. <br />
-              아코디언 닫겼을 상태입니다. <br />
-              아코디언 닫겼을 상태입니다. <br />
-              아코디언 닫겼을 상태입니다. <br />
-              아코디언 닫겼을 상태입니다. <br />
-              아코디언 닫겼을 상태입니다. <br />
-              아코디언 닫겼을 상태입니다. <br />
-              아코디언 닫겼을 상태입니다. <br />
-              아코디언 닫겼을 상태입니다. <br />
-              아코디언 닫겼을 상태입니다. <br />
-              아코디언 닫겼을 상태입니다. <br />
-            </div>
-            <!-- //slide -->
-
-            <div class="mt-16"></div>
-
-            <!-- grid -->
-            <div class="title-wrap">
-              <h3 class="title-17">Grid</h3>
-              <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_grid')"></button>
-            </div>
-            <div id="sec_grid" style="display: block">
-              <div class="image-grid">
-                <div class="grid-item">
-                  <div style="width: 236px; height: 800px; background-color: orange"></div>
-                </div>
-                <div class="grid-item">
-                  <div style="width: 236px; height: 200px; background-color: green"></div>
-                </div>
-                <div class="grid-item">
-                  <div style="width: 236px; height: 600px; background-color: blue"></div>
-                </div>
-
-                <div class="grid-item">
-                  <div style="width: 236px; height: 300px; background-color: red"></div>
-                </div>
-                <div class="grid-item">
-                  <div style="width: 236px; height: 450px; background-color: yellow"></div>
-                </div>
-                <div class="grid-item">
-                  <div style="width: 236px; height: 280px; background-color: pink"></div>
-                </div>
-                <div class="grid-item">
-                  <div style="width: 236px; height: 200px; background-color: darkmagenta"></div>
-                </div>
-                <div class="grid-item">
-                  <div style="width: 236px; height: 600px; background-color: lightgrey"></div>
-                </div>
-                <div class="grid-item">
-                  <div style="width: 236px; height: 300px; background-color: lightskyblue"></div>
-                </div>
-              </div>
-            </div>
-            <style>
-              .grid-item {
-                margin-bottom: 0.2rem;
-              }
-            </style>
-            <script src="../assets/js/masonry.pkgd.min.js"></script>
-            <script>
-              $('.image-grid').masonry({
-                columnWidth: 236,
-                gutter: 2,
-                itemSelector: '.grid-item',
-              });
-            </script>
-            <!-- //grid -->
-
-            <div class="mt-16"></div>
-
-            <!-- dropdown -->
-            <style>
-              .inner-content .ui-menu {
-                position: absolute !important;
-                display: none;
-                border: 1px solid #ddd;
-                border-radius: 3px;
-                font-size: 13px;
-                width: 200px;
-                z-index: 1000;
-                text-align: left;
-              }
-              .inner-content .ui-dropdown {
-                position: absolute !important;
-                display: none;
-                border: 1px solid #ddd;
-                border-radius: 3px;
-                font-size: 13px;
-                width: 230px;
-                z-index: 1000;
-                text-align: left;
-              }
-              .inner-content .ui-dropdown .ui-state-focus,
-              .inner-content .ui-dropdown .ui-state-active {
-                margin: 0px;
-                background: #eee !important;
-                border: none !important;
-              }
-              .inner-content .ui-dropdown li {
-                padding: 0 !important;
-              }
-              .inner-content .ui-dropdown li a {
-                display: block;
-                padding: 10px 15px !important;
-                text-shadow: none !important;
-                color: #333 !important;
-                text-decoration: none;
-                font-size: 13px;
-              }
-              .inner-content .ui-dropdown li p {
-                white-space: normal;
-                font-size: 13px;
-                font-weight: normal;
-                text-shadow: none;
-                color: #888 !important;
-                padding: 10px;
-                margin: 0;
-              }
-              .inner-content .button.ui-button {
-                padding: 0 !important;
-                display: block !important;
-                height: 36px !important;
-                width: 36px !important;
-                line-height: 34px !important;
-                color: #333;
-              }
-              .inner-content .button.ui-button.ui-state-hover .fa,
-              .inner-content .button.ui-button.ui-state-focus .fa,
-              .inner-content .button.ui-button.ui-state-active .fa {
-                color: #777 !important;
-              }
-              .inner-content .button.button.ui-button .ui-button-text {
-                padding: 0px !important;
-                display: block;
-                width: 35px;
-                line-height: 34px !important;
-                height: 35px;
-                text-align: center !important;
-              }
-            </style>
-            <div class="title-wrap">
-              <h3 class="title-17">dropdown</h3>
-            </div>
-            <a href="#" class="button action ui-dropper" data-drop="select_drop"><i class="fa fa-cog"></i></a>
-            <ul id="select_drop" class="ui-dropdown action-dropdown">
-              <li><a href="javascript:void(0);">Open...</a></li>
-              <li><a href="javascript:void(0);">Save</a></li>
-              <li><a href="javascript:void(0);">Delete</a></li>
-            </ul>
-            <script>
-              $(function () {
-                $('.ui-dropdown').menu().hide();
-
-                $('.inner-content .ui-dropper')
-                  .button()
-                  .click(function () {
-                    // data-drop value and create ID to target dropdown
-                    var menu = $('#' + $(this).attr('data-drop'));
-
-                    // hide all OTHER dropdowns when we open one
-                    $('.ui-menu:visible')
-                      .not('#' + $(this).attr('data-drop'))
-                      .hide();
-
-                    // position the dropdown to the right, so it works on all buttons
-                    // buttons at far right of screen will have menus flipped inward to avoid viewport collision
-                    menu.toggle().position({
-                      my: 'left top',
-                      at: 'right top',
-                      of: this,
-                    });
-                    // on click of the document, close the menus
-                    $(document).one('click', function () {
-                      //menu.hide();
-                      $('.ui-menu:visible').hide();
-                    });
-                    return false;
-                  });
-              });
-            </script>
-            <!-- //dropdown -->
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-          </div>
-          <!-- // -->
-        </div>
-        <!-- //contents -->
+<body>
+  <div id="wrap" class="g-wrap">
+    <!-- 숨겨진 툴팁 콘텐츠 -->
+    <div id="tooltipContent1" style="display: none">
+      <div style="font-size: 16px; color: #333">
+        <strong>툴팁 타이틀</strong><br />
+        이건 툴팁에 표시될 HTML입니다.
       </div>
-      <!-- //컨테이너 영역 -->
     </div>
-  </body>
+    <!-- //숨겨진 툴팁 콘텐츠 -->
+    <!-- 헤더 영역 -->
+    <header id="header">
+      <!-- 헤더 컨텐츠 영역 -->
+      <div class="header-in">
+        <h1 class="logo">
+          <a href="#">
+            <i class="logo-img"></i>
+            <span class="logo-text"></span>
+          </a>
+        </h1>
+
+        <div class="utilbox">
+          <button type="button" class="btn-style size-sm outline">Create</button>
+          <button type="button" class="btn-style size-sm">Upgrade</button>
+          <div class="user-on">
+            <button type="button" class="notify">
+              <span class="sr-only">알림글</span>
+            </button>
+            <button type="button" class="user">
+              <span class="sr-only">mypage</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- //헤더 컨텐츠 영역 -->
+    </header>
+    <!-- //헤더 영역 -->
+    <!-- 컨테이너 영역 -->
+    <div id="container">
+      <!-- lnb -->
+      <div class="lnb">
+        <div class="top-toggle">
+          <button type="button" class="btn-toggle" onclick="lnbToggle()"><span class="sr-only">메뉴 확장/축소</span></button>
+        </div>
+        <ul class="lnb-menu">
+          <li>
+            <a href="#" class="active">
+              <i class="icon icon-home"></i>
+              <span class="text">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="icon icon-image"></i>
+              <span class="text">Image</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="icon icon-video"></i>
+              <span class="text">Video</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="icon icon-shorts"></i>
+              <span class="text">Shorts</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="icon icon-k-art"></i>
+              <span class="text">K-Art</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="icon icon-others"></i>
+              <span class="text">Others</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- //lnb -->
+      <!-- lob -->
+      <div class="lob">
+        <div class="lob-head">
+          <h2 class="lob-title">Create Shorts<span class="btn-tooltip" tabindex="0" data-geo="#tooltipContent1"></span></h2>
+        </div>
+        <div class="lob-body">
+          <!-- tabs -->
+          <div id="lobTabs" class="lob-tabs">
+            <ul>
+              <li><a href="#tabs-1">Text</a></li>
+              <li><a href="#tabs-2">Image</a></li>
+              <li><a href="#tabs-3">Element</a></li>
+              <li><a href="#tabs-4">Audio</a></li>
+            </ul>
+            <div id="tabs-1">
+              <!-- lob-menu -->
+              <div class="lob-menu">
+                <div class="lob-menu-item">
+                  <div class="lob-menu-item-head">
+                    <div class="lob-menu-item-title">Select Model<span class="btn-tooltip" tabindex="0" data-geo="#tooltipContent1"></span></div>
+                    <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_1_1')"></button>
+                  </div>
+                  <div class="lob-menu-item-body" id="sec_lob_1_1" style="display: block">
+                    <select class="custom-select">
+                      <option value="">Select Model</option>
+                      <option value="">Select Model2</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="lob-menu-item">
+                  <div class="lob-menu-item-head">
+                    <div class="lob-menu-item-title">Prompt<span class="btn-tooltip" tabindex="0" data-geo="#tooltipContent1"></span></div>
+                    <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_1_2')"></button>
+                  </div>
+                  <div class="lob-menu-item-body" id="sec_lob_1_2" style="display: block">
+                    <textarea class="input-text">
+Swedish male model, late 20s, youthful but intense masculine features, platinum blonde hair styled in slicked-back pomade, sharp narrow nose, defined cheekbones, chiseled jawline, symmetrical and refined face, clear skin, no freckles, faintly raised corners of the mouth, subtle enigmatic expression, intense gaze, inspired by Penn Badgley in YOU, front-facing ID photo style, head level, squared shoulders, looking directly at the camera, no tilt, no movement, white background, studio lighting, in full natural color, realistic skin tone, no black and w</textarea>
+                    <div class="ctrl-switch">
+                      <div class="switch-col">
+                        <label class="toggle-switch size-sm">
+                          <input type="checkbox" name="checkbox1" checked />
+                          <div class="toogle-text">
+                            <span class="on">Auto Sound</span>
+                            <span class="off">Auto Sound</span>
+                          </div>
+                          <div class="val"></div>
+                        </label>
+                      </div>
+                      <div class="switch-col">
+                        <label class="toggle-switch size-sm">
+                          <input type="checkbox" name="checkbox2" />
+                          <div class="toogle-text">
+                            <span class="on">Auto Speech</span>
+                            <span class="off">Auto Speech</span>
+                          </div>
+                          <div class="val"></div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="lob-menu-item">
+                  <div class="lob-menu-item-head">
+                    <div class="lob-menu-item-title">Settings<span class="btn-tooltip" tabindex="0" data-geo="#tooltipContent1"></span></div>
+                    <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_1_3')"></button>
+                  </div>
+                  <div class="lob-menu-item-body" id="sec_lob_1_3" style="display: block">
+                    <div class="dl-form">
+                      <dl class="dl-form-item">
+                        <dt>Quality Mode</dt>
+                        <dd>
+                          <div class="radio-group">
+                            <label class="radio-label">
+                              <input type="radio" name="qMode" checked="" />
+                              <span class="radio-text">Lite</span>
+                            </label>
+                            <label class="radio-label">
+                              <input type="radio" name="qMode" />
+                              <span class="radio-text">Pro</span>
+                            </label>
+                          </div>
+                        </dd>
+                      </dl>
+                      <dl class="dl-form-item">
+                        <dt>Duration</dt>
+                        <dd>
+                          <div class="radio-group">
+                            <label class="radio-label">
+                              <input type="radio" name="Duration" checked="" />
+                              <span class="radio-text">5s</span>
+                            </label>
+                            <label class="radio-label">
+                              <input type="radio" name="Duration" />
+                              <span class="radio-text">10s</span>
+                            </label>
+                          </div>
+                        </dd>
+                      </dl>
+                      <dl class="dl-form-item">
+                        <dt>Resolution</dt>
+                        <dd>
+                          <div class="radio-group">
+                            <label class="radio-label">
+                              <input type="radio" name="Resolution" checked="" />
+                              <span class="radio-text">480p</span>
+                            </label>
+                            <label class="radio-label">
+                              <input type="radio" name="Resolution" />
+                              <span class="radio-text">720p</span>
+                            </label>
+                            <label class="radio-label">
+                              <input type="radio" name="Resolution" />
+                              <span class="radio-text">1080p</span>
+                            </label>
+                          </div>
+                        </dd>
+                      </dl>
+                      <dl class="dl-form-item">
+                        <dt>Resolution</dt>
+                        <dd>
+                          <select class="custom-select">
+                            <option value="">Cinema (16:9)</option>
+                            <option value="">Cinema (16:9)</option>
+                          </select>
+                        </dd>
+                      </dl>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- //lob-menu -->
+            </div>
+            <div id="tabs-2">22</div>
+            <div id="tabs-3">333</div>
+            <div id="tabs-4">4444</div>
+          </div>
+          <script>
+            $(function () {
+              $('#lobTabs').tabs({
+                active: 0, // 0부터 시작
+              });
+            });
+          </script>
+          <!-- //tabs -->
+        </div>
+      </div>
+      <!-- //lob -->
+      <!-- contents -->
+      <div class="contents">
+        <!--  -->
+        <ul class="tab">
+          <li><a href="#" class="active">Tab01</a></li>
+          <li><a href="#">Tab02</a></li>
+        </ul>
+        <div class="inner-content">
+          <!-- button -->
+          <div class="title-wrap">
+            <h3 class="title-17">button</h3>
+          </div>
+          <div class="flex items-center gap-08">
+            <button type="button" class="btn-style size-lg" disabled>disabled</button>
+            <button type="button" class="btn-style size-lg">size-sm</button>
+            <button type="button" class="btn-style size-rg">size-rg</button>
+            <button type="button" class="btn-style size-sm">size-sm</button>
+          </div>
+          <div class="mt-16"></div>
+          <div class="flex items-center gap-08">
+            <button type="button" class="btn-style size-lg outline" disabled>disabled</button>
+            <button type="button" class="btn-style size-lg outline">size-sm</button>
+            <button type="button" class="btn-style size-rg outline">size-rg</button>
+            <button type="button" class="btn-style size-sm outline">size-sm</button>
+          </div>
+          <!-- //button -->
+
+          <div class="mt-16"></div>
+
+          <!-- input-text -->
+          <div class="title-wrap">
+            <h3 class="title-17">input-text</h3>
+          </div>
+          <div class="flex items-center gap-08">
+            <input type="text" class="input-text size-lg" placeholder="placeholder" value="disabled" disabled />
+            <input type="text" class="input-text size-lg" placeholder="placeholder" value="readonly" readonly />
+            <input type="text" class="input-text size-lg" placeholder="placeholder" />
+            <input type="text" class="input-text size-rg" placeholder="placeholder" />
+            <input type="text" class="input-text size-sm" placeholder="placeholder" />
+          </div>
+          <br />
+          <div class="flex items-center gap-08">
+            <textarea class="input-text"></textarea>
+          </div>
+          <!-- input-text -->
+
+          <div class="mt-16"></div>
+
+          <!-- select -->
+          <div class="title-wrap">
+            <h3 class="title-17">select</h3>
+          </div>
+          <div class="flex items-center gap-08">
+            <select class="custom-select size-lg" disabled>
+              <option value="1">disabled</option>
+              <option value="2">disabled2</option>
+            </select>
+            <select class="custom-select size-lg">
+              <option value="1">size-lg</option>
+              <option value="2">size-lg2</option>
+            </select>
+            <select class="custom-select size-rg">
+              <option value="1" data-class="icon" data-style="background-image: url(../assets/img/icon/icon_r_1_1.svg)">Auto (Default)</option>
+              <option value="2" data-class="icon" data-style="background-image: url(../assets/img/icon/icon_r_1_1.svg)">Square 1:1</option>
+              <option value="2" data-class="icon" data-style="background-image: url(../assets/img/icon/icon_r_16_9.svg)">Widescreen 16:9</option>
+            </select>
+            <select class="custom-select size-sm">
+              <option value="1">size-sm</option>
+              <option value="1">size-sm2</option>
+              <option value="1">size-sm3</option>
+              <option value="1">size-sm4</option>
+              <option value="1">size-sm5</option>
+              <option value="1">size-sm6</option>
+              <option value="1">size-sm7</option>
+              <option value="1">size-sm8</option>
+              <option value="1">size-sm9</option>
+              <option value="1">size-sm10</option>
+              <option value="1">size-sm11</option>
+              <option value="1">size-sm12</option>
+            </select>
+          </div>
+          <!-- //select -->
+
+          <div class="mt-16"></div>
+
+          <!-- radio-group -->
+          <div class="title-wrap">
+            <h3 class="title-17">radio-group</h3>
+          </div>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="radio" checked />
+              <span class="radio-text">x1</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="radio" />
+              <span class="radio-text">x2</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="radio" />
+              <span class="radio-text">x3</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="radio" />
+              <span class="radio-text">x4</span>
+            </label>
+          </div>
+          <!-- //radio-group -->
+
+          <div class="mt-16"></div>
+
+          <!-- toggle-switch -->
+          <div class="title-wrap">
+            <h3 class="title-17">toggle-switch</h3>
+          </div>
+          <div class="flex items-center gap-08">
+            <label class="toggle-switch">
+              <input type="checkbox" name="checkbox" />
+              <div class="val"></div>
+            </label>
+            <label class="toggle-switch size-sm">
+              <input type="checkbox" name="checkbox" />
+              <div class="val"></div>
+            </label>
+
+            <label class="toggle-switch ml-auto">
+              <input type="checkbox" name="checkbox" />
+              <div class="toogle-text">
+                <span class="on">On</span>
+                <span class="off">OFF</span>
+              </div>
+              <div class="val"></div>
+            </label>
+          </div>
+          <!-- //toggle-switch -->
+
+          <div class="mt-16"></div>
+
+          <!-- slide -->
+          <div class="title-wrap">
+            <h3 class="title-17">slider</h3>
+          </div>
+          <div id="slider" class="custom-slider"></div>
+          <script>
+            $(function () {
+              $('#slider').slider({
+                value: 60,
+                orientation: 'horizontal',
+                range: 'min',
+                animate: true,
+              });
+            });
+          </script>
+          <!-- //slide -->
+
+          <div class="mt-16"></div>
+
+          <!-- 아코디언 -->
+          <div class="title-wrap">
+            <h3 class="title-17">아코디언</h3>
+            <button type="button" class="btn-toggle-acc" onclick="toggleAcc(this, '#sec_acc')"></button>
+          </div>
+          <div id="sec_acc" style="display: none">
+            아코디언 닫겼을 상태입니다. <br />
+            아코디언 닫겼을 상태입니다. <br />
+            아코디언 닫겼을 상태입니다. <br />
+            아코디언 닫겼을 상태입니다. <br />
+            아코디언 닫겼을 상태입니다. <br />
+            아코디언 닫겼을 상태입니다. <br />
+            아코디언 닫겼을 상태입니다. <br />
+            아코디언 닫겼을 상태입니다. <br />
+            아코디언 닫겼을 상태입니다. <br />
+            아코디언 닫겼을 상태입니다. <br />
+            아코디언 닫겼을 상태입니다. <br />
+          </div>
+          <!-- //아코디언 -->
+
+          <div class="mt-16"></div>
+
+          <!-- grid -->
+          <div class="title-wrap">
+            <h3 class="title-17">Grid</h3>
+            <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_grid')"></button>
+          </div>
+          <div id="sec_grid" style="display: block">
+            <div class="image-grid">
+              <div class="grid-item">
+                <div style="width: 236px; height: 800px; background-color: orange"></div>
+              </div>
+              <div class="grid-item">
+                <div style="width: 236px; height: 200px; background-color: green"></div>
+              </div>
+              <div class="grid-item">
+                <div style="width: 236px; height: 600px; background-color: blue"></div>
+              </div>
+
+              <div class="grid-item">
+                <div style="width: 236px; height: 300px; background-color: red"></div>
+              </div>
+              <div class="grid-item">
+                <div style="width: 236px; height: 450px; background-color: yellow"></div>
+              </div>
+              <div class="grid-item">
+                <div style="width: 236px; height: 280px; background-color: pink"></div>
+              </div>
+              <div class="grid-item">
+                <div style="width: 236px; height: 200px; background-color: darkmagenta"></div>
+              </div>
+              <div class="grid-item">
+                <div style="width: 236px; height: 600px; background-color: lightgrey"></div>
+              </div>
+              <div class="grid-item">
+                <div style="width: 236px; height: 300px; background-color: lightskyblue"></div>
+              </div>
+            </div>
+          </div>
+          <style>
+            .grid-item {
+              margin-bottom: 0.2rem;
+            }
+          </style>
+          <script src="../assets/js/masonry.pkgd.min.js"></script>
+          <script>
+            $('.image-grid').masonry({
+              columnWidth: 236,
+              gutter: 2,
+              itemSelector: '.grid-item',
+            });
+          </script>
+          <!-- //grid -->
+
+          <div class="mt-16"></div>
+
+          <!-- dropdown -->
+          <style>
+            .inner-content .ui-menu {
+              position: absolute !important;
+              display: none;
+              border: 1px solid #ddd;
+              border-radius: 3px;
+              font-size: 13px;
+              width: 200px;
+              z-index: 1000;
+              text-align: left;
+            }
+
+            .inner-content .ui-dropdown {
+              position: absolute !important;
+              display: none;
+              border: 1px solid #ddd;
+              border-radius: 3px;
+              font-size: 13px;
+              width: 230px;
+              z-index: 1000;
+              text-align: left;
+            }
+
+            .inner-content .ui-dropdown .ui-state-focus,
+            .inner-content .ui-dropdown .ui-state-active {
+              margin: 0px;
+              background: #eee !important;
+              border: none !important;
+            }
+
+            .inner-content .ui-dropdown li {
+              padding: 0 !important;
+            }
+
+            .inner-content .ui-dropdown li a {
+              display: block;
+              padding: 10px 15px !important;
+              text-shadow: none !important;
+              color: #333 !important;
+              text-decoration: none;
+              font-size: 13px;
+            }
+
+            .inner-content .ui-dropdown li p {
+              white-space: normal;
+              font-size: 13px;
+              font-weight: normal;
+              text-shadow: none;
+              color: #888 !important;
+              padding: 10px;
+              margin: 0;
+            }
+
+            .inner-content .button.ui-button {
+              padding: 0 !important;
+              display: block !important;
+              height: 36px !important;
+              width: 36px !important;
+              line-height: 34px !important;
+              color: #333;
+            }
+
+            .inner-content .button.ui-button.ui-state-hover .fa,
+            .inner-content .button.ui-button.ui-state-focus .fa,
+            .inner-content .button.ui-button.ui-state-active .fa {
+              color: #777 !important;
+            }
+
+            .inner-content .button.button.ui-button .ui-button-text {
+              padding: 0px !important;
+              display: block;
+              width: 35px;
+              line-height: 34px !important;
+              height: 35px;
+              text-align: center !important;
+            }
+          </style>
+          <div class="title-wrap">
+            <h3 class="title-17">dropdown</h3>
+          </div>
+          <a href="#" class="button action ui-dropper" data-drop="select_drop"><i class="fa fa-cog"></i></a>
+          <ul id="select_drop" class="ui-dropdown action-dropdown">
+            <li><a href="javascript:void(0);">Open...</a></li>
+            <li><a href="javascript:void(0);">Save</a></li>
+            <li><a href="javascript:void(0);">Delete</a></li>
+          </ul>
+          <script>
+            $(function () {
+              $('.ui-dropdown').menu().hide();
+
+              $('.inner-content .ui-dropper')
+                .button()
+                .click(function () {
+                  // data-drop value and create ID to target dropdown
+                  var menu = $('#' + $(this).attr('data-drop'));
+
+                  // hide all OTHER dropdowns when we open one
+                  $('.ui-menu:visible')
+                    .not('#' + $(this).attr('data-drop'))
+                    .hide();
+
+                  // position the dropdown to the right, so it works on all buttons
+                  // buttons at far right of screen will have menus flipped inward to avoid viewport collision
+                  menu.toggle().position({
+                    my: 'left top',
+                    at: 'right top',
+                    of: this,
+                  });
+                  // on click of the document, close the menus
+                  $(document).one('click', function () {
+                    //menu.hide();
+                    $('.ui-menu:visible').hide();
+                  });
+                  return false;
+                });
+            });
+          </script>
+          <!-- //dropdown -->
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+        </div>
+        <!-- // -->
+      </div>
+      <!-- //contents -->
+    </div>
+    <!-- //컨테이너 영역 -->
+  </div>
+</body>
+
 </html>
