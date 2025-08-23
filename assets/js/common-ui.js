@@ -71,6 +71,37 @@ $(function () {
     },
     track: false // 마우스를 따라다니지 않음
   });
+  // dropdown
+  $('.ui-dropdown').menu().hide();
+  $('.ui-dropper').each(function () {
+    $(this)
+      .button()
+      .click(function (e) {
+        e.preventDefault(); // 기본 이벤트 막기
+
+        var $this = $(this);
+        var menuId = $this.data('drop');
+        var $menu = $('#' + menuId);
+
+        // 다른 모든 드롭다운 메뉴 닫기
+        $('.ui-menu:visible').not($menu).hide();
+
+        // 해당 메뉴 toggle 및 위치 설정
+        $menu.toggle().position({
+          my: 'right top',
+          at: 'right bottom+4',
+          of: this,
+          collision: 'fit', // 뷰포트 밖으로 나가지 않도록 보정
+        });
+
+        // 문서 클릭 시 드롭다운 닫기
+        $(document).one('click', function () {
+          $menu.hide();
+        });
+
+        return false;
+      });
+  });
 
 });
 

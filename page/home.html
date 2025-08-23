@@ -1,374 +1,590 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home | Widai</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>home | Widai</title>
-
-  <!-- <link rel="icon" type="image/png" href="/">
+    <!-- <link rel="icon" type="image/png" href="/">
   <link rel="apple-touch-icon" href="/"> -->
 
-  <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
-  <link rel="stylesheet" href="../assets/css/common-ui.css" />
-  <script src="../assets/js/jquery-3.7.1.min.js"></script>
-  <script src="../assets/js/jquery-ui.min.js"></script>
-  <script src="../assets/js/imagesloaded.pkgd.min.js"></script>
-  <script src="../assets/js/common-ui.js"></script>
-</head>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../assets/css/common-ui.css" />
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="../assets/js/common-ui.js"></script>
+  </head>
 
-<body>
-  <div id="wrap" class="g-wrap">
-    <!-- 숨겨진 툴팁 콘텐츠 -->
-    <div id="tooltipContent1" style="display: none">
-      <div style="font-size: 16px; color: #333">
-        <strong>툴팁 타이틀</strong><br />
-        이건 툴팁에 표시될 HTML입니다.
-      </div>
-    </div>
-    <!-- //숨겨진 툴팁 콘텐츠 -->
-    <!-- 헤더 영역 -->
-    <header id="header">
-      <!-- 헤더 컨텐츠 영역 -->
-      <div class="header-in">
-        <h1 class="logo">
-          <a href="#">
-            <i class="logo-img"></i>
-            <span class="logo-text"></span>
-          </a>
-        </h1>
-
-        <div class="utilbox">
-          <button type="button" class="btn-style size-sm outline">Login</button>
-          <button type="button" class="btn-style size-sm">Sign Up</button>
+  <body>
+    <div id="wrap" class="g-wrap">
+      <!-- 숨겨진 툴팁 콘텐츠 -->
+      <div id="tooltipContent1" style="display: none">
+        <div style="font-size: 16px; color: #333">
+          <strong>툴팁 타이틀</strong><br />
+          이건 툴팁에 표시될 HTML입니다.
         </div>
       </div>
-      <!-- //헤더 컨텐츠 영역 -->
-    </header>
-    <!-- //헤더 영역 -->
-    <!-- 컨테이너 영역 -->
-    <div id="container">
-      <!-- lnb -->
-      <div class="lnb">
-        <div class="top-toggle">
-          <button type="button" class="btn-toggle" onclick="lnbToggle()"><span class="sr-only">메뉴 확장/축소</span></button>
-        </div>
-        <ul class="lnb-menu">
-          <li>
-            <a href="#" class="active">
-              <i class="icon icon-home"></i>
-              <span class="text">Home</span>
-            </a>
-          </li>
-          <li>
+      <!-- //숨겨진 툴팁 콘텐츠 -->
+      <!-- 헤더 영역 -->
+      <header id="header">
+        <!-- 헤더 컨텐츠 영역 -->
+        <div class="header-in">
+          <h1 class="logo">
             <a href="#">
-              <i class="icon icon-image"></i>
-              <span class="text">Image</span>
+              <i class="logo-img"></i>
+              <span class="logo-text"></span>
             </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="icon icon-video"></i>
-              <span class="text">Video</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="icon icon-shorts"></i>
-              <span class="text">Shorts</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="icon icon-k-art"></i>
-              <span class="text">K-Art</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="icon icon-others"></i>
-              <span class="text">Others</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <!-- //lnb -->
-      <!-- contents -->
-      <div class="contents">
-        <!--  -->
-        <ul class="tab">
-          <li><a href="#" class="active">Image</a></li>
-          <li><a href="#">Video</a></li>
-          <li><a href="#">Shorts</a></li>
-          <li><a href="#">K-Art</a></li>
-        </ul>
-        <div class="inner-content">
+          </h1>
 
-          <!-- grid -->
-
-          <div class="masonry-grid">
-            <div class="grid-item">
-              <div class="img-box">
-                <div class="img"><img src="../assets/img/main_grid01.png" alt=""></div>
-                <div class="img-info">
-                  <div class="name">
-                    <div class="avatar"></div>
-                    Display name
-                  </div>
-                  <div class="like-cnt">
-                    <i class="icon on"></i>
-                    <span class="cnt">241</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="grid-item">
-              <div class="img-box">
-                <div class="img"><img src="../assets/img/main_grid02.png" alt=""></div>
-                <div class="img-info">
-                  <div class="name">
-                    <div class="avatar"></div>
-                    Display name
-                  </div>
-                  <div class="like-cnt">
-                    <i class="icon"></i>
-                    <span class="cnt">241</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="grid-item">
-              <div class="img-box">
-                <div class="img"><img src="../assets/img/main_grid03.png" alt=""></div>
-                <div class="img-info">
-                  <div class="name">
-                    <div class="avatar"></div>
-                    Display name
-                  </div>
-                  <div class="like-cnt">
-                    <i class="icon"></i>
-                    <span class="cnt">241</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="grid-item">
-              <div class="img-box">
-                <div class="img"><img src="../assets/img/main_grid04.png" alt=""></div>
-                <div class="img-info">
-                  <div class="name">
-                    <div class="avatar"></div>
-                    Display name
-                  </div>
-                  <div class="like-cnt">
-                    <i class="icon"></i>
-                    <span class="cnt">241</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="grid-item">
-              <div class="img-box">
-                <div class="img"><img src="../assets/img/main_grid05.png" alt=""></div>
-                <div class="img-info">
-                  <div class="name">
-                    <div class="avatar"></div>
-                    Display name
-                  </div>
-                  <div class="like-cnt">
-                    <i class="icon"></i>
-                    <span class="cnt">241</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="grid-item">
-              <div class="img-box">
-                <div class="img"><img src="../assets/img/main_grid06.png" alt=""></div>
-                <div class="img-info">
-                  <div class="name">
-                    <div class="avatar"></div>
-                    Display name
-                  </div>
-                  <div class="like-cnt">
-                    <i class="icon"></i>
-                    <span class="cnt">241</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="grid-item">
-              <div class="img-box">
-                <div class="img"><img src="../assets/img/main_grid07.png" alt=""></div>
-                <div class="img-info">
-                  <div class="name">
-                    <div class="avatar"></div>
-                    Display name
-                  </div>
-                  <div class="like-cnt">
-                    <i class="icon"></i>
-                    <span class="cnt">241</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="grid-item">
-              <div class="img-box">
-                <div class="img"><img src="../assets/img/main_grid08.png" alt=""></div>
-                <div class="img-info">
-                  <div class="name">
-                    <div class="avatar"></div>
-                    Display name
-                  </div>
-                  <div class="like-cnt">
-                    <i class="icon"></i>
-                    <span class="cnt">241</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="grid-item">
-              <div class="img-box">
-                <div class="img"><img src="../assets/img/main_grid09.png" alt=""></div>
-                <div class="img-info">
-                  <div class="name">
-                    <div class="avatar"></div>
-                    Display name
-                  </div>
-                  <div class="like-cnt">
-                    <i class="icon"></i>
-                    <span class="cnt">241</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="grid-item">
-              <div class="img-box">
-                <div class="img"><img src="../assets/img/main_grid10.png" alt=""></div>
-                <div class="img-info">
-                  <div class="name">
-                    <div class="avatar"></div>
-                    Display name
-                  </div>
-                  <div class="like-cnt">
-                    <i class="icon"></i>
-                    <span class="cnt">241</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="grid-item">
-              <div class="img-box">
-                <div class="img"><img src="../assets/img/main_grid11.png" alt=""></div>
-                <div class="img-info">
-                  <div class="name">
-                    <div class="avatar"></div>
-                    Display name
-                  </div>
-                  <div class="like-cnt">
-                    <i class="icon"></i>
-                    <span class="cnt">241</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="grid-item">
-              <div class="img-box">
-                <div class="img"><img src="../assets/img/main_grid12.png" alt=""></div>
-                <div class="img-info">
-                  <div class="name">
-                    <div class="avatar"></div>
-                    Display name
-                  </div>
-                  <div class="like-cnt">
-                    <i class="icon"></i>
-                    <span class="cnt">241</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="grid-item">
-              <div class="img-box">
-                <div class="img"><img src="../assets/img/main_grid13.png" alt=""></div>
-                <div class="img-info">
-                  <div class="name">
-                    <div class="avatar"></div>
-                    Display name
-                  </div>
-                  <div class="like-cnt">
-                    <i class="icon"></i>
-                    <span class="cnt">241</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="grid-item">
-              <div class="img-box">
-                <div class="img"><img src="../assets/img/main_grid14.png" alt=""></div>
-                <div class="img-info">
-                  <div class="name">
-                    <div class="avatar"></div>
-                    Display name
-                  </div>
-                  <div class="like-cnt">
-                    <i class="icon"></i>
-                    <span class="cnt">241</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="grid-item">
-              <div class="img-box">
-                <div class="img"><img src="../assets/img/main_grid15.png" alt=""></div>
-                <div class="img-info">
-                  <div class="name">
-                    <div class="avatar"></div>
-                    Display name
-                  </div>
-                  <div class="like-cnt">
-                    <i class="icon"></i>
-                    <span class="cnt">241</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="utilbox">
+            <button type="button" class="btn-style size-sm outline">Login</button>
+            <button type="button" class="btn-style size-sm">Sign Up</button>
           </div>
-          <style>
-            .grid-item {
-              margin-bottom: 0.2rem;
-            }
-          </style>
-          <script src="../assets/js/masonry.pkgd.min.js"></script>
-          <script>
-            $(function () {
-              $('.masonry-grid').imagesLoaded(function () {
-                // Masonry 초기화
-                var $grid = $('.masonry-grid').masonry({
-                  itemSelector: '.grid-item',
-                  columnWidth: '.grid-item',
-                  gutter: 2,
-                });
-
-                // ResizeObserver로 .masonry-grid 크기 변경 감지
-                var grid = document.querySelector('.masonry-grid');
-                var resizeObserver = new ResizeObserver(function (entries) {
-                  $grid.masonry('layout'); // 레이아웃 업데이트
-                });
-
-                // .masonry-grid 요소 관찰
-                resizeObserver.observe(grid);
-              });
-            })
-          </script>
-          <!-- //grid -->
-
         </div>
-        <!-- // -->
-      </div>
-      <!-- //contents -->
-    </div>
-    <!-- //컨테이너 영역 -->
-  </div>
-</body>
+        <!-- //헤더 컨텐츠 영역 -->
+      </header>
+      <!-- //헤더 영역 -->
+      <!-- 컨테이너 영역 -->
+      <div id="container">
+        <!-- lnb -->
+        <div class="lnb">
+          <div class="top-toggle">
+            <button type="button" class="btn-toggle" onclick="lnbToggle()"><span class="sr-only">메뉴 확장/축소</span></button>
+          </div>
+          <ul class="lnb-menu">
+            <li>
+              <a href="#" class="active">
+                <i class="icon icon-home"></i>
+                <span class="text">Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-image"></i>
+                <span class="text">Image</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-video"></i>
+                <span class="text">Video</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-shorts"></i>
+                <span class="text">Shorts</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-k-art"></i>
+                <span class="text">K-Art</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-others"></i>
+                <span class="text">Others</span>
+              </a>
+            </li>
+          </ul>
+          <a href="#" class="lnb-like">
+            <i class="icon icon-heart"></i>
+            <span class="text">Liked</span>
+          </a>
+        </div>
+        <!-- //lnb -->
+        <!-- contents -->
+        <div class="contents">
+          <!--  -->
+          <ul class="tab">
+            <li><a href="#" class="active">Image</a></li>
+            <li><a href="#">Video</a></li>
+            <li><a href="#">Shorts</a></li>
+            <li><a href="#">K-Art</a></li>
+          </ul>
+          <div class="inner-content">
+            <!-- grid -->
 
+            <div class="masonry-grid">
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid01.png" alt="" /></div>
+                  <div class="img-info">
+                    <div class="name">
+                      <div class="avatar"></div>
+                      Display name
+                    </div>
+                    <div class="like-cnt-box">
+                      <div class="dropdown-container">
+                        <div class="like-cnt ui-dropper" data-drop="select_drop_1">
+                          <i class="icon on"></i>
+                          <span class="cnt">241</span>
+                        </div>
+                        <ul id="select_drop_1" class="ui-dropdown in-fixed">
+                          <li class="create-li">
+                            <a href="#">
+                              <i class="icon-plus-circle"></i>
+                              Create Album
+                            </a>
+                          </li>
+                          <li><a href="#">Album name A</a></li>
+                          <li><a href="#">Album name A</a></li>
+                          <li><a href="#">Album name A</a></li>
+                          <li><a href="#">Album name A</a></li>
+                          <li><a href="#">Album name A</a></li>
+                          <li><a href="#">Album name A</a></li>
+                          <li><a href="#">Album name A</a></li>
+                          <li><a href="#">Album name A</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid02.png" alt="" /></div>
+                  <div class="img-info">
+                    <div class="name">
+                      <div class="avatar"></div>
+                      Display name
+                    </div>
+                    <div class="like-cnt-box">
+                      <div class="dropdown-container">
+                        <div class="like-cnt ui-dropper" data-drop="select_drop_2">
+                          <i class="icon"></i>
+                          <span class="cnt">241</span>
+                        </div>
+                        <ul id="select_drop_2" class="ui-dropdown in-fixed">
+                          <li class="create-li">
+                            <a href="#">
+                              <i class="icon-plus-circle"></i>
+                              Create Album
+                            </a>
+                          </li>
+                          <li><a href="#">Album name A</a></li>
+                          <li><a href="#">Album name B</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid03.png" alt="" /></div>
+                  <div class="img-info">
+                    <div class="name">
+                      <div class="avatar"></div>
+                      Display name
+                    </div>
+                    <div class="like-cnt-box">
+                      <div class="dropdown-container">
+                        <div class="like-cnt ui-dropper" data-drop="select_drop_2">
+                          <i class="icon"></i>
+                          <span class="cnt">241</span>
+                        </div>
+                        <ul id="select_drop_2" class="ui-dropdown in-fixed">
+                          <li class="create-li">
+                            <a href="#">
+                              <i class="icon-plus-circle"></i>
+                              Create Album
+                            </a>
+                          </li>
+                          <li><a href="#">Album name A</a></li>
+                          <li><a href="#">Album name B</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid04.png" alt="" /></div>
+                  <div class="img-info">
+                    <div class="name">
+                      <div class="avatar"></div>
+                      Display name
+                    </div>
+                    <div class="like-cnt-box">
+                      <div class="dropdown-container">
+                        <div class="like-cnt ui-dropper" data-drop="select_drop_2">
+                          <i class="icon"></i>
+                          <span class="cnt">241</span>
+                        </div>
+                        <ul id="select_drop_2" class="ui-dropdown in-fixed">
+                          <li class="create-li">
+                            <a href="#">
+                              <i class="icon-plus-circle"></i>
+                              Create Album
+                            </a>
+                          </li>
+                          <li><a href="#">Album name A</a></li>
+                          <li><a href="#">Album name B</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid05.png" alt="" /></div>
+                  <div class="img-info">
+                    <div class="name">
+                      <div class="avatar"></div>
+                      Display name
+                    </div>
+                    <div class="like-cnt-box">
+                      <div class="dropdown-container">
+                        <div class="like-cnt ui-dropper" data-drop="select_drop_2">
+                          <i class="icon"></i>
+                          <span class="cnt">241</span>
+                        </div>
+                        <ul id="select_drop_2" class="ui-dropdown in-fixed">
+                          <li class="create-li">
+                            <a href="#">
+                              <i class="icon-plus-circle"></i>
+                              Create Album
+                            </a>
+                          </li>
+                          <li><a href="#">Album name A</a></li>
+                          <li><a href="#">Album name B</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid06.png" alt="" /></div>
+                  <div class="img-info">
+                    <div class="name">
+                      <div class="avatar"></div>
+                      Display name
+                    </div>
+                    <div class="like-cnt-box">
+                      <div class="dropdown-container">
+                        <div class="like-cnt ui-dropper" data-drop="select_drop_2">
+                          <i class="icon"></i>
+                          <span class="cnt">241</span>
+                        </div>
+                        <ul id="select_drop_2" class="ui-dropdown in-fixed">
+                          <li class="create-li">
+                            <a href="#">
+                              <i class="icon-plus-circle"></i>
+                              Create Album
+                            </a>
+                          </li>
+                          <li><a href="#">Album name A</a></li>
+                          <li><a href="#">Album name B</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid07.png" alt="" /></div>
+                  <div class="img-info">
+                    <div class="name">
+                      <div class="avatar"></div>
+                      Display name
+                    </div>
+                    <div class="like-cnt-box">
+                      <div class="dropdown-container">
+                        <div class="like-cnt ui-dropper" data-drop="select_drop_2">
+                          <i class="icon"></i>
+                          <span class="cnt">241</span>
+                        </div>
+                        <ul id="select_drop_2" class="ui-dropdown in-fixed">
+                          <li class="create-li">
+                            <a href="#">
+                              <i class="icon-plus-circle"></i>
+                              Create Album
+                            </a>
+                          </li>
+                          <li><a href="#">Album name A</a></li>
+                          <li><a href="#">Album name B</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid08.png" alt="" /></div>
+                  <div class="img-info">
+                    <div class="name">
+                      <div class="avatar"></div>
+                      Display name
+                    </div>
+                    <div class="like-cnt-box">
+                      <div class="dropdown-container">
+                        <div class="like-cnt ui-dropper" data-drop="select_drop_2">
+                          <i class="icon"></i>
+                          <span class="cnt">241</span>
+                        </div>
+                        <ul id="select_drop_2" class="ui-dropdown in-fixed">
+                          <li class="create-li">
+                            <a href="#">
+                              <i class="icon-plus-circle"></i>
+                              Create Album
+                            </a>
+                          </li>
+                          <li><a href="#">Album name A</a></li>
+                          <li><a href="#">Album name B</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid09.png" alt="" /></div>
+                  <div class="img-info">
+                    <div class="name">
+                      <div class="avatar"></div>
+                      Display name
+                    </div>
+                    <div class="like-cnt-box">
+                      <div class="dropdown-container">
+                        <div class="like-cnt ui-dropper" data-drop="select_drop_2">
+                          <i class="icon"></i>
+                          <span class="cnt">241</span>
+                        </div>
+                        <ul id="select_drop_2" class="ui-dropdown in-fixed">
+                          <li class="create-li">
+                            <a href="#">
+                              <i class="icon-plus-circle"></i>
+                              Create Album
+                            </a>
+                          </li>
+                          <li><a href="#">Album name A</a></li>
+                          <li><a href="#">Album name B</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid10.png" alt="" /></div>
+                  <div class="img-info">
+                    <div class="name">
+                      <div class="avatar"></div>
+                      Display name
+                    </div>
+                    <div class="like-cnt-box">
+                      <div class="dropdown-container">
+                        <div class="like-cnt ui-dropper" data-drop="select_drop_2">
+                          <i class="icon"></i>
+                          <span class="cnt">241</span>
+                        </div>
+                        <ul id="select_drop_2" class="ui-dropdown in-fixed">
+                          <li class="create-li">
+                            <a href="#">
+                              <i class="icon-plus-circle"></i>
+                              Create Album
+                            </a>
+                          </li>
+                          <li><a href="#">Album name A</a></li>
+                          <li><a href="#">Album name B</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid11.png" alt="" /></div>
+                  <div class="img-info">
+                    <div class="name">
+                      <div class="avatar"></div>
+                      Display name
+                    </div>
+                    <div class="like-cnt-box">
+                      <div class="dropdown-container">
+                        <div class="like-cnt ui-dropper" data-drop="select_drop_2">
+                          <i class="icon"></i>
+                          <span class="cnt">241</span>
+                        </div>
+                        <ul id="select_drop_2" class="ui-dropdown in-fixed">
+                          <li class="create-li">
+                            <a href="#">
+                              <i class="icon-plus-circle"></i>
+                              Create Album
+                            </a>
+                          </li>
+                          <li><a href="#">Album name A</a></li>
+                          <li><a href="#">Album name B</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid12.png" alt="" /></div>
+                  <div class="img-info">
+                    <div class="name">
+                      <div class="avatar"></div>
+                      Display name
+                    </div>
+                    <div class="like-cnt-box">
+                      <div class="dropdown-container">
+                        <div class="like-cnt ui-dropper" data-drop="select_drop_2">
+                          <i class="icon"></i>
+                          <span class="cnt">241</span>
+                        </div>
+                        <ul id="select_drop_2" class="ui-dropdown in-fixed">
+                          <li class="create-li">
+                            <a href="#">
+                              <i class="icon-plus-circle"></i>
+                              Create Album
+                            </a>
+                          </li>
+                          <li><a href="#">Album name A</a></li>
+                          <li><a href="#">Album name B</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid13.png" alt="" /></div>
+                  <div class="img-info">
+                    <div class="name">
+                      <div class="avatar"></div>
+                      Display name
+                    </div>
+                    <div class="like-cnt-box">
+                      <div class="dropdown-container">
+                        <div class="like-cnt ui-dropper" data-drop="select_drop_2">
+                          <i class="icon"></i>
+                          <span class="cnt">241</span>
+                        </div>
+                        <ul id="select_drop_2" class="ui-dropdown in-fixed">
+                          <li class="create-li">
+                            <a href="#">
+                              <i class="icon-plus-circle"></i>
+                              Create Album
+                            </a>
+                          </li>
+                          <li><a href="#">Album name A</a></li>
+                          <li><a href="#">Album name B</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid14.png" alt="" /></div>
+                  <div class="img-info">
+                    <div class="name">
+                      <div class="avatar"></div>
+                      Display name
+                    </div>
+                    <div class="like-cnt-box">
+                      <div class="dropdown-container">
+                        <div class="like-cnt ui-dropper" data-drop="select_drop_2">
+                          <i class="icon"></i>
+                          <span class="cnt">241</span>
+                        </div>
+                        <ul id="select_drop_2" class="ui-dropdown in-fixed">
+                          <li class="create-li">
+                            <a href="#">
+                              <i class="icon-plus-circle"></i>
+                              Create Album
+                            </a>
+                          </li>
+                          <li><a href="#">Album name A</a></li>
+                          <li><a href="#">Album name B</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid15.png" alt="" /></div>
+                  <div class="img-info">
+                    <div class="name">
+                      <div class="avatar"></div>
+                      Display name
+                    </div>
+                    <div class="like-cnt-box">
+                      <div class="dropdown-container">
+                        <div class="like-cnt ui-dropper" data-drop="select_drop_2">
+                          <i class="icon"></i>
+                          <span class="cnt">241</span>
+                        </div>
+                        <ul id="select_drop_2" class="ui-dropdown in-fixed">
+                          <li class="create-li">
+                            <a href="#">
+                              <i class="icon-plus-circle"></i>
+                              Create Album
+                            </a>
+                          </li>
+                          <li><a href="#">Album name A</a></li>
+                          <li><a href="#">Album name B</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <style>
+              .grid-item {
+                margin-bottom: 0.2rem;
+              }
+            </style>
+            <script src="../assets/js/masonry.pkgd.min.js"></script>
+            <script>
+              $(function () {
+                $('.masonry-grid').imagesLoaded(function () {
+                  // Masonry 초기화
+                  var $grid = $('.masonry-grid').masonry({
+                    itemSelector: '.grid-item',
+                    columnWidth: '.grid-item',
+                    gutter: 2,
+                  });
+
+                  // ResizeObserver로 .masonry-grid 크기 변경 감지
+                  var grid = document.querySelector('.masonry-grid');
+                  var resizeObserver = new ResizeObserver(function (entries) {
+                    $grid.masonry('layout'); // 레이아웃 업데이트
+                  });
+
+                  // .masonry-grid 요소 관찰
+                  resizeObserver.observe(grid);
+                });
+              });
+            </script>
+            <!-- //grid -->
+          </div>
+          <!-- // -->
+        </div>
+        <!-- //contents -->
+      </div>
+      <!-- //컨테이너 영역 -->
+    </div>
+  </body>
 </html>
