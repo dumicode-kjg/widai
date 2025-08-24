@@ -113,3 +113,9 @@ function toggleAcc(btn, targetSelector) {
   $(btn).toggleClass('open');
   $(targetSelector).stop().slideToggle();
 }
+
+function viewFullText(btn, targetSelector) {
+  $(btn).remove();
+  $(targetSelector).addClass('view-full');
+}
+

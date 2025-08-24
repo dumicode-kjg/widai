@@ -30,7 +30,7 @@
         <!-- 헤더 컨텐츠 영역 -->
         <div class="header-in">
           <h1 class="logo">
-            <a href="#">
+            <a href="#" class="beta">
               <i class="logo-img"></i>
               <span class="logo-text"></span>
             </a>
@@ -43,7 +43,7 @@
               <button type="button" class="notify">
                 <span class="sr-only">알림글</span>
               </button>
-              <button type="button" class="user">
+              <button type="button" class="user ui-dropper" data-drop="head_drop_user">
                 <span class="sr-only">mypage</span>
               </button>
             </div>
@@ -97,153 +97,150 @@
               </a>
             </li>
           </ul>
+          <a href="#" class="lnb-like">
+            <i class="icon icon-heart"></i>
+            <span class="text">Liked</span>
+          </a>
         </div>
         <!-- //lnb -->
         <!-- lob -->
         <div class="lob">
-          <div class="lob-head">
-            <h2 class="lob-title">Create Shorts<span class="btn-tooltip" tabindex="0" data-geo="#tooltipContent1"></span></h2>
-          </div>
-          <div class="lob-body">
-            <!-- tabs -->
-            <div id="lobTabs" class="lob-tabs">
-              <ul>
-                <li><a href="#tabs-1">Text</a></li>
-                <li><a href="#tabs-2">Image</a></li>
-                <li><a href="#tabs-3">Element</a></li>
-                <li><a href="#tabs-4">Audio</a></li>
-              </ul>
-              <div id="tabs-1">
-                <!-- lob-menu -->
-                <div class="lob-menu">
-                  <div class="lob-menu-item">
-                    <div class="lob-menu-item-head">
-                      <div class="lob-menu-item-title">Select Model<span class="btn-tooltip" tabindex="0" data-geo="#tooltipContent1"></span></div>
-                      <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_1_1')"></button>
-                    </div>
-                    <div class="lob-menu-item-body" id="sec_lob_1_1" style="display: block">
-                      <select class="custom-select">
-                        <option value="">Select Model</option>
-                        <option value="">Select Model2</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="lob-menu-item">
-                    <div class="lob-menu-item-head">
-                      <div class="lob-menu-item-title">Prompt<span class="btn-tooltip" tabindex="0" data-geo="#tooltipContent1"></span></div>
-                      <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_1_2')"></button>
-                    </div>
-                    <div class="lob-menu-item-body" id="sec_lob_1_2" style="display: block">
-                      <textarea class="input-text">
-Swedish male model, late 20s, youthful but intense masculine features, platinum blonde hair styled in slicked-back pomade, sharp narrow nose, defined cheekbones, chiseled jawline, symmetrical and refined face, clear skin, no freckles, faintly raised corners of the mouth, subtle enigmatic expression, intense gaze, inspired by Penn Badgley in YOU, front-facing ID photo style, head level, squared shoulders, looking directly at the camera, no tilt, no movement, white background, studio lighting, in full natural color, realistic skin tone, no black and w</textarea
-                      >
-                      <div class="ctrl-switch">
-                        <div class="switch-col">
-                          <label class="toggle-switch size-sm">
-                            <input type="checkbox" name="checkbox1" checked />
-                            <div class="toogle-text">
-                              <span class="on">Auto Sound</span>
-                              <span class="off">Auto Sound</span>
-                            </div>
-                            <div class="val"></div>
-                          </label>
-                        </div>
-                        <div class="switch-col">
-                          <label class="toggle-switch size-sm">
-                            <input type="checkbox" name="checkbox2" />
-                            <div class="toogle-text">
-                              <span class="on">Auto Speech</span>
-                              <span class="off">Auto Speech</span>
-                            </div>
-                            <div class="val"></div>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="lob-menu-item">
-                    <div class="lob-menu-item-head">
-                      <div class="lob-menu-item-title">Settings<span class="btn-tooltip" tabindex="0" data-geo="#tooltipContent1"></span></div>
-                      <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_1_3')"></button>
-                    </div>
-                    <div class="lob-menu-item-body" id="sec_lob_1_3" style="display: block">
-                      <div class="dl-form">
-                        <dl class="dl-form-item">
-                          <dt>Quality Mode</dt>
-                          <dd>
-                            <div class="radio-group">
-                              <label class="radio-label">
-                                <input type="radio" name="qMode" checked="" />
-                                <span class="radio-text">Lite</span>
-                              </label>
-                              <label class="radio-label">
-                                <input type="radio" name="qMode" />
-                                <span class="radio-text">Pro</span>
-                              </label>
-                            </div>
-                          </dd>
-                        </dl>
-                        <dl class="dl-form-item">
-                          <dt>Duration</dt>
-                          <dd>
-                            <div class="radio-group">
-                              <label class="radio-label">
-                                <input type="radio" name="Duration" checked="" />
-                                <span class="radio-text">5s</span>
-                              </label>
-                              <label class="radio-label">
-                                <input type="radio" name="Duration" />
-                                <span class="radio-text">10s</span>
-                              </label>
-                            </div>
-                          </dd>
-                        </dl>
-                        <dl class="dl-form-item">
-                          <dt>Resolution</dt>
-                          <dd>
-                            <div class="radio-group">
-                              <label class="radio-label">
-                                <input type="radio" name="Resolution" checked="" />
-                                <span class="radio-text">480p</span>
-                              </label>
-                              <label class="radio-label">
-                                <input type="radio" name="Resolution" />
-                                <span class="radio-text">720p</span>
-                              </label>
-                              <label class="radio-label">
-                                <input type="radio" name="Resolution" />
-                                <span class="radio-text">1080p</span>
-                              </label>
-                            </div>
-                          </dd>
-                        </dl>
-                        <dl class="dl-form-item">
-                          <dt>Resolution</dt>
-                          <dd>
-                            <select class="custom-select">
-                              <option value="">Cinema (16:9)</option>
-                              <option value="">Cinema (16:9)</option>
-                            </select>
-                          </dd>
-                        </dl>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- //lob-menu -->
-              </div>
-              <div id="tabs-2">22</div>
-              <div id="tabs-3">333</div>
-              <div id="tabs-4">4444</div>
+          <div class="lob-container">
+            <div class="lob-head">
+              <h2 class="lob-title">Create Shorts<span class="btn-tooltip" tabindex="0" data-geo="#tooltipContent1"></span></h2>
             </div>
-            <script>
-              $(function () {
-                $('#lobTabs').tabs({
-                  active: 0, // 0부터 시작
+            <div class="lob-body">
+              <!-- tabs -->
+              <div id="lobTabs" class="lob-tabs">
+                <ul>
+                  <li><a href="#tabs-1">Text</a></li>
+                  <li><a href="#tabs-2">Image</a></li>
+                  <li><a href="#tabs-3">Element</a></li>
+                  <li><a href="#tabs-4">Audio</a></li>
+                </ul>
+                <div id="tabs-1">
+                  <!-- lob-menu -->
+                  <div class="lob-menu">
+                    <div class="lob-menu-item">
+                      <div class="lob-menu-item-head">
+                        <div class="lob-menu-item-title">Select Model<span class="btn-tooltip" tabindex="0" data-geo="#tooltipContent1"></span></div>
+                        <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_1_1')"></button>
+                      </div>
+                      <div class="lob-menu-item-body" id="sec_lob_1_1" style="display: block">
+                        <select class="custom-select">
+                          <option value="">Select Model</option>
+                          <option value="">Select Model2</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="lob-menu-item">
+                      <div class="lob-menu-item-head">
+                        <div class="lob-menu-item-title">Prompt<span class="btn-tooltip" tabindex="0" data-geo="#tooltipContent1"></span></div>
+                        <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_1_2')"></button>
+                      </div>
+                      <div class="lob-menu-item-body" id="sec_lob_1_2" style="display: block">
+                        <textarea class="input-text">
+Swedish male model, late 20s, youthful but intense masculine features, platinum blonde hair styled in slicked-back pomade, sharp narrow nose, defined cheekbones, chiseled jawline, symmetrical and refined face, clear skin, no freckles, faintly raised corners of the mouth, subtle enigmatic expression, intense gaze, inspired by Penn Badgley in YOU, front-facing ID photo style, head level, squared shoulders, looking directly at the camera, no tilt, no movement, white background, studio lighting, in full natural color, realistic skin tone, no black and w</textarea
+                        >
+                        <div class="ctrl-switch">
+                          <div class="switch-col">
+                            <div class="switch-tit">Auto Enhance</div>
+                            <label class="toggle-switch size-sm">
+                              <input type="checkbox" name="checkbox1" />
+                              <div class="toogle-text">
+                                <span class="on">On</span>
+                                <span class="off">OFF</span>
+                              </div>
+                              <div class="val"></div>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="lob-menu-item">
+                      <div class="lob-menu-item-head">
+                        <div class="lob-menu-item-title">Settings<span class="btn-tooltip" tabindex="0" data-geo="#tooltipContent1"></span></div>
+                        <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_1_3')"></button>
+                      </div>
+                      <div class="lob-menu-item-body" id="sec_lob_1_3" style="display: block">
+                        <div class="dl-form">
+                          <dl class="dl-form-item">
+                            <dt>Quality Mode</dt>
+                            <dd>
+                              <div class="radio-group">
+                                <label class="radio-label">
+                                  <input type="radio" name="qMode" checked="" />
+                                  <span class="radio-text">Lite</span>
+                                </label>
+                                <label class="radio-label">
+                                  <input type="radio" name="qMode" />
+                                  <span class="radio-text">Pro</span>
+                                </label>
+                              </div>
+                            </dd>
+                          </dl>
+                          <dl class="dl-form-item">
+                            <dt>Duration</dt>
+                            <dd>
+                              <div class="radio-group">
+                                <label class="radio-label">
+                                  <input type="radio" name="Duration" checked="" />
+                                  <span class="radio-text">5s</span>
+                                </label>
+                                <label class="radio-label">
+                                  <input type="radio" name="Duration" />
+                                  <span class="radio-text">10s</span>
+                                </label>
+                              </div>
+                            </dd>
+                          </dl>
+                          <dl class="dl-form-item">
+                            <dt>Resolution</dt>
+                            <dd>
+                              <div class="radio-group">
+                                <label class="radio-label">
+                                  <input type="radio" name="Resolution" checked="" />
+                                  <span class="radio-text">480p</span>
+                                </label>
+                                <label class="radio-label">
+                                  <input type="radio" name="Resolution" />
+                                  <span class="radio-text">720p</span>
+                                </label>
+                                <label class="radio-label">
+                                  <input type="radio" name="Resolution" />
+                                  <span class="radio-text">1080p</span>
+                                </label>
+                              </div>
+                            </dd>
+                          </dl>
+                          <dl class="dl-form-item">
+                            <dt>Resolution</dt>
+                            <dd>
+                              <select class="custom-select">
+                                <option value="">Cinema (16:9)</option>
+                                <option value="">Cinema (16:9)</option>
+                              </select>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //lob-menu -->
+                </div>
+                <div id="tabs-2">22</div>
+                <div id="tabs-3">333</div>
+                <div id="tabs-4">4444</div>
+              </div>
+              <script>
+                $(function () {
+                  $('#lobTabs').tabs({
+                    active: 0, // 0부터 시작
+                  });
                 });
-              });
-            </script>
-            <!-- //tabs -->
+              </script>
+              <!-- //tabs -->
+            </div>
           </div>
         </div>
         <!-- //lob -->
@@ -410,17 +407,19 @@ Swedish male model, late 20s, youthful but intense masculine features, platinum 
               <button type="button" class="btn-toggle-acc" onclick="toggleAcc(this, '#sec_acc')"></button>
             </div>
             <div id="sec_acc" style="display: none">
-              아코디언 닫겼을 상태입니다. <br />
-              아코디언 닫겼을 상태입니다. <br />
-              아코디언 닫겼을 상태입니다. <br />
-              아코디언 닫겼을 상태입니다. <br />
-              아코디언 닫겼을 상태입니다. <br />
-              아코디언 닫겼을 상태입니다. <br />
-              아코디언 닫겼을 상태입니다. <br />
-              아코디언 닫겼을 상태입니다. <br />
-              아코디언 닫겼을 상태입니다. <br />
-              아코디언 닫겼을 상태입니다. <br />
-              아코디언 닫겼을 상태입니다. <br />
+              아코디언 텍스트 내용입니다. <br />
+              아코디언 텍스트 내용입니다. <br />
+              아코디언 텍스트 내용입니다. <br />
+              아코디언 텍스트 내용입니다. <br />
+              아코디언 텍스트 내용입니다. <br />
+              아코디언 텍스트 내용입니다. <br />
+              아코디언 텍스트 내용입니다. <br />
+              아코디언 텍스트 내용입니다. <br />
+              아코디언 텍스트 내용입니다. <br />
+              아코디언 텍스트 내용입니다. <br />
+              아코디언 텍스트 내용입니다. <br />
+              아코디언 텍스트 내용입니다. <br />
+              아코디언 텍스트 내용입니다. <br />
             </div>
             <!-- //아코디언 -->
 
@@ -484,40 +483,10 @@ Swedish male model, late 20s, youthful but intense masculine features, platinum 
             <div class="title-wrap">
               <h3 class="title-17">dropdown</h3>
             </div>
-            <div class="dropdown-container">
-              <a href="#" class="ui-dropper" data-drop="select_drop_1">222</a>
-              <ul id="select_drop_1" class="ui-dropdown">
-                <li><a href="#">Album name A</a></li>
-                <li><a href="#">Album name A</a></li>
-                <li><a href="#">Album name A</a></li>
-                <li><a href="#">Album name A</a></li>
-                <li><a href="#">Album name A</a></li>
-                <li><a href="#">Album name A</a></li>
-                <li><a href="#">Album name A</a></li>
-                <li><a href="#">Album name A</a></li>
-                <li><a href="#">Album name A</a></li>
-                <li><a href="#">Album name A</a></li>
-                <li><a href="#">Album name A</a></li>
-                <li><a href="#">Album name A</a></li>
-                <li><a href="#">Album name A</a></li>
-                <li><a href="javascript:void(0);">Save</a></li>
-              </ul>
-            </div>
 
-            <div class="dropdown-container">
-              <a href="#" class="button action ui-dropper" data-drop="select_drop_2"><i class="fa fa-cog"></i></a>
-              <ul id="select_drop_2" class="ui-dropdown">
-                <li><a href="javascript:void(0);">2Open...</a></li>
-                <li><a href="javascript:void(0);">2Save</a></li>
-                <li><a href="javascript:void(0);">2Delete</a></li>
-              </ul>
+            <div class="flex justify-start">
+              <span class="ui-dropper" data-drop="select_drop_1">드롭다운</span>
             </div>
-
-            <script>
-              $(function () {
-                
-              });
-            </script>
             <!-- //dropdown -->
             <br />
             <br />
@@ -531,7 +500,6 @@ Swedish male model, late 20s, youthful but intense masculine features, platinum 
             <br />
             <br />
             <br />
-
           </div>
           <!-- // -->
         </div>
@@ -539,5 +507,39 @@ Swedish male model, late 20s, youthful but intense masculine features, platinum 
       </div>
       <!-- //컨테이너 영역 -->
     </div>
+
+    <!-- pop, layer -->
+    <ul id="head_drop_user" class="ui-dropdown">
+      <li>
+        <a href="#"><i class="icon icon-profile-circle"></i>Account Setting</a>
+      </li>
+      <li>
+        <a href="#"><i class="icon icon-badge-check"></i>Manage Subscription</a>
+      </li>
+      <li>
+        <a href="#"><i class="icon icon-help-circle"></i>Help Center</a>
+      </li>
+      <li class="mt-08">
+        <a href="#"><i class="icon icon-log-out"></i>Log Out</a>
+      </li>
+    </ul>
+
+    <ul id="select_drop_1" class="ui-dropdown">
+      <li><a href="#">Album name A</a></li>
+      <li><a href="#">Album name A</a></li>
+      <li><a href="#">Album name A</a></li>
+      <li><a href="#">Album name A</a></li>
+      <li><a href="#">Album name A</a></li>
+      <li><a href="#">Album name A</a></li>
+      <li><a href="#">Album name A</a></li>
+      <li><a href="#">Album name A</a></li>
+      <li><a href="#">Album name A</a></li>
+      <li><a href="#">Album name A</a></li>
+      <li><a href="#">Album name A</a></li>
+      <li><a href="#">Album name A</a></li>
+      <li><a href="#">Album name A</a></li>
+      <li><a href="#">Album name A</a></li>
+    </ul>
+    <!-- //pop, layer -->
   </body>
 </html>
