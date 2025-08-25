@@ -40,7 +40,7 @@
             <button type="button" class="btn-style size-sm outline">Create</button>
             <button type="button" class="btn-style size-sm">Upgrade</button>
             <div class="user-on">
-              <button type="button" class="notify">
+              <button type="button" class="notify ui-dropper" data-drop="head_drop_notify">
                 <span class="sr-only">알림글</span>
               </button>
               <button type="button" class="user ui-dropper" data-drop="head_drop_user">
@@ -509,37 +509,70 @@ Swedish male model, late 20s, youthful but intense masculine features, platinum 
     </div>
 
     <!-- pop, layer -->
-    <ul id="head_drop_user" class="ui-dropdown">
-      <li>
-        <a href="#"><i class="icon icon-profile-circle"></i>Account Setting</a>
-      </li>
-      <li>
-        <a href="#"><i class="icon icon-badge-check"></i>Manage Subscription</a>
-      </li>
-      <li>
-        <a href="#"><i class="icon icon-help-circle"></i>Help Center</a>
-      </li>
-      <li class="mt-08">
-        <a href="#"><i class="icon icon-log-out"></i>Log Out</a>
-      </li>
-    </ul>
+    <div id="head_drop_notify" class="ui-dropdown">
+      <ul class="notify-list">
+        <li>
+          <a href="#">
+            <div class="tit">Announce Title</div>
+            <div class="desc">DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</div>
+            <div class="date">2025-08-08</div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="tit">Announce Title</div>
+            <div class="desc">DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</div>
+            <div class="date">2025-08-08</div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="tit">Announce Title</div>
+            <div class="desc">DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</div>
+            <div class="date">2025-08-08</div>
+          </a>
+        </li>
+      </ul>
+      <div class="notify-btns">
+        <button type="button" class="btn-style outline size-sm">Close</button>
+        <button type="button" class="btn-style size-sm">Go to Announce</button>
+      </div>
+    </div>
 
-    <ul id="select_drop_1" class="ui-dropdown">
-      <li><a href="#">Album name A</a></li>
-      <li><a href="#">Album name A</a></li>
-      <li><a href="#">Album name A</a></li>
-      <li><a href="#">Album name A</a></li>
-      <li><a href="#">Album name A</a></li>
-      <li><a href="#">Album name A</a></li>
-      <li><a href="#">Album name A</a></li>
-      <li><a href="#">Album name A</a></li>
-      <li><a href="#">Album name A</a></li>
-      <li><a href="#">Album name A</a></li>
-      <li><a href="#">Album name A</a></li>
-      <li><a href="#">Album name A</a></li>
-      <li><a href="#">Album name A</a></li>
-      <li><a href="#">Album name A</a></li>
-    </ul>
+    <div id="head_drop_user" class="ui-dropdown">
+      <ul class="drop-menu">
+        <li>
+          <a href="#"><i class="icon icon-profile-circle"></i>Account Setting</a>
+        </li>
+        <li>
+          <a href="#"><i class="icon icon-badge-check"></i>Manage Subscription</a>
+        </li>
+        <li>
+          <a href="#"><i class="icon icon-help-circle"></i>Help Center</a>
+        </li>
+        <li class="mt-08">
+          <a href="#"><i class="icon icon-log-out"></i>Log Out</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="select_drop_1" class="ui-dropdown">
+      <ul class="drop-menu">
+        <li><a href="#">Album name A</a></li>
+        <li><a href="#">Album name A</a></li>
+        <li><a href="#">Album name A</a></li>
+        <li><a href="#">Album name A</a></li>
+        <li><a href="#">Album name A</a></li>
+        <li><a href="#">Album name A</a></li>
+        <li><a href="#">Album name A</a></li>
+        <li><a href="#">Album name A</a></li>
+        <li><a href="#">Album name A</a></li>
+      </ul>
+      <a href="#" class="bottom-btn-create">
+        <i class="icon-plus-circle"></i>
+        Create Album
+      </a>
+    </div>
     <!-- //pop, layer -->
   </body>
 </html>

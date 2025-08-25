@@ -72,36 +72,55 @@ $(function () {
     track: false // 마우스를 따라다니지 않음
   });
   // dropdown
-  $('.ui-dropdown').menu().hide();
+  $('.ui-dropdown').hide();
+
   $('.ui-dropper').each(function () {
     $(this)
       .button()
       .click(function (e) {
-        e.preventDefault(); // 기본 이벤트 막기
+        e.preventDefault();
 
         var $this = $(this);
         var menuId = $this.data('drop');
         var $menu = $('#' + menuId);
 
-        // 다른 모든 드롭다운 메뉴 닫기
-        $('.ui-menu:visible').not($menu).hide();
-
-        // 해당 메뉴 toggle 및 위치 설정
-        $menu.toggle().position({
-          my: 'right top',
-          at: 'right bottom+4',
-          of: this,
-          collision: 'fit', // 뷰포트 밖으로 나가지 않도록 보정
-        });
-
-        // 문서 클릭 시 드롭다운 닫기
-        $(document).one('click', function () {
+        // 이미 보이고 있으면 (같은 버튼이면 닫기)
+        if ($menu.is(':visible') && $menu.data('current') === this) {
           $menu.hide();
-        });
+          $menu.removeData('current');
+        } else {
+          // 다른 버튼이 눌렸거나 안 보이고 있다면
+          $('.ui-dropdown').not($menu).hide().removeData('current');
+
+          $menu
+            .data('current', this)
+            .show()
+            .position({
+              my: 'right top',
+              at: 'right bottom+4',
+              of: this,
+              collision: 'fit',
+            });
+
+          // 문서 클릭 시 드롭다운 닫기
+          $(document)
+            .off('click.uiDrop')
+            .on('click.uiDrop', function (event) {
+              if (
+                !$(event.target).closest('.ui-dropper').length &&
+                !$(event.target).closest('.ui-dropdown').length
+              ) {
+                $('.ui-dropdown').hide().removeData('current');
+              }
+            });
+        }
 
         return false;
       });
   });
+
+
+
 
 });
 
