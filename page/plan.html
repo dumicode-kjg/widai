@@ -1,190 +1,192 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Plan | Widai</title>
 
-    <!-- <link rel="icon" type="image/png" href="/">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan | Widai</title>
+
+  <!-- <link rel="icon" type="image/png" href="/">
   <link rel="apple-touch-icon" href="/"> -->
 
-    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
-    <link rel="stylesheet" href="../assets/css/common-ui.css" />
-    <script src="../assets/js/jquery-3.7.1.min.js"></script>
-    <script src="../assets/js/jquery-ui.min.js"></script>
-    <script src="../assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="../assets/js/common-ui.js"></script>
-  </head>
+  <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../assets/css/common-ui.css" />
+  <script src="../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../assets/js/jquery-ui.min.js"></script>
+  <script src="../assets/js/imagesloaded.pkgd.min.js"></script>
+  <script src="../assets/js/common-ui.js"></script>
+</head>
 
-  <body>
-    <div id="wrap" class="g-wrap">
-      <!-- 헤더 영역 -->
-      <header id="header">
-        <!-- 헤더 컨텐츠 영역 -->
-        <div class="header-in">
-          <h1 class="logo">
-            <a href="#" class="beta">
-              <i class="logo-img"></i>
-              <span class="logo-text"></span>
-            </a>
-          </h1>
-
-          <div class="utilbox">
-            <button type="button" class="btn-style size-sm outline">Login</button>
-            <button type="button" class="btn-style size-sm">Sign Up</button>
-          </div>
-        </div>
-        <!-- //헤더 컨텐츠 영역 -->
-      </header>
-      <!-- //헤더 영역 -->
-      <!-- 컨테이너 영역 -->
-      <div id="container">
-        <!-- lnb -->
-        <div class="lnb">
-          <div class="top-toggle">
-            <button type="button" class="btn-toggle" onclick="lnbToggle()"><span class="sr-only">메뉴 확장/축소</span></button>
-          </div>
-          <ul class="lnb-menu">
-            <li>
-              <a href="#">
-                <i class="icon icon-home"></i>
-                <span class="text">Home</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="icon icon-image"></i>
-                <span class="text">Image</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="icon icon-video"></i>
-                <span class="text">Video</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="icon icon-shorts"></i>
-                <span class="text">Shorts</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="icon icon-k-art"></i>
-                <span class="text">K-Art</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="icon icon-others"></i>
-                <span class="text">Others</span>
-              </a>
-            </li>
-          </ul>
-          <a href="#" class="lnb-like">
-            <i class="icon icon-heart"></i>
-            <span class="text">Liked</span>
+<body>
+  <div id="wrap" class="g-wrap">
+    <!-- 헤더 영역 -->
+    <header id="header">
+      <!-- 헤더 컨텐츠 영역 -->
+      <div class="header-in">
+        <h1 class="logo">
+          <a href="#" class="beta">
+            <i class="logo-img"></i>
+            <span class="logo-text"></span>
           </a>
+        </h1>
+
+        <div class="utilbox">
+          <button type="button" class="btn-style size-sm outline">Login</button>
+          <button type="button" class="btn-style size-sm">Sign Up</button>
         </div>
-        <!-- //lnb -->
-        <!-- contents -->
-        <div class="contents">
-          <!--  -->
-          <ul class="tab">
-            <li><a href="#" class="active">Plans</a></li>
-            <li><a href="#">Credits</a></li>
-          </ul>
-          <div class="inner-content">
-            <!-- plans-wrap -->
-            <div class="plans-wrap">
-              <ul class="tab no-bg-center">
-                <li>
-                  <a href="#" class="active">Yearly<span class="discount">-12%</span></a>
-                </li>
-                <li>
-                  <a href="#">Monthly<span class="discount">-12%</span></a>
-                </li>
-              </ul>
-              <ul class="plans-list">
-                <li class="basic">
-                  <div class="title">Basic</div>
-                  <div class="price">
-                    <span class="dl">$</span>
-                    <span class="val">0</span>
-                    <span class="py">per Year</span>
-                  </div>
-                  <div class="type">Free</div>
-                  <a href="#" class="btn-buy">Current</a>
-                  <ul class="bnft-list">
-                    <li>Get credits montly by logging in</li>
-                    <li>Try member-only features montly by logging in</li>
-                  </ul>
-                </li>
-                <li class="standard">
-                  <div class="title">Standard</div>
-                  <div class="price">
-                    <span class="dl">$</span>
-                    <span class="val">79.2</span>
-                    <span class="py">per Year</span>
-                  </div>
-                  <div class="type">Cancel Anytime</div>
-                  <a href="#" class="btn-buy">Subscribe Standard Yearly</a>
-                  <ul class="bnft-list">
-                    <li>Fast-Track generation</li>
-                    <li>Professional mode for videos</li>
-                    <li>Watermark removal</li>
-                    <li>Video extension</li>
-                    <li>Image upscalling</li>
-                  </ul>
-                </li>
-                <li class="pro">
-                  <div class="title">Pro</div>
-                  <div class="price">
-                    <span class="dl">$</span>
-                    <span class="val">293.94</span>
-                    <span class="py">per Year</span>
-                  </div>
-                  <div class="type">Cancel Anytime</div>
-                  <a href="#" class="btn-buy">Subscribe Pro Yearly</a>
-                  <ul class="bnft-list">
-                    <li>Fast-Track generation</li>
-                    <li>Professional mode for videos</li>
-                    <li>Watermark removal</li>
-                    <li>Video extension</li>
-                    <li>Image upscalling</li>
-                    <li>Priority access to new features</li>
-                  </ul>
-                </li>
-                <li class="premier">
-                  <div class="title">Premier</div>
-                  <div class="price">
-                    <span class="dl">$</span>
-                    <span class="val">728.94</span>
-                    <span class="py">per Year</span>
-                  </div>
-                  <div class="type">Cancel Anytime</div>
-                  <a href="#" class="btn-buy">Subscribe Premier Yearly</a>
-                  <ul class="bnft-list">
-                    <li>Fast-Track generation</li>
-                    <li>Professional mode for videos</li>
-                    <li>Watermark removal</li>
-                    <li>Video extension</li>
-                    <li>Image upscalling</li>
-                    <li>Priority access to new features</li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-            <!-- //plans-wrap -->
-          </div>
-          <!-- // -->
-        </div>
-        <!-- //contents -->
       </div>
-      <!-- //컨테이너 영역 -->
+      <!-- //헤더 컨텐츠 영역 -->
+    </header>
+    <!-- //헤더 영역 -->
+    <!-- 컨테이너 영역 -->
+    <div id="container">
+      <!-- lnb -->
+      <div class="lnb">
+        <div class="top-toggle">
+          <button type="button" class="btn-toggle" onclick="lnbToggle()"><span class="sr-only">메뉴 확장/축소</span></button>
+        </div>
+        <ul class="lnb-menu">
+          <li>
+            <a href="#">
+              <i class="icon icon-home"></i>
+              <span class="text">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="icon icon-image"></i>
+              <span class="text">Image</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="icon icon-video"></i>
+              <span class="text">Video</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="icon icon-shorts"></i>
+              <span class="text">Shorts</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="icon icon-k-art"></i>
+              <span class="text">K-Art</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="icon icon-others"></i>
+              <span class="text">Others</span>
+            </a>
+          </li>
+        </ul>
+        <a href="#" class="lnb-like">
+          <i class="icon icon-heart"></i>
+          <span class="text">Liked</span>
+        </a>
+      </div>
+      <!-- //lnb -->
+      <!-- contents -->
+      <div class="contents">
+        <!--  -->
+        <ul class="tab">
+          <li><a href="#" class="active">Plans</a></li>
+          <li><a href="#">Credits</a></li>
+        </ul>
+        <div class="inner-content">
+          <!-- plans-wrap -->
+          <div class="plans-wrap">
+            <ul class="tab no-bg-center">
+              <li>
+                <a href="#" class="active">Yearly<span class="discount">-12%</span></a>
+              </li>
+              <li>
+                <a href="#">Monthly<span class="discount">-12%</span></a>
+              </li>
+            </ul>
+            <ul class="plans-list">
+              <li class="basic">
+                <div class="title">Basic</div>
+                <div class="price">
+                  <span class="dl">$</span>
+                  <span class="val">0</span>
+                  <span class="py">per Year</span>
+                </div>
+                <div class="type">Free</div>
+                <a href="#" class="btn-buy">Current</a>
+                <ul class="bnft-list">
+                  <li>Get credits montly by logging in</li>
+                  <li>Try member-only features montly by logging in</li>
+                </ul>
+              </li>
+              <li class="standard">
+                <div class="title">Standard</div>
+                <div class="price">
+                  <span class="dl">$</span>
+                  <span class="val">79.2</span>
+                  <span class="py">per Year</span>
+                </div>
+                <div class="type">Cancel Anytime</div>
+                <a href="#" class="btn-buy">Subscribe Standard Yearly</a>
+                <ul class="bnft-list">
+                  <li>Fast-Track generation</li>
+                  <li>Professional mode for videos</li>
+                  <li>Watermark removal</li>
+                  <li>Video extension</li>
+                  <li>Image upscalling</li>
+                </ul>
+              </li>
+              <li class="pro">
+                <div class="title">Pro</div>
+                <div class="price">
+                  <span class="dl">$</span>
+                  <span class="val">293.94</span>
+                  <span class="py">per Year</span>
+                </div>
+                <div class="type">Cancel Anytime</div>
+                <a href="#" class="btn-buy">Subscribe Pro Yearly</a>
+                <ul class="bnft-list">
+                  <li>Fast-Track generation</li>
+                  <li>Professional mode for videos</li>
+                  <li>Watermark removal</li>
+                  <li>Video extension</li>
+                  <li>Image upscalling</li>
+                  <li>Priority access to new features</li>
+                </ul>
+              </li>
+              <li class="premier">
+                <div class="title">Premier</div>
+                <div class="price">
+                  <span class="dl">$</span>
+                  <span class="val">728.94</span>
+                  <span class="py">per Year</span>
+                </div>
+                <div class="type">Cancel Anytime</div>
+                <a href="#" class="btn-buy">Subscribe Premier Yearly</a>
+                <ul class="bnft-list">
+                  <li>Fast-Track generation</li>
+                  <li>Professional mode for videos</li>
+                  <li>Watermark removal</li>
+                  <li>Video extension</li>
+                  <li>Image upscalling</li>
+                  <li>Priority access to new features</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <!-- //plans-wrap -->
+        </div>
+        <!-- // -->
+      </div>
+      <!-- //contents -->
     </div>
-    <!-- pop, layer -->
-    <!-- //pop, layer -->
-  </body>
+    <!-- //컨테이너 영역 -->
+  </div>
+  <!-- pop, layer -->
+  <!-- //pop, layer -->
+</body>
+
 </html>
