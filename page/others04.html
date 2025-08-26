@@ -91,7 +91,7 @@
         <div class="lob">
           <div class="lob-container">
             <div class="lob-head">
-              <h2 class="lob-title">Ai Filters</h2>
+              <h2 class="lob-title">Sketch To Image</h2>
             </div>
             <div class="lob-body">
               <!-- lob-menu -->
@@ -108,12 +108,54 @@
                     </div>
                   </div>
                 </div>
+
                 <div class="lob-menu-item">
                   <div class="lob-menu-item-head">
-                    <div class="lob-menu-item-title">Pick a Style</div>
+                    <div class="lob-menu-item-title">Photo</div>
                     <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_6_2')"></button>
                   </div>
                   <div class="lob-menu-item-body" id="sec_lob_6_2" style="display: block">
+                    <textarea class="input-text" placeholder="e.g, A cat is sitting ona table. We support all languages.">For instance, “a cat on the beach.”</textarea>
+                  </div>
+                </div>
+
+                <div class="lob-menu-item">
+                  <div class="lob-menu-item-head">
+                    <div class="lob-menu-item-title">Adjust Creativity</div>
+                    <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_6_3')"></button>
+                  </div>
+                  <div class="lob-menu-item-body" id="sec_lob_6_3" style="display: block">
+                    <!--  -->
+                    <div class="dl-form">
+                      <dl class="dl-form-item">
+                        <dd>
+                          <!-- slide -->
+                          <div id="ACSlider" class="custom-slider"></div>
+                          <script>
+                            $(function () {
+                              $('#ACSlider').slider({
+                                value: 50,
+                                min: 1,
+                                max: 100,
+                                range: 'min',
+                                animate: true,
+                              });
+                            });
+                          </script>
+                          <!-- //slide -->
+                        </dd>
+                      </dl>
+                    </div>
+                    <!-- // -->
+                  </div>
+                </div>
+
+                <div class="lob-menu-item">
+                  <div class="lob-menu-item-head">
+                    <div class="lob-menu-item-title">Pick a Style</div>
+                    <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_6_4')"></button>
+                  </div>
+                  <div class="lob-menu-item-body" id="sec_lob_6_4" style="display: block">
                     <!-- square-image-wrap -->
                     <div class="square-image-wrap square">
                       <!-- Motion Sequence -->
@@ -180,18 +222,18 @@
                 <div class="lob-menu-item">
                   <div class="lob-menu-item-head">
                     <div class="lob-menu-item-title">Adjust Creativity</div>
-                    <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_6_3')"></button>
+                    <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_6_5')"></button>
                   </div>
-                  <div class="lob-menu-item-body" id="sec_lob_6_3" style="display: block">
+                  <div class="lob-menu-item-body" id="sec_lob_6_5" style="display: block">
                     <!--  -->
                     <div class="dl-form">
                       <dl class="dl-form-item">
                         <dd>
                           <!-- slide -->
-                          <div id="ACSlider" class="custom-slider"></div>
+                          <div id="ACSlider2" class="custom-slider"></div>
                           <script>
                             $(function () {
-                              $('#ACSlider').slider({
+                              $('#ACSlider2').slider({
                                 value: 50,
                                 min: 1,
                                 max: 100,
@@ -210,10 +252,23 @@
 
                 <div class="lob-menu-item">
                   <div class="lob-menu-item-head">
-                    <div class="lob-menu-item-title">Number of images</div>
-                    <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_6_4')"></button>
+                    <div class="lob-menu-item-title">Reference image for the style</div>
+                    <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_6_6')"></button>
                   </div>
-                  <div class="lob-menu-item-body" id="sec_lob_6_4" style="display: block">
+                  <div class="lob-menu-item-body" id="sec_lob_6_6" style="display: block">
+                    <div class="upload-drag-box">
+                      <i class="icon-meia-image-plus"></i>
+                      Please login to upload image
+                    </div>
+                  </div>
+                </div>
+
+                <div class="lob-menu-item">
+                  <div class="lob-menu-item-head">
+                    <div class="lob-menu-item-title">Number of images</div>
+                    <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_6_7')"></button>
+                  </div>
+                  <div class="lob-menu-item-body" id="sec_lob_6_7" style="display: block">
                     <!--  -->
                     <div class="dl-form">
                       <dl class="dl-form-item">
@@ -269,7 +324,7 @@
           <div class="inner-content">
             <!-- inner-content -->
             <div class="title-wrap">
-              <h2 class="title-20">Ai Filters</h2>
+              <h2 class="title-20">Sketch To image</h2>
             </div>
 
             <div class="title-wrap mt-20">

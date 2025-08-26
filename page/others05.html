@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Others | Widai</title>
+
+    <!-- <link rel="icon" type="image/png" href="/">
+  <link rel="apple-touch-icon" href="/"> -->
+
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../assets/css/common-ui.css" />
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/common-ui.js"></script>
+  </head>
+
+  <body>
+    <div id="wrap" class="g-wrap">
+      <!-- 헤더 영역 -->
+      <header id="header">
+        <!-- 헤더 컨텐츠 영역 -->
+        <div class="header-in">
+          <h1 class="logo">
+            <a href="#" class="beta">
+              <i class="logo-img"></i>
+              <span class="logo-text"></span>
+            </a>
+          </h1>
+
+          <div class="utilbox">
+            <button type="button" class="btn-style size-sm outline">Login</button>
+            <button type="button" class="btn-style size-sm">Sign Up</button>
+          </div>
+        </div>
+        <!-- //헤더 컨텐츠 영역 -->
+      </header>
+      <!-- //헤더 영역 -->
+      <!-- 컨테이너 영역 -->
+      <div id="container">
+        <!-- lnb -->
+        <div class="lnb">
+          <div class="top-toggle">
+            <button type="button" class="btn-toggle" onclick="lnbToggle()"><span class="sr-only">메뉴 확장/축소</span></button>
+          </div>
+          <ul class="lnb-menu">
+            <li>
+              <a href="#">
+                <i class="icon icon-home"></i>
+                <span class="text">Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-image"></i>
+                <span class="text">Image</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-video"></i>
+                <span class="text">Video</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-shorts"></i>
+                <span class="text">Shorts</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-k-art"></i>
+                <span class="text">K-Art</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="active">
+                <i class="icon icon-others"></i>
+                <span class="text">Others</span>
+              </a>
+            </li>
+          </ul>
+          <a href="#" class="lnb-like">
+            <i class="icon icon-heart"></i>
+            <span class="text">Liked</span>
+          </a>
+        </div>
+        <!-- //lnb -->
+        <!-- lob -->
+        <div class="lob">
+          <div class="lob-container">
+            <div class="lob-head">
+              <h2 class="lob-title">Background Changer</h2>
+            </div>
+            <div class="lob-body">
+              <!-- lob-menu -->
+              <div class="lob-menu">
+                <div class="lob-menu-item">
+                  <div class="lob-menu-item-head">
+                    <div class="lob-menu-item-title">Upload your image</div>
+                    <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_6_1')"></button>
+                  </div>
+                  <div class="lob-menu-item-body" id="sec_lob_6_1" style="display: block">
+                    <div class="upload-drag-box">
+                      <i class="icon-meia-image-plus"></i>
+                      Drag & drop a image Or <br />from Generation History
+                    </div>
+
+                    <!-- success -->
+                    <div class="upload-drag-box success">
+                      <div class="imgbox">
+                        <img src="../assets/img/img_imagelist00.png" alt="" />
+                      </div>
+                      <button type="button" class="del">
+                        <i class="icon-bin-full"></i>
+                      </button>
+                    </div>
+                    <!-- //success -->
+                  </div>
+                </div>
+              </div>
+              <!-- //lob-menu -->
+            </div>
+          </div>
+          <div class="lob-footer">
+            <button type="button" class="btn-style size-rg" disabled>Create</button>
+          </div>
+        </div>
+        <!-- //lob -->
+        <!-- contents -->
+        <div class="contents">
+          <!--  -->
+          <div class="inner-content">
+            <!-- inner-content -->
+            <div class="title-wrap">
+              <h2 class="title-20">Background Remover</h2>
+            </div>
+
+            <!-- //inner-content -->
+          </div>
+          <!-- // -->
+        </div>
+        <!-- //contents -->
+      </div>
+      <!-- //컨테이너 영역 -->
+    </div>
+
+    <!-- pop, layer -->
+    <!-- //pop, layer -->
+  </body>
+</html>
