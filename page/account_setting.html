@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account Setting | Widai</title>
+
+    <!-- <link rel="icon" type="image/png" href="/">
+  <link rel="apple-touch-icon" href="/"> -->
+
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../assets/css/common-ui.css" />
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="../assets/js/common-ui.js"></script>
+  </head>
+
+  <body>
+    <div id="wrap" class="g-wrap">
+      <!-- 헤더 영역 -->
+      <header id="header">
+        <!-- 헤더 컨텐츠 영역 -->
+        <div class="header-in">
+          <h1 class="logo">
+            <a href="#" class="beta">
+              <i class="logo-img"></i>
+              <span class="logo-text"></span>
+            </a>
+          </h1>
+
+          <div class="utilbox">
+            <button type="button" class="btn-style size-sm outline">Login</button>
+            <button type="button" class="btn-style size-sm">Sign Up</button>
+          </div>
+        </div>
+        <!-- //헤더 컨텐츠 영역 -->
+      </header>
+      <!-- //헤더 영역 -->
+      <!-- 컨테이너 영역 -->
+      <div id="container">
+        <!-- lnb -->
+        <div class="lnb">
+          <div class="top-toggle">
+            <button type="button" class="btn-toggle" onclick="lnbToggle()"><span class="sr-only">메뉴 확장/축소</span></button>
+          </div>
+          <ul class="lnb-menu">
+            <li>
+              <a href="#">
+                <i class="icon icon-home"></i>
+                <span class="text">Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-image"></i>
+                <span class="text">Image</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-video"></i>
+                <span class="text">Video</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-shorts"></i>
+                <span class="text">Shorts</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-k-art"></i>
+                <span class="text">K-Art</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-others"></i>
+                <span class="text">Others</span>
+              </a>
+            </li>
+          </ul>
+          <a href="#" class="lnb-like">
+            <i class="icon icon-heart"></i>
+            <span class="text">Liked</span>
+          </a>
+        </div>
+        <!-- //lnb -->
+        <!-- contents -->
+        <div class="contents">
+          <!--  -->
+          <div class="inner-content">
+            <div class="setting-container">
+              <div class="title-wrap">
+                <h2 class="title-36">Account Setting</h2>
+              </div>
+
+              <div class="title-wrap">
+                <h3 class="title-17">Account details</h3>
+                <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_acc')"></button>
+              </div>
+              <div id="sec_acc" style="display: block">
+                <table class="table-write">
+                  <colgroup>
+                    <col style="width: 19.1rem" />
+                    <col />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th scope="row">
+                        <div class="con-label">Profile Photo</div>
+                      </th>
+                      <td>
+                        <div class="con-flex">
+                          <button type="button" class="add-photo"></button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        <div class="con-label">Email</div>
+                      </th>
+                      <td>
+                        <div class="con-flex">
+                          <input type="text" class="input-text size-sm" placeholder="liam@teamsi7.com" />
+                          <i class="icon-google-color"></i>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        <div class="con-label">Username</div>
+                      </th>
+                      <td>
+                        <div class="con-flex">
+                          <input type="text" class="input-text size-sm" value="liam_2415234" />
+                          <button class="btn-style outline size-sm width-auto flex-none">Check Availability</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        <div class="con-label">Display name</div>
+                      </th>
+                      <td>
+                        <div class="con-flex">
+                          <input type="text" class="input-text size-sm" value="Liam A" />
+                          <button class="btn-style outline size-sm width-auto flex-none">Check Availability</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">
+                        <div class="con-label">Bio</div>
+                      </th>
+                      <td>
+                        <div class="con-flex">
+                          <input type="text" class="input-text size-sm" value="Bio" disabled />
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="title-wrap">
+                <h3 class="title-17">Terms</h3>
+                <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_acc2')"></button>
+              </div>
+              <div id="sec_acc2" style="display: block">
+                <ul class="terms-list">
+                  <li>
+                    <a href="#" class="in-box">
+                      <div class="txt">Marketing Consent membership</div>
+                      <i class="icon-nav-arrow-right"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="in-box">
+                      <div class="txt">Terms of Service</div>
+                      <i class="icon-nav-arrow-right"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="in-box">
+                      <div class="txt">Privacy Policy</div>
+                      <i class="icon-nav-arrow-right"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="in-box">
+                      <div class="txt">License Agreement</div>
+                      <i class="icon-nav-arrow-right"></i>
+                    </a>
+                  </li>
+                  <li class="delete-line">
+                    <a href="#" class="in-box">
+                      <div class="txt">Delete Account</div>
+                      <i class="icon-nav-arrow-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- // -->
+        </div>
+        <!-- //contents -->
+      </div>
+      <!-- //컨테이너 영역 -->
+    </div>
+    <!-- pop, layer -->
+    <!-- //pop, layer -->
+  </body>
+</html>
