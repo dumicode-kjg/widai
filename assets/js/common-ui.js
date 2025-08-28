@@ -119,9 +119,33 @@ $(function () {
       });
   });
 
+  /* pop */
+  $(".open-dialog").on("click", function () {
+    const dialogId = $(this).data("dialog-id");
+    const width = $(this).data("dialog-width") || 400;
+    const $dialog = $("#" + dialogId);
 
+    if ($dialog.length) {
+      // 드롭다운 닫기
+      $('.ui-dropdown').hide().removeData('current');
 
-
+      $(".dialog-dim").fadeIn(200); // dim 보여주기
+      $dialog.css("width", width + "px").fadeIn(200); // 팝업 열기
+    }
+  });
+  // 닫기 버튼 클릭
+  $(".close-dialog").on("click", function () {
+    closeDialog();
+  });
+  // dim 클릭 시 팝업 닫기
+  $(".dialog-dim").on("click", function () {
+    closeDialog();
+  });
+  // 팝업 닫는 함수
+  function closeDialog() {
+    $(".custom-dialog:visible").fadeOut(200);
+    $(".dialog-dim").fadeOut(200);
+  }
 });
 
 function lnbToggle() {

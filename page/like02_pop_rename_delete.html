@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Like | Widai</title>
+
+    <!-- <link rel="icon" type="image/png" href="/">
+  <link rel="apple-touch-icon" href="/"> -->
+
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../assets/css/common-ui.css" />
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="../assets/js/common-ui.js"></script>
+  </head>
+
+  <body>
+    <div id="wrap" class="g-wrap">
+      <!-- 헤더 영역 -->
+      <header id="header">
+        <!-- 헤더 컨텐츠 영역 -->
+        <div class="header-in">
+          <h1 class="logo">
+            <a href="#" class="beta">
+              <i class="logo-img"></i>
+              <span class="logo-text"></span>
+            </a>
+          </h1>
+
+          <div class="utilbox">
+            <button type="button" class="btn-style size-sm outline">Login</button>
+            <button type="button" class="btn-style size-sm">Sign Up</button>
+          </div>
+        </div>
+        <!-- //헤더 컨텐츠 영역 -->
+      </header>
+      <!-- //헤더 영역 -->
+      <!-- 컨테이너 영역 -->
+      <div id="container">
+        <!-- lnb -->
+        <div class="lnb">
+          <div class="top-toggle">
+            <button type="button" class="btn-toggle" onclick="lnbToggle()"><span class="sr-only">메뉴 확장/축소</span></button>
+          </div>
+          <ul class="lnb-menu">
+            <li>
+              <a href="#">
+                <i class="icon icon-home"></i>
+                <span class="text">Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-image"></i>
+                <span class="text">Image</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-video"></i>
+                <span class="text">Video</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-shorts"></i>
+                <span class="text">Shorts</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-k-art"></i>
+                <span class="text">K-Art</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-others"></i>
+                <span class="text">Others</span>
+              </a>
+            </li>
+          </ul>
+          <a href="#" class="lnb-like active">
+            <i class="icon icon-heart"></i>
+            <span class="text">Liked</span>
+          </a>
+        </div>
+        <!-- //lnb -->
+        <!-- contents -->
+        <div class="contents">
+          <!--  -->
+          <div class="inner-content">
+            <div class="title-wrap">
+              <h3 class="title-36">Like</h3>
+              <button type="button" class="btn-style outline size-sm width-auto">+ Album</button>
+            </div>
+            <div class="album-list">
+              <div class="album-list-item">
+                <div class="in-head">
+                  <div class="titbox">
+                    <div class="tit">Album name</div>
+                    <span class="cnt">24</span>
+                  </div>
+                  <button class="btn-more ui-dropper" data-drop="album_item_more">
+                    <i class="icon-more-horiz"></i>
+                  </button>
+                </div>
+                <div class="in-body">
+                  <ul class="album-images">
+                    <li><img src="../assets/img/img_album_sample01.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample02.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample03.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample04.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample05.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample06.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample01.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample02.png" alt="" /></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="album-list-item">
+                <div class="in-head">
+                  <div class="titbox">
+                    <div class="tit">Album name Album name Album name Album name</div>
+                    <span class="cnt">24</span>
+                  </div>
+                  <button class="btn-more ui-dropper" data-drop="album_item_more">
+                    <i class="icon-more-horiz"></i>
+                  </button>
+                </div>
+                <div class="in-body">
+                  <ul class="album-images">
+                    <li><img src="../assets/img/img_album_sample01.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample02.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample03.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample04.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample05.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample06.png" alt="" /></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="album-list-item">
+                <div class="in-head">
+                  <div class="titbox">
+                    <div class="tit">Album name</div>
+                    <span class="cnt">24</span>
+                  </div>
+                  <button class="btn-more ui-dropper" data-drop="album_item_more">
+                    <i class="icon-more-horiz"></i>
+                  </button>
+                </div>
+                <div class="in-body">
+                  <ul class="album-images">
+                    <li><img src="../assets/img/img_album_sample01.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample02.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample03.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample04.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample05.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample06.png" alt="" /></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="album-list-item">
+                <div class="in-head">
+                  <div class="titbox">
+                    <div class="tit">Album name</div>
+                    <span class="cnt">24</span>
+                  </div>
+                  <button class="btn-more ui-dropper" data-drop="album_item_more">
+                    <i class="icon-more-horiz"></i>
+                  </button>
+                </div>
+                <div class="in-body">
+                  <ul class="album-images">
+                    <li><img src="../assets/img/img_album_sample01.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample02.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample03.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample04.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample05.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample06.png" alt="" /></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="album-list-item">
+                <div class="in-head">
+                  <div class="titbox">
+                    <div class="tit">Album name</div>
+                    <span class="cnt">24</span>
+                  </div>
+                  <button class="btn-more ui-dropper" data-drop="album_item_more">
+                    <i class="icon-more-horiz"></i>
+                  </button>
+                </div>
+                <div class="in-body">
+                  <ul class="album-images">
+                    <li><img src="../assets/img/img_album_sample01.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample02.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample03.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample04.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample05.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample06.png" alt="" /></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="album-list-item">
+                <div class="in-head">
+                  <div class="titbox">
+                    <div class="tit">Album name</div>
+                    <span class="cnt">24</span>
+                  </div>
+                  <button class="btn-more ui-dropper" data-drop="album_item_more">
+                    <i class="icon-more-horiz"></i>
+                  </button>
+                </div>
+                <div class="in-body">
+                  <ul class="album-images">
+                    <li><img src="../assets/img/img_album_sample01.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample02.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample03.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample04.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample05.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample06.png" alt="" /></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="album-list-item">
+                <div class="in-head">
+                  <div class="titbox">
+                    <div class="tit">Album name</div>
+                    <span class="cnt">24</span>
+                  </div>
+                  <button class="btn-more ui-dropper" data-drop="album_item_more">
+                    <i class="icon-more-horiz"></i>
+                  </button>
+                </div>
+                <div class="in-body">
+                  <ul class="album-images">
+                    <li><img src="../assets/img/img_album_sample01.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample02.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample03.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample04.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample05.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample06.png" alt="" /></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="album-list-item">
+                <div class="in-head">
+                  <div class="titbox">
+                    <div class="tit">Album name</div>
+                    <span class="cnt">24</span>
+                  </div>
+                  <button class="btn-more ui-dropper" data-drop="album_item_more">
+                    <i class="icon-more-horiz"></i>
+                  </button>
+                </div>
+                <div class="in-body">
+                  <ul class="album-images">
+                    <li><img src="../assets/img/img_album_sample01.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample02.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample03.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample04.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample05.png" alt="" /></li>
+                    <li><img src="../assets/img/img_album_sample06.png" alt="" /></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- grid -->
+            <div class="masonry-grid">
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid01.png" alt="" /></div>
+                  <label class="like-check">
+                    <input type="checkbox" checked />
+                    <div class="icon"></div>
+                  </label>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid02.png" alt="" /></div>
+                  <label class="like-check">
+                    <input type="checkbox" checked />
+                    <div class="icon"></div>
+                  </label>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid03.png" alt="" /></div>
+                  <label class="like-check">
+                    <input type="checkbox" checked />
+                    <div class="icon"></div>
+                  </label>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid04.png" alt="" /></div>
+                  <label class="like-check">
+                    <input type="checkbox" checked />
+                    <div class="icon"></div>
+                  </label>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid05.png" alt="" /></div>
+                  <label class="like-check">
+                    <input type="checkbox" checked />
+                    <div class="icon"></div>
+                  </label>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid06.png" alt="" /></div>
+                  <label class="like-check">
+                    <input type="checkbox" checked />
+                    <div class="icon"></div>
+                  </label>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid07.png" alt="" /></div>
+                  <label class="like-check">
+                    <input type="checkbox" checked />
+                    <div class="icon"></div>
+                  </label>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid08.png" alt="" /></div>
+                  <label class="like-check">
+                    <input type="checkbox" checked />
+                    <div class="icon"></div>
+                  </label>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid09.png" alt="" /></div>
+                  <label class="like-check">
+                    <input type="checkbox" checked />
+                    <div class="icon"></div>
+                  </label>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid10.png" alt="" /></div>
+                  <label class="like-check">
+                    <input type="checkbox" checked />
+                    <div class="icon"></div>
+                  </label>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid11.png" alt="" /></div>
+                  <label class="like-check">
+                    <input type="checkbox" checked />
+                    <div class="icon"></div>
+                  </label>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid12.png" alt="" /></div>
+                  <label class="like-check">
+                    <input type="checkbox" checked />
+                    <div class="icon"></div>
+                  </label>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid13.png" alt="" /></div>
+                  <label class="like-check">
+                    <input type="checkbox" checked />
+                    <div class="icon"></div>
+                  </label>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid14.png" alt="" /></div>
+                  <label class="like-check">
+                    <input type="checkbox" checked />
+                    <div class="icon"></div>
+                  </label>
+                </div>
+              </div>
+              <div class="grid-item">
+                <div class="img-box">
+                  <div class="img"><img src="../assets/img/main_grid15.png" alt="" /></div>
+                  <label class="like-check">
+                    <input type="checkbox" checked />
+                    <div class="icon"></div>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <style>
+              .grid-item {
+                margin-bottom: 0.2rem;
+              }
+            </style>
+            <script src="../assets/js/masonry.pkgd.min.js"></script>
+            <script>
+              $(function () {
+                $('.masonry-grid').imagesLoaded(function () {
+                  // Masonry 초기화
+                  var $grid = $('.masonry-grid').masonry({
+                    itemSelector: '.grid-item',
+                    columnWidth: '.grid-item',
+                    gutter: 2,
+                  });
+
+                  // ResizeObserver로 .masonry-grid 크기 변경 감지
+                  var grid = document.querySelector('.masonry-grid');
+                  var resizeObserver = new ResizeObserver(function (entries) {
+                    $grid.masonry('layout'); // 레이아웃 업데이트
+                  });
+
+                  // .masonry-grid 요소 관찰
+                  resizeObserver.observe(grid);
+                });
+              });
+            </script>
+            <!-- //grid -->
+          </div>
+          <!-- // -->
+        </div>
+        <!-- //contents -->
+      </div>
+      <!-- //컨테이너 영역 -->
+    </div>
+
+    <!-- dim -->
+    <div class="dialog-dim"></div>
+    <!-- //dim -->
+
+    <!-- pop, layer -->
+    <div id="album_item_more" class="ui-dropdown">
+      <ul class="drop-menu">
+        <li><a href="javascript:;" class="open-dialog" data-dialog-id="albumRename" data-dialog-width="">Rename album</a></li>
+        <li><a href="javascript:;" class="open-dialog" data-dialog-id="deleteAlbum" data-dialog-width="">Delete album</a></li>
+      </ul>
+    </div>
+
+    <div id="albumRename" class="custom-dialog">
+      <div class="dialog-content">
+        <div class="in-head">
+          <div class="titbox">
+            <div class="tit">Create Album</div>
+          </div>
+          <button type="button" class="close-dialog">
+            <i class="icon-xmark-black"></i>
+          </button>
+        </div>
+        <div class="in-body">
+          <form action="">
+            <div class="form-group">
+              <input type="text" class="input-text size-lg" id="form_albumname" placeholder="input album name" />
+              <label for="form_albumname" class="form-label">Album name</label>
+            </div>
+          </form>
+        </div>
+        <div class="in-foot">
+          <button type="button" class="btn-style">Create album</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="deleteAlbum" class="custom-dialog">
+      <div class="dialog-content">
+        <div class="in-head">
+          <div class="titbox">
+            <div class="tit">Confirm Album Deletion</div>
+          </div>
+          <button type="button" class="close-dialog">
+            <i class="icon-xmark-black"></i>
+          </button>
+        </div>
+        <div class="in-body">
+          <p>Deleting the album won’t remove the photos or videos, but you can decide what happens to the hearts.</p>
+        </div>
+        <div class="in-foot">
+          <button type="button" class="btn-style">Keep Hearts</button>
+          <button type="button" class="btn-style bg-red">Delete Hearts</button>
+        </div>
+      </div>
+    </div>
+    <!-- //pop, layer -->
+  </body>
+</html>

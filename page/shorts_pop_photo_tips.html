@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shorts | Widai</title>
+
+    <!-- <link rel="icon" type="image/png" href="/">
+  <link rel="apple-touch-icon" href="/"> -->
+
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../assets/css/common-ui.css" />
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/common-ui.js"></script>
+    <script>
+      $(function () {
+        // 페이지 로딩 시 .open-dialog 중 첫 번째 요소 자동 클릭
+        $('.open-dialog').first().trigger('click');
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="wrap" class="g-wrap">
+      <!-- 헤더 영역 -->
+      <header id="header">
+        <!-- 헤더 컨텐츠 영역 -->
+        <div class="header-in">
+          <h1 class="logo">
+            <a href="#" class="beta">
+              <i class="logo-img"></i>
+              <span class="logo-text"></span>
+            </a>
+          </h1>
+
+          <div class="utilbox">
+            <button type="button" class="btn-style size-sm outline">Login</button>
+            <button type="button" class="btn-style size-sm">Sign Up</button>
+          </div>
+        </div>
+        <!-- //헤더 컨텐츠 영역 -->
+      </header>
+      <!-- //헤더 영역 -->
+      <!-- 컨테이너 영역 -->
+      <div id="container">
+        <!-- lnb -->
+        <div class="lnb">
+          <div class="top-toggle">
+            <button type="button" class="btn-toggle" onclick="lnbToggle()"><span class="sr-only">메뉴 확장/축소</span></button>
+          </div>
+          <ul class="lnb-menu">
+            <li>
+              <a href="#">
+                <i class="icon icon-home"></i>
+                <span class="text">Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-image"></i>
+                <span class="text">Image</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-video"></i>
+                <span class="text">Video</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="active">
+                <i class="icon icon-shorts"></i>
+                <span class="text">Shorts</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-k-art"></i>
+                <span class="text">K-Art</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-others"></i>
+                <span class="text">Others</span>
+              </a>
+            </li>
+          </ul>
+          <a href="#" class="lnb-like">
+            <i class="icon icon-heart"></i>
+            <span class="text">Liked</span>
+          </a>
+        </div>
+        <!-- //lnb -->
+        <!-- lob -->
+        <div class="lob">
+          <div class="lob-container">
+            <div class="lob-head">
+              <h2 class="lob-title">Create Shorts</h2>
+            </div>
+            <div class="lob-body">
+              <!-- lob-menu -->
+              <div class="lob-menu">
+                <div class="lob-menu-item">
+                  <div class="lob-menu-item-head">
+                    <div class="lob-menu-item-title">Photo with a clear face</div>
+                    <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_4_1')"></button>
+                  </div>
+                  <div class="lob-menu-item-body" id="sec_lob_4_1" style="display: block">
+                    <!-- circle-image-wrap -->
+                    <div class="circle-image-wrap">
+                      <button type="button" class="add open-dialog" data-dialog-id="photoTips" data-dialog-width="">
+                        <i class="icon-plus"></i>
+                      </button>
+                      <!-- face -->
+                      <div class="circle-image-item">
+                        <img src="../assets/img/img_imagelist00.png" alt="" />
+                      </div>
+                      <div class="circle-image-item active"></div>
+                      <div class="circle-image-item"></div>
+                      <div class="circle-image-item"></div>
+                      <div class="circle-image-item"></div>
+                      <div class="circle-image-item"></div>
+                      <div class="circle-image-item"></div>
+                      <div class="circle-image-item"></div>
+                      <div class="circle-image-item"></div>
+                      <!-- //face -->
+                    </div>
+                    <script>
+                      $(function () {
+                        $('.circle-image-wrap').on('click', '.circle-image-item', function () {
+                          const $clicked = $(this);
+
+                          if ($clicked.hasClass('active')) {
+                            // 이미 active면 제거
+                            $clicked.removeClass('active');
+                          } else {
+                            // 다른 항목의 active 제거 후 자신에게 추가
+                            $('.circle-image-item').removeClass('active');
+                            $clicked.addClass('active');
+                          }
+                        });
+                      });
+                    </script>
+                    <!-- //circle-image-wrap -->
+                  </div>
+                </div>
+                <div class="lob-menu-item">
+                  <div class="lob-menu-item-head">
+                    <div class="lob-menu-item-title">Background Music</div>
+                    <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_4_2')"></button>
+                  </div>
+                  <div class="lob-menu-item-body" id="sec_lob_4_2" style="display: block">
+                    <select class="custom-select size-sm">
+                      <option value="">Select a background music</option>
+                      <option value="">Select a background music2</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="lob-menu-item">
+                  <div class="lob-menu-item-head">
+                    <div class="lob-menu-item-title">Motion Sequence</div>
+                    <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_4_3')"></button>
+                  </div>
+                  <div class="lob-menu-item-body" id="sec_lob_4_3" style="display: block">
+                    <!-- square-image-wrap -->
+                    <div class="square-image-wrap">
+                      <!-- Motion Sequence -->
+                      <div class="square-image-item">
+                        <div class="img">
+                          <img src="../assets/img/img_imagelist00.png" alt="" />
+                        </div>
+                        <div class="text">Apt</div>
+                      </div>
+                      <div class="square-image-item active">
+                        <div class="img"></div>
+                        <div class="text">Apt</div>
+                      </div>
+                      <div class="square-image-item">
+                        <div class="img"></div>
+                        <div class="text">Apt</div>
+                      </div>
+                      <div class="square-image-item">
+                        <div class="img"></div>
+                        <div class="text">Apt</div>
+                      </div>
+                      <div class="square-image-item">
+                        <div class="img"></div>
+                        <div class="text">Apt</div>
+                      </div>
+                      <div class="square-image-item">
+                        <div class="img"></div>
+                        <div class="text">Apt</div>
+                      </div>
+                      <div class="square-image-item">
+                        <div class="img"></div>
+                        <div class="text">Apt</div>
+                      </div>
+                      <div class="square-image-item">
+                        <div class="img"></div>
+                        <div class="text">Apt</div>
+                      </div>
+                      <div class="square-image-item">
+                        <div class="img"></div>
+                        <div class="text">Apt</div>
+                      </div>
+                      <!-- //Motion Sequence -->
+                    </div>
+                    <script>
+                      $(function () {
+                        $('.square-image-wrap').on('click', '.square-image-item', function () {
+                          const $clicked = $(this);
+
+                          if ($clicked.hasClass('active')) {
+                            // 이미 active면 제거
+                            $clicked.removeClass('active');
+                          } else {
+                            // 다른 항목의 active 제거 후 자신에게 추가
+                            $('.square-image-item').removeClass('active');
+                            $clicked.addClass('active');
+                          }
+                        });
+                      });
+                    </script>
+                    <!-- //square-image-wrap -->
+                  </div>
+                </div>
+              </div>
+              <!-- //lob-menu -->
+            </div>
+          </div>
+          <div class="lob-footer">
+            <button type="button" class="btn-style size-rg">Create Shorts</button>
+          </div>
+        </div>
+        <!-- //lob -->
+        <!-- contents -->
+        <div class="contents">
+          <!--  -->
+          <ul class="tab">
+            <li><a href="#" class="active">Generation</a></li>
+            <li><a href="#">Albums</a></li>
+          </ul>
+          <div class="inner-content">
+            <!-- inner-content -->
+            <div class="title-wrap">
+              <h3 class="title-17">Today</h3>
+              <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_acc')"></button>
+            </div>
+            <div id="sec_acc" style="display: block">
+              <!-- group-flex progress -->
+              <div class="group-flex progress">
+                <div class="progress-noti"><i class="icon-progress-noti"></i>Your image is being generated. This may take a few seconds.</div>
+                <div class="cont-body">
+                  <!-- image-list -->
+                  <ul class="image-list">
+                    <li>
+                      <!-- progress-item -->
+                      <div class="progress-item">
+                        <div class="progress-info">
+                          <div class="text">10% Complete</div>
+                          <div class="val-box">
+                            <div class="val" style="width: 10%"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //progress-item -->
+                    </li>
+                    <li>
+                      <!-- progress-item -->
+                      <div class="progress-item">
+                        <div class="progress-info">
+                          <div class="text">50% Complete</div>
+                          <div class="val-box">
+                            <div class="val" style="width: 50%"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //progress-item -->
+                    </li>
+                    <li>
+                      <!-- progress-item -->
+                      <div class="progress-item">
+                        <div class="progress-info">
+                          <div class="text">50% Complete</div>
+                          <div class="val-box">
+                            <div class="val" style="width: 50%"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //progress-item -->
+                    </li>
+                    <li>
+                      <!-- progress-item -->
+                      <div class="progress-item">
+                        <div class="progress-info">
+                          <div class="text">50% Complete</div>
+                          <div class="val-box">
+                            <div class="val" style="width: 50%"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //progress-item -->
+                    </li>
+                  </ul>
+                  <!-- //image-list -->
+                </div>
+                <div class="text-info">
+                  <div class="text-sec">
+                    <p class="text" id="infoText01_pro">
+                      A glowing blue and pink flower with green leaves, in the style of anime, fantasy background, glowing lights, sparkles, water droplets, digital art, simple, cartoon, cute, colorful, neon colors, magical, fantasy world.A glowing blue and pink flower with green leaves, in the
+                      style of anime, fantasy background, glowing lights, sparkles, water droplets, digital art, simple, cartoon, cute, colorful, neon colors, magical, fantasy world.
+                    </p>
+                    <button type="button" class="copy">Copy</button>
+                    <button type="button" class="more" onclick="viewFullText(this, '#infoText01_pro')"><i class="icon-plus-circle-solid"></i>more</button>
+                  </div>
+                  <div class="tags">
+                    <span class="tag">Ratio 1:1</span>
+                    <span class="tag">1280px</span>
+                  </div>
+                </div>
+              </div>
+              <!-- //group-flex progress -->
+
+              <!-- group-flex -->
+              <div class="group-flex">
+                <div class="cont-body">
+                  <!-- image-list -->
+                  <ul class="image-list">
+                    <li>
+                      <div class="in-box">
+                        <div class="img"><img src="../assets/img/img_imagelist00.png" alt="" /></div>
+                        <div class="tag-name">name</div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="in-box">
+                        <div class="img"><img src="../assets/img/img_imagelist00.png" alt="" /></div>
+                        <div class="tag-name">name</div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="in-box">
+                        <div class="img"><img src="../assets/img/img_imagelist00.png" alt="" /></div>
+                        <div class="tag-name">name</div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="in-box">
+                        <div class="img"><img src="../assets/img/img_imagelist00.png" alt="" /></div>
+                        <div class="tag-name">name</div>
+                      </div>
+                    </li>
+                  </ul>
+                  <!-- //image-list -->
+                </div>
+                <div class="text-info">
+                  <div class="text-sec">
+                    <p class="text" id="infoText01">
+                      A glowing blue and pink flower with green leaves, in the style of anime, fantasy background, glowing lights, sparkles, water droplets, digital art, simple, cartoon, cute, colorful, neon colors, magical, fantasy world.A glowing blue and pink flower with green leaves, in the
+                      style of anime, fantasy background, glowing lights, sparkles, water droplets, digital art, simple, cartoon, cute, colorful, neon colors, magical, fantasy world.
+                    </p>
+                    <button type="button" class="copy">Copy</button>
+                    <button type="button" class="more" onclick="viewFullText(this, '#infoText01')"><i class="icon-plus-circle-solid"></i>more</button>
+                  </div>
+                  <div class="tags">
+                    <span class="tag">Ratio 1:1</span>
+                    <span class="tag">1280px</span>
+                  </div>
+                </div>
+              </div>
+              <!-- //group-flex -->
+            </div>
+
+            <div class="title-wrap">
+              <h3 class="title-17">Yesterday</h3>
+              <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_acc2')"></button>
+            </div>
+            <div id="sec_acc2" style="display: block">
+              <!-- group-flex -->
+              <div class="group-flex">
+                <div class="cont-body">
+                  <!-- image-list -->
+                  <ul class="image-list">
+                    <li>
+                      <div class="in-box">
+                        <div class="img"><img src="../assets/img/img_imagelist00.png" alt="" /></div>
+                        <div class="tag-name">name</div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="in-box">
+                        <div class="img"><img src="../assets/img/img_imagelist00.png" alt="" /></div>
+                        <div class="tag-name">name</div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="in-box">
+                        <div class="img"><img src="../assets/img/img_imagelist00.png" alt="" /></div>
+                        <div class="tag-name">name</div>
+                      </div>
+                    </li>
+                  </ul>
+                  <!-- //image-list -->
+                </div>
+                <div class="text-info">
+                  <div class="text-sec">
+                    <p class="text" id="infoText02">
+                      A glowing blue and pink flower with green leaves, in the style of anime, fantasy background, glowing lights, sparkles, water droplets, digital art, simple, cartoon, cute, colorful, neon colors, magical, fantasy world.A glowing blue and pink flower with green leaves, in the
+                      style of anime, fantasy background, glowing lights, sparkles, water droplets, digital art, simple, cartoon, cute, colorful, neon colors, magical, fantasy world.
+                    </p>
+                    <button type="button" class="copy">Copy</button>
+                    <button type="button" class="more" onclick="viewFullText(this, '#infoText02')"><i class="icon-plus-circle-solid"></i>more</button>
+                  </div>
+                  <div class="tags">
+                    <span class="tag">Ratio 1:1</span>
+                    <span class="tag">1280px</span>
+                  </div>
+                </div>
+              </div>
+              <!-- //group-flex -->
+            </div>
+            <!-- //inner-content -->
+          </div>
+          <!-- // -->
+        </div>
+        <!-- //contents -->
+      </div>
+      <!-- //컨테이너 영역 -->
+    </div>
+
+    <!-- dim -->
+    <div class="dialog-dim"></div>
+    <!-- //dim -->
+
+    <!-- pop, layer -->
+    <div id="photoTips" class="custom-dialog">
+      <div class="dialog-content">
+        <div class="in-head">
+          <div class="titbox">
+            <div class="tit">Photo Tips</div>
+            <p class="desc">Make sure photo with clear front full-body image.</p>
+          </div>
+          <button type="button" class="close-dialog">
+            <i class="icon-xmark-black"></i>
+          </button>
+        </div>
+        <div class="in-body">
+          <!-- photo-tips -->
+          <ul class="photo-tips">
+            <li class="good">
+              <div class="imgbox">
+                <img src="../assets/img/img_videolist00.png" alt="" />
+              </div>
+              <div class="txtbox">Good samples</div>
+            </li>
+            <li class="poor">
+              <div class="imgbox"></div>
+              <div class="txtbox">Poor sample</div>
+            </li>
+          </ul>
+          <!-- //photo-tips -->
+        </div>
+        <div class="in-foot">
+          <button type="button" class="btn-style">Upload Now</button>
+        </div>
+      </div>
+    </div>
+    <!-- //pop, layer -->
+  </body>
+</html>
