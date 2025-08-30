@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Image | Widai</title>
+
+    <!-- <link rel="icon" type="image/png" href="/">
+  <link rel="apple-touch-icon" href="/"> -->
+
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../assets/css/common-ui.css" />
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/common-ui.js"></script>
+  </head>
+
+  <body>
+    <div id="wrap" class="g-wrap">
+      <!-- 헤더 영역 -->
+      <header id="header">
+        <!-- 헤더 컨텐츠 영역 -->
+        <div class="header-in">
+          <h1 class="logo">
+            <a href="#" class="beta">
+              <i class="logo-img"></i>
+              <span class="logo-text"></span>
+            </a>
+          </h1>
+
+          <div class="utilbox">
+            <button type="button" class="btn-style size-sm outline">Login</button>
+            <button type="button" class="btn-style size-sm">Sign Up</button>
+          </div>
+        </div>
+        <!-- //헤더 컨텐츠 영역 -->
+      </header>
+      <!-- //헤더 영역 -->
+      <!-- 컨테이너 영역 -->
+      <div id="container">
+        <!-- lnb -->
+        <div class="lnb">
+          <div class="top-toggle">
+            <button type="button" class="btn-toggle" onclick="lnbToggle()"><span class="sr-only">메뉴 확장/축소</span></button>
+          </div>
+          <ul class="lnb-menu">
+            <li>
+              <a href="#">
+                <i class="icon icon-home"></i>
+                <span class="text">Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="active">
+                <i class="icon icon-image"></i>
+                <span class="text">Image</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-video"></i>
+                <span class="text">Video</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-shorts"></i>
+                <span class="text">Shorts</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-k-art"></i>
+                <span class="text">K-Art</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-others"></i>
+                <span class="text">Others</span>
+              </a>
+            </li>
+          </ul>
+          <a href="#" class="lnb-like">
+            <i class="icon icon-heart"></i>
+            <span class="text">Liked</span>
+          </a>
+        </div>
+        <!-- //lnb -->
+        <!-- contents -->
+        <div class="contents">
+          <!--  -->
+          <div class="edit-img-head">
+            <div class="eih-ctrl">
+              <button type="button" class="btn">
+                <i class="icon-eih-open-select-hand-gesture"></i>
+              </button>
+              <button type="button" class="btn">
+                <i class="icon-eih-cursor-pointer"></i>
+              </button>
+              <button type="button" class="btn">
+                <i class="icon-eih-expand-rotate"></i>
+              </button>
+              <button type="button" class="btn">
+                <i class="icon-eih-text"></i>
+              </button>
+            </div>
+            <div class="vline"></div>
+            <div class="eih-select">
+              <select class="custom-select">
+                <option>100%</option>
+                <option>90%</option>
+                <option>80%</option>
+                <option>70%</option>
+                <option>60%</option>
+                <option>50%</option>
+                <option>40%</option>
+                <option>30%</option>
+                <option>20%</option>
+                <option>10%</option>
+              </select>
+            </div>
+            <div class="vline"></div>
+            <div class="eih-menu">
+              <button type="button" class="btn">
+                <i class="icon-eih-design-pencil"></i>
+                <span class="txt">Inpaint</span>
+              </button>
+              <button type="button" class="btn">
+                <i class="icon-eih-erase"></i>
+                <span class="txt">Remove</span>
+              </button>
+              <button type="button" class="btn">
+                <i class="icon-eih-scale-frame-enlarge"></i>
+                <span class="txt">Expend</span>
+              </button>
+              <button type="button" class="btn">
+                <i class="icon-eih-palette"></i>
+                <span class="txt">Stylize</span>
+              </button>
+              <button type="button" class="btn">
+                <i class="icon-eih-media-image"></i>
+                <span class="txt">Background</span>
+              </button>
+              <button type="button" class="btn active">
+                <i class="icon-eih-face-id"></i>
+                <span class="txt">Face</span>
+              </button>
+              <button type="button" class="btn">
+                <i class="icon-eih-expand"></i>
+                <span class="txt">Upscale</span>
+              </button>
+            </div>
+            <div class="vline"></div>
+            <div class="eih-undo-redo">
+              <button type="button" class="btn-undo">
+                <i class="icon-undo"></i>
+              </button>
+              <div class="dobar"></div>
+              <button type="button" class="btn-redo">
+                <i class="icon-redo"></i>
+              </button>
+            </div>
+          </div>
+          <div class="edit-img-body">
+            <!-- edit-img-box -->
+            <div class="edit-img-box active">
+              <!-- img -->
+              <div class="img">
+                <img src="../assets/img/img_edit_image00.png" alt="" />
+              </div>
+              <!-- //img -->
+            </div>
+            <!-- //edit-img-box -->
+          </div>
+          <!-- // -->
+        </div>
+        <!-- //contents -->
+        <!-- lob -->
+        <div class="lob">
+          <div class="lob-container">
+            <div class="lob-head">
+              <h2 class="lob-title">Remove</h2>
+            </div>
+            <div class="lob-body">
+              <!-- lob-menu -->
+              <div class="lob-menu-item">
+                <div class="lob-menu-item-head">
+                  <div class="lob-menu-item-title">Head Positioning</div>
+                  <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_9_1')"></button>
+                </div>
+                <div class="lob-menu-item-body" id="sec_lob_9_1" style="display: block">
+                  <!--  -->
+                  <div class="dl-form">
+                    <dl class="dl-form-item">
+                      <dt class="width-auto">Head Vertical Direction</dt>
+                      <dd>
+                        <input type="text" class="input-text size-sm" id="HP01_Val" value="50" style="max-width: 5.4rem" autocomplete="off" />
+                      </dd>
+                    </dl>
+                    <dl class="dl-form-item">
+                      <dd>
+                        <!-- slide -->
+                        <span class="space-text">Down</span>
+                        <div id="HP01_Slider" class="custom-slider"></div>
+                        <span class="space-text">Up</span>
+                        <script>
+                          $(function () {
+                            const $slider = $('#HP01_Slider');
+                            const $input = $('#HP01_Val');
+
+                            // 슬라이더 초기화
+                            $slider.slider({
+                              value: 50,
+                              range: 'min',
+                              min: 0,
+                              max: 100,
+                              animate: true,
+                              slide: function (event, ui) {
+                                $input.val(ui.value);
+                              },
+                            });
+
+                            // input 변경 → 슬라이더 갱신
+                            $input.on('input change', function () {
+                              const val = parseInt($(this).val(), 10);
+                              if (!isNaN(val) && val >= 1 && val <= 100) {
+                                $slider.slider('value', val);
+                              }
+                            });
+                          });
+                        </script>
+                        <!-- //slide -->
+                      </dd>
+                    </dl>
+
+                    <dl class="dl-form-item">
+                      <dt class="width-auto">Head Horizontal Direction</dt>
+                      <dd>
+                        <input type="text" class="input-text size-sm" id="HP02_Val" value="50" style="max-width: 5.4rem" autocomplete="off" />
+                      </dd>
+                    </dl>
+                    <dl class="dl-form-item">
+                      <dd>
+                        <!-- slide -->
+                        <span class="space-text">Left</span>
+                        <div id="HP02_Slider" class="custom-slider"></div>
+                        <span class="space-text">Right</span>
+                        <script>
+                          $(function () {
+                            const $slider = $('#HP02_Slider');
+                            const $input = $('#HP02_Val');
+
+                            // 슬라이더 초기화
+                            $slider.slider({
+                              value: 50,
+                              range: 'min',
+                              min: 0,
+                              max: 100,
+                              animate: true,
+                              slide: function (event, ui) {
+                                $input.val(ui.value);
+                              },
+                            });
+
+                            // input 변경 → 슬라이더 갱신
+                            $input.on('input change', function () {
+                              const val = parseInt($(this).val(), 10);
+                              if (!isNaN(val) && val >= 1 && val <= 100) {
+                                $slider.slider('value', val);
+                              }
+                            });
+                          });
+                        </script>
+                        <!-- //slide -->
+                      </dd>
+                    </dl>
+                  </div>
+                  <!-- // -->
+                </div>
+              </div>
+
+              <div class="lob-menu-item">
+                <div class="lob-menu-item-head">
+                  <div class="lob-menu-item-title">Mouth Adjustments</div>
+                  <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_9_2')"></button>
+                </div>
+                <div class="lob-menu-item-body" id="sec_lob_9_2" style="display: block">
+                  <!--  -->
+                  <div class="dl-form">
+                    <dl class="dl-form-item">
+                      <dt class="width-auto">Smile</dt>
+                      <dd>
+                        <input type="text" class="input-text size-sm" id="MA01_Val" value="50" style="max-width: 5.4rem" autocomplete="off" />
+                      </dd>
+                    </dl>
+                    <dl class="dl-form-item">
+                      <dd>
+                        <!-- slide -->
+                        <span class="space-text">Frown</span>
+                        <div id="MA01_Slider" class="custom-slider"></div>
+                        <span class="space-text">Laugh</span>
+                        <script>
+                          $(function () {
+                            const $slider = $('#MA01_Slider');
+                            const $input = $('#MA01_Val');
+
+                            // 슬라이더 초기화
+                            $slider.slider({
+                              value: 50,
+                              range: 'min',
+                              min: 0,
+                              max: 100,
+                              animate: true,
+                              slide: function (event, ui) {
+                                $input.val(ui.value);
+                              },
+                            });
+
+                            // input 변경 → 슬라이더 갱신
+                            $input.on('input change', function () {
+                              const val = parseInt($(this).val(), 10);
+                              if (!isNaN(val) && val >= 1 && val <= 100) {
+                                $slider.slider('value', val);
+                              }
+                            });
+                          });
+                        </script>
+                        <!-- //slide -->
+                      </dd>
+                    </dl>
+
+                    <dl class="dl-form-item">
+                      <dt class="width-auto">Mouse Open</dt>
+                      <dd>
+                        <input type="text" class="input-text size-sm" id="MA02_Val" value="50" style="max-width: 5.4rem" autocomplete="off" />
+                      </dd>
+                    </dl>
+                    <dl class="dl-form-item">
+                      <dd>
+                        <!-- slide -->
+                        <span class="space-text">Closed</span>
+                        <div id="MA02_Slider" class="custom-slider"></div>
+                        <span class="space-text">Open</span>
+                        <script>
+                          $(function () {
+                            const $slider = $('#MA02_Slider');
+                            const $input = $('#MA02_Val');
+
+                            // 슬라이더 초기화
+                            $slider.slider({
+                              value: 50,
+                              range: 'min',
+                              min: 0,
+                              max: 100,
+                              animate: true,
+                              slide: function (event, ui) {
+                                $input.val(ui.value);
+                              },
+                            });
+
+                            // input 변경 → 슬라이더 갱신
+                            $input.on('input change', function () {
+                              const val = parseInt($(this).val(), 10);
+                              if (!isNaN(val) && val >= 1 && val <= 100) {
+                                $slider.slider('value', val);
+                              }
+                            });
+                          });
+                        </script>
+                        <!-- //slide -->
+                      </dd>
+                    </dl>
+
+                    <dl class="dl-form-item">
+                      <dt class="width-auto">Mouth width</dt>
+                      <dd>
+                        <input type="text" class="input-text size-sm" id="MA03_Val" value="50" style="max-width: 5.4rem" autocomplete="off" />
+                      </dd>
+                    </dl>
+                    <dl class="dl-form-item">
+                      <dd>
+                        <!-- slide -->
+                        <span class="space-text">Narrow</span>
+                        <div id="MA03_Slider" class="custom-slider"></div>
+                        <span class="space-text">Wide</span>
+                        <script>
+                          $(function () {
+                            const $slider = $('#MA03_Slider');
+                            const $input = $('#MA03_Val');
+
+                            // 슬라이더 초기화
+                            $slider.slider({
+                              value: 50,
+                              range: 'min',
+                              min: 0,
+                              max: 100,
+                              animate: true,
+                              slide: function (event, ui) {
+                                $input.val(ui.value);
+                              },
+                            });
+
+                            // input 변경 → 슬라이더 갱신
+                            $input.on('input change', function () {
+                              const val = parseInt($(this).val(), 10);
+                              if (!isNaN(val) && val >= 1 && val <= 100) {
+                                $slider.slider('value', val);
+                              }
+                            });
+                          });
+                        </script>
+                        <!-- //slide -->
+                      </dd>
+                    </dl>
+
+                    <dl class="dl-form-item">
+                      <dt class="width-auto">Mouth Roundness</dt>
+                      <dd>
+                        <input type="text" class="input-text size-sm" id="MA04_Val" value="50" style="max-width: 5.4rem" autocomplete="off" />
+                      </dd>
+                    </dl>
+                    <dl class="dl-form-item">
+                      <dd>
+                        <!-- slide -->
+                        <span class="space-text">Flat</span>
+                        <div id="MA04_Slider" class="custom-slider"></div>
+                        <span class="space-text">Round</span>
+                        <script>
+                          $(function () {
+                            const $slider = $('#MA04_Slider');
+                            const $input = $('#MA04_Val');
+
+                            // 슬라이더 초기화
+                            $slider.slider({
+                              value: 50,
+                              range: 'min',
+                              min: 0,
+                              max: 100,
+                              animate: true,
+                              slide: function (event, ui) {
+                                $input.val(ui.value);
+                              },
+                            });
+
+                            // input 변경 → 슬라이더 갱신
+                            $input.on('input change', function () {
+                              const val = parseInt($(this).val(), 10);
+                              if (!isNaN(val) && val >= 1 && val <= 100) {
+                                $slider.slider('value', val);
+                              }
+                            });
+                          });
+                        </script>
+                        <!-- //slide -->
+                      </dd>
+                    </dl>
+                  </div>
+                  <!-- // -->
+                </div>
+              </div>
+
+              <div class="lob-menu-item">
+                <div class="lob-menu-item-head">
+                  <div class="lob-menu-item-title">Eyes Adjustments</div>
+                  <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_9_3')"></button>
+                </div>
+                <div class="lob-menu-item-body" id="sec_lob_9_3" style="display: block">
+                  <!--  -->
+                  <div class="dl-form">
+                    <dl class="dl-form-item">
+                      <dt class="width-auto">Blink</dt>
+                      <dd>
+                        <input type="text" class="input-text size-sm" id="EA01_Val" value="50" style="max-width: 5.4rem" autocomplete="off" />
+                      </dd>
+                    </dl>
+                    <dl class="dl-form-item">
+                      <dd>
+                        <!-- slide -->
+                        <span class="space-text">Frown</span>
+                        <div id="EA01_Slider" class="custom-slider"></div>
+                        <span class="space-text">Laugh</span>
+                        <script>
+                          $(function () {
+                            const $slider = $('#EA01_Slider');
+                            const $input = $('#EA01_Val');
+
+                            // 슬라이더 초기화
+                            $slider.slider({
+                              value: 50,
+                              range: 'min',
+                              min: 0,
+                              max: 100,
+                              animate: true,
+                              slide: function (event, ui) {
+                                $input.val(ui.value);
+                              },
+                            });
+
+                            // input 변경 → 슬라이더 갱신
+                            $input.on('input change', function () {
+                              const val = parseInt($(this).val(), 10);
+                              if (!isNaN(val) && val >= 1 && val <= 100) {
+                                $slider.slider('value', val);
+                              }
+                            });
+                          });
+                        </script>
+                        <!-- //slide -->
+                      </dd>
+                    </dl>
+
+                    <dl class="dl-form-item">
+                      <dt class="width-auto">Eye Direction(Horizontal)</dt>
+                      <dd>
+                        <input type="text" class="input-text size-sm" id="EA02_Val" value="50" style="max-width: 5.4rem" autocomplete="off" />
+                      </dd>
+                    </dl>
+                    <dl class="dl-form-item">
+                      <dd>
+                        <!-- slide -->
+                        <span class="space-text">Closed</span>
+                        <div id="EA02_Slider" class="custom-slider"></div>
+                        <span class="space-text">Open</span>
+                        <script>
+                          $(function () {
+                            const $slider = $('#EA02_Slider');
+                            const $input = $('#EA02_Val');
+
+                            // 슬라이더 초기화
+                            $slider.slider({
+                              value: 50,
+                              range: 'min',
+                              min: 0,
+                              max: 100,
+                              animate: true,
+                              slide: function (event, ui) {
+                                $input.val(ui.value);
+                              },
+                            });
+
+                            // input 변경 → 슬라이더 갱신
+                            $input.on('input change', function () {
+                              const val = parseInt($(this).val(), 10);
+                              if (!isNaN(val) && val >= 1 && val <= 100) {
+                                $slider.slider('value', val);
+                              }
+                            });
+                          });
+                        </script>
+                        <!-- //slide -->
+                      </dd>
+                    </dl>
+
+                    <dl class="dl-form-item">
+                      <dt class="width-auto">Eye Direction(Vertical)</dt>
+                      <dd>
+                        <input type="text" class="input-text size-sm" id="EA03_Val" value="50" style="max-width: 5.4rem" autocomplete="off" />
+                      </dd>
+                    </dl>
+                    <dl class="dl-form-item">
+                      <dd>
+                        <!-- slide -->
+                        <span class="space-text">Down</span>
+                        <div id="EA03_Slider" class="custom-slider"></div>
+                        <span class="space-text">Up</span>
+                        <script>
+                          $(function () {
+                            const $slider = $('#EA03_Slider');
+                            const $input = $('#EA03_Val');
+
+                            // 슬라이더 초기화
+                            $slider.slider({
+                              value: 50,
+                              range: 'min',
+                              min: 0,
+                              max: 100,
+                              animate: true,
+                              slide: function (event, ui) {
+                                $input.val(ui.value);
+                              },
+                            });
+
+                            // input 변경 → 슬라이더 갱신
+                            $input.on('input change', function () {
+                              const val = parseInt($(this).val(), 10);
+                              if (!isNaN(val) && val >= 1 && val <= 100) {
+                                $slider.slider('value', val);
+                              }
+                            });
+                          });
+                        </script>
+                        <!-- //slide -->
+                      </dd>
+                    </dl>
+
+                    <dl class="dl-form-item">
+                      <dt class="width-auto">Eye Position</dt>
+                      <dd>
+                        <input type="text" class="input-text size-sm" id="EA04_Val" value="50" style="max-width: 5.4rem" autocomplete="off" />
+                      </dd>
+                    </dl>
+                    <dl class="dl-form-item">
+                      <dd>
+                        <!-- slide -->
+                        <span class="space-text">Lower</span>
+                        <div id="EA04_Slider" class="custom-slider"></div>
+                        <span class="space-text">Higher</span>
+                        <script>
+                          $(function () {
+                            const $slider = $('#EA04_Slider');
+                            const $input = $('#EA04_Val');
+
+                            // 슬라이더 초기화
+                            $slider.slider({
+                              value: 50,
+                              range: 'min',
+                              min: 0,
+                              max: 100,
+                              animate: true,
+                              slide: function (event, ui) {
+                                $input.val(ui.value);
+                              },
+                            });
+
+                            // input 변경 → 슬라이더 갱신
+                            $input.on('input change', function () {
+                              const val = parseInt($(this).val(), 10);
+                              if (!isNaN(val) && val >= 1 && val <= 100) {
+                                $slider.slider('value', val);
+                              }
+                            });
+                          });
+                        </script>
+                        <!-- //slide -->
+                      </dd>
+                    </dl>
+
+                    <dl class="dl-form-item">
+                      <dt class="width-auto">Wink</dt>
+                      <dd>
+                        <input type="text" class="input-text size-sm" id="EA05_Val" value="50" style="max-width: 5.4rem" autocomplete="off" />
+                      </dd>
+                    </dl>
+                    <dl class="dl-form-item">
+                      <dd>
+                        <!-- slide -->
+                        <span class="space-text">No wink</span>
+                        <div id="EA05_Slider" class="custom-slider"></div>
+                        <span class="space-text">Wink</span>
+                        <script>
+                          $(function () {
+                            const $slider = $('#EA05_Slider');
+                            const $input = $('#EA05_Val');
+
+                            // 슬라이더 초기화
+                            $slider.slider({
+                              value: 50,
+                              range: 'min',
+                              min: 0,
+                              max: 100,
+                              animate: true,
+                              slide: function (event, ui) {
+                                $input.val(ui.value);
+                              },
+                            });
+
+                            // input 변경 → 슬라이더 갱신
+                            $input.on('input change', function () {
+                              const val = parseInt($(this).val(), 10);
+                              if (!isNaN(val) && val >= 1 && val <= 100) {
+                                $slider.slider('value', val);
+                              }
+                            });
+                          });
+                        </script>
+                        <!-- //slide -->
+                      </dd>
+                    </dl>
+                  </div>
+                  <!-- // -->
+                </div>
+              </div>
+              <!-- //lob-menu -->
+            </div>
+          </div>
+          <div class="lob-footer">
+            <button type="button" class="btn-style size-rg">Create</button>
+          </div>
+        </div>
+        <!-- //lob -->
+      </div>
+      <!-- //컨테이너 영역 -->
+    </div>
+
+    <!-- pop, layer -->
+    <!-- //pop, layer -->
+  </body>
+</html>

@@ -92,7 +92,7 @@
           <!--  -->
           <div class="edit-img-head">
             <div class="eih-ctrl">
-              <button type="button" class="btn active">
+              <button type="button" class="btn">
                 <i class="icon-eih-open-select-hand-gesture"></i>
               </button>
               <button type="button" class="btn">
@@ -122,7 +122,7 @@
             </div>
             <div class="vline"></div>
             <div class="eih-menu">
-              <button type="button" class="btn active">
+              <button type="button" class="btn">
                 <i class="icon-eih-design-pencil"></i>
                 <span class="txt">Inpaint</span>
               </button>
@@ -138,7 +138,7 @@
                 <i class="icon-eih-palette"></i>
                 <span class="txt">Stylize</span>
               </button>
-              <button type="button" class="btn">
+              <button type="button" class="btn active">
                 <i class="icon-eih-media-image"></i>
                 <span class="txt">Background</span>
               </button>
@@ -170,41 +170,6 @@
                 <img src="../assets/img/img_edit_image00.png" alt="" />
               </div>
               <!-- //img -->
-              <!-- img-edit-bar -->
-               <div class="img-edit-bar">
-                <button type="button" class="btn">
-                  <i class="icon-cursor-pointer"></i>
-                </button>
-                <button type="button" class="btn">
-                  <i class="icon-crop-rotate-tl"></i>
-                </button>
-                <button type="button" class="btn active">
-                  <i class="icon-apple-shortcuts"></i>
-                </button>
-                <button type="button" class="btn">
-                  <i class="icon-text"></i>
-                </button>
-                <button type="button" class="btn">
-                  <i class="icon-cloud-download"></i>
-                </button>
-                <button type="button" class="btn">
-                  <i class="icon-save-floppy-disk"></i>
-                </button>
-                <button type="button" class="btn">
-                  <i class="icon-trash-white"></i>
-                </button>
-               </div>
-              <!-- //img-edit-bar -->
-              <!-- loading -->
-              <div class="loading-wrap">
-                <div class="loading-container">
-                  <div class="dot"></div>
-                  <div class="dot"></div>
-                  <div class="dot"></div>
-                </div>
-                <div class="loading-text">Loading...</div>
-              </div>
-              <!-- //loading -->
             </div>
             <!-- //edit-img-box -->
           </div>
@@ -215,89 +180,100 @@
         <div class="lob">
           <div class="lob-container">
             <div class="lob-head">
-              <h2 class="lob-title">In Paint Area</h2>
+              <h2 class="lob-title">Remove</h2>
             </div>
             <div class="lob-body">
               <!-- lob-menu -->
               <div class="lob-menu-item">
                 <div class="lob-menu-item-head">
-                  <div class="lob-menu-item-title">Prompt</div>
+                  <div class="lob-menu-item-title">Advanced Settings</div>
                   <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_9_1')"></button>
                 </div>
                 <div class="lob-menu-item-body" id="sec_lob_9_1" style="display: block">
-                  <textarea class="input-text" placeholder="e.g, A cat is sitting ona table. We support all languages.">
+                  <!--  -->
+                  <ul class="sel-setting">
+                    <li class="active">
+                      <div class="tit">Remove Background</div>
+                      <div class="txt">Get a transparent backdrop</div>
+                    </li>
+                    <li>
+                      <div class="tit">Change Background</div>
+                      <div class="txt">Generate a new background</div>
+                      <!--  -->
+                      <div class="in-lob">
+                        <!-- lob-menu -->
+                        <div class="lob-menu-item">
+                          <div class="lob-menu-item-head">
+                            <div class="lob-menu-item-title">Prompt</div>
+                            <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_9_1_1')"></button>
+                          </div>
+                          <div class="lob-menu-item-body" id="sec_lob_9_1_1" style="display: block">
+                            <textarea class="input-text" placeholder="e.g, A cat is sitting ona table. We support all languages.">
 Swedish male model, late 20s, youthful but intense masculine features, platinum blonde hair styled in slicked-back pomade, sharp narrow nose, defined cheekbones, chiseled jawline, symmetrical and refined face, clear skin, no freckles, faintly raised corners of the mouth, subtle enigmatic expression, intense gaze, inspired by Penn Badgley in YOU, front-facing ID photo style, head level, squared shoulders, looking directly at the camera, no tilt, no movement, white background, studio lighting, in full natural color, realistic skin tone, no black and w</textarea
-                  >
-                  <div class="ctrl-switch">
-                    <div class="switch-col">
-                      <div class="switch-tit">Auto Enhance : OFF</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                            >
+                            <div class="ctrl-switch">
+                              <div class="switch-col">
+                                <div class="switch-tit">Auto Enhance</div>
+                                <label class="toggle-switch size-sm">
+                                  <input type="checkbox" name="checkbox1" checked />
+                                  <div class="toogle-text">
+                                    <span class="on">On</span>
+                                    <span class="off">OFF</span>
+                                  </div>
+                                  <div class="val"></div>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
 
-              <div class="lob-menu-item">
-                <div class="lob-menu-item-head">
-                  <div class="lob-menu-item-title">Image Guidance</div>
-                  <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_9_2')"></button>
-                </div>
-                <div class="lob-menu-item-body" id="sec_lob_9_2" style="display: block">
-                  <div class="image-guidance-box">Purchase Starter or above Upgrade to use image guidance</div>
-                </div>
-              </div>
+                        <div class="lob-menu-item">
+                          <div class="lob-menu-item-head">
+                            <div class="lob-menu-item-title">Image Guidance</div>
+                            <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_9_1_2')"></button>
+                          </div>
+                          <div class="lob-menu-item-body" id="sec_lob_9_1_2" style="display: block">
+                            <div class="image-guidance-box">Purchase Starter or above Upgrade to use image guidance</div>
+                          </div>
+                        </div>
 
-              <div class="lob-menu-item">
-                <div class="lob-menu-item-head">
-                  <div class="lob-menu-item-title">Model</div>
-                  <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_9_3')"></button>
-                </div>
-                <div class="lob-menu-item-body" id="sec_lob_9_3" style="display: block">
-                  <!--  -->
-                  <div class="radio-group">
-                    <label class="radio-label">
-                      <input type="radio" name="Model" checked="" />
-                      <span class="radio-text">Quick</span>
-                    </label>
-                    <label class="radio-label">
-                      <input type="radio" name="Model" />
-                      <span class="radio-text">Premium</span>
-                    </label>
-                    <label class="radio-label">
-                      <input type="radio" name="Model" />
-                      <span class="radio-text">Advanced</span>
-                    </label>
-                  </div>
-                  <!-- // -->
-                </div>
-              </div>
+                        <div class="lob-menu-item">
+                          <div class="lob-menu-item-head">
+                            <div class="lob-menu-item-title">Advenced Setting</div>
+                            <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_9_1_3')"></button>
+                          </div>
+                          <div class="lob-menu-item-body" id="sec_lob_9_1_3" style="display: block">
+                            <!--  -->
+                            <div class="dl-form">
+                              <dl class="dl-form-item">
+                                <dt class="width-auto">Number of Images</dt>
+                                <dd>
+                                  <input type="text" class="input-text size-sm" value="4" style="max-width: 5.4rem" />
+                                </dd>
+                              </dl>
+                            </div>
+                            <!-- // -->
+                          </div>
+                        </div>
+                        <!-- //lob-menu -->
+                      </div>
+                      <!-- // -->
+                    </li>
+                  </ul>
+                  <script>
+                    $(function () {
+                      $('.sel-setting').on('click', 'li', function () {
+                        const $clicked = $(this);
 
-              <div class="lob-menu-item">
-                <div class="lob-menu-item-head">
-                  <div class="lob-menu-item-title">Advanced Settings</div>
-                  <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_9_4')"></button>
-                </div>
-                <div class="lob-menu-item-body" id="sec_lob_9_4" style="display: block">
-                  <!--  -->
-                  <div class="dl-form">
-                    <dl class="dl-form-item">
-                      <dt class="width-auto">Prompt Adherence(CFG)</dt>
-                      <dd>
-                        <input type="text" class="input-text size-sm" value="25" style="max-width: 5.4rem" />
-                      </dd>
-                    </dl>
-                    <dl class="dl-form-item">
-                      <dt class="width-auto">Steps</dt>
-                      <dd>
-                        <input type="text" class="input-text size-sm" value="25" style="max-width: 5.4rem" />
-                      </dd>
-                    </dl>
-                    <dl class="dl-form-item">
-                      <dt class="width-auto">Number of Images</dt>
-                      <dd>
-                        <input type="text" class="input-text size-sm" value="4" style="max-width: 5.4rem" />
-                      </dd>
-                    </dl>
-                  </div>
+                        if ($clicked.hasClass('active')) {
+                          return;
+                        }
+
+                        $('.sel-setting li').removeClass('active');
+                        $clicked.addClass('active');
+                      });
+                    });
+                  </script>
                   <!-- // -->
                 </div>
               </div>
