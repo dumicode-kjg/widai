@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image | Widai</title>
+
+    <!-- <link rel="icon" type="image/png" href="/">
+  <link rel="apple-touch-icon" href="/"> -->
+
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../assets/css/common-ui.css" />
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/common-ui.js"></script>
+  </head>
+
+  <body>
+    <div id="wrap" class="g-wrap">
+      <!-- 헤더 영역 -->
+      <header id="header">
+        <!-- 헤더 컨텐츠 영역 -->
+        <div class="header-in">
+          <h1 class="logo">
+            <a href="#" class="beta">
+              <i class="logo-img"></i>
+              <span class="logo-text"></span>
+            </a>
+          </h1>
+
+          <div class="utilbox">
+            <button type="button" class="btn-style size-sm outline">Create</button>
+            <button type="button" class="btn-style size-sm">Upgrade</button>
+            <div class="user-on">
+              <button type="button" class="notify ui-dropper" data-drop="head_drop_notify">
+                <span class="sr-only">알림글</span>
+              </button>
+              <button type="button" class="user ui-dropper" data-drop="head_drop_user">
+                <span class="sr-only">mypage</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- //헤더 컨텐츠 영역 -->
+      </header>
+      <!-- //헤더 영역 -->
+      <!-- 컨테이너 영역 -->
+      <div id="container">
+        <!-- lnb -->
+        <div class="lnb">
+          <div class="top-toggle">
+            <button type="button" class="btn-toggle" onclick="lnbToggle()"><span class="sr-only">메뉴 확장/축소</span></button>
+          </div>
+          <ul class="lnb-menu">
+            <li>
+              <a href="#">
+                <i class="icon icon-home"></i>
+                <span class="text">Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="active">
+                <i class="icon icon-image"></i>
+                <span class="text">Image</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-video"></i>
+                <span class="text">Video</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-shorts"></i>
+                <span class="text">Shorts</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-k-art"></i>
+                <span class="text">K-Art</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-others"></i>
+                <span class="text">Others</span>
+              </a>
+            </li>
+          </ul>
+          <a href="#" class="lnb-like">
+            <i class="icon icon-heart"></i>
+            <span class="text">Liked</span>
+          </a>
+        </div>
+        <!-- //lnb -->
+        <!-- lob -->
+        <div class="lob">
+          <div class="lob-container">
+            <div class="lob-head">
+              <h2 class="lob-title">Create Image</h2>
+            </div>
+            <div class="lob-body">
+              <!-- lob-menu -->
+              <div class="lob-menu">
+                <div class="lob-menu-item">
+                  <div class="lob-menu-item-head">
+                    <div class="lob-menu-item-title">Prompt</div>
+                    <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_2_3')"></button>
+                  </div>
+                  <div class="lob-menu-item-body" id="sec_lob_2_3" style="display: block">
+                    <textarea class="input-text" placeholder="e.g, A cat is sitting ona table. We support all languages.">e.g, A cat is sitting ona table. We support all languages.</textarea>
+                    <div class="ctrl-switch">
+                      <div class="switch-col">
+                        <div class="switch-tit">Auto Enhance</div>
+                        <label class="toggle-switch size-sm">
+                          <input type="checkbox" name="checkbox1" />
+                          <div class="toogle-text">
+                            <span class="on">On</span>
+                            <span class="off">OFF</span>
+                          </div>
+                          <div class="val"></div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="lob-menu-item">
+                  <div class="lob-menu-item-head">
+                    <div class="lob-menu-item-title">Model</div>
+                    <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_2_10')"></button>
+                  </div>
+                  <div class="lob-menu-item-body" id="sec_lob_2_10" style="display: block">
+                    <!-- model group -->
+                    <div class="model-group">
+                      <div class="model-title">
+                        Imagen 4
+                        <button type="button" class="model-del"></button>
+                      </div>
+                      <!--  -->
+                      <div class="dl-form">
+                        <dl class="dl-form-item column">
+                          <dt>Number of images</dt>
+                          <dd>
+                            <select class="custom-select size-sm">
+                              <option value="1">1</option>
+                              <option value="1">2</option>
+                              <option value="1">3</option>
+                              <option value="1">4</option>
+                            </select>
+                          </dd>
+                        </dl>
+
+                        <dl class="dl-form-item column">
+                          <dt>Sample Image Size</dt>
+                          <dd>
+                            <select class="custom-select size-sm">
+                              <option value="1">1K</option>
+                              <option value="1">2K</option>
+                              <option value="1">3K</option>
+                              <option value="1">4K</option>
+                            </select>
+                          </dd>
+                        </dl>
+
+                        <dl class="dl-form-item column">
+                          <dt>Aspect Ratio</dt>
+                          <dd>
+                            <select class="custom-select size-sm">
+                              <option value="1">1:1</option>
+                              <option value="1">1:2</option>
+                              <option value="1">1:3</option>
+                              <option value="1">1:4</option>
+                            </select>
+                          </dd>
+                        </dl>
+
+                        <dl class="dl-form-item column">
+                          <dt>Person Generation</dt>
+                          <dd>
+                            <div class="radio-group">
+                              <label class="radio-label">
+                                <input type="radio" name="gen" checked="" />
+                                <span class="radio-text">Allow</span>
+                              </label>
+                              <label class="radio-label">
+                                <input type="radio" name="gen" />
+                                <span class="radio-text">Don’t Allow</span>
+                              </label>
+                              <label class="radio-label">
+                                <input type="radio" name="gen" />
+                                <span class="radio-text">Allow All</span>
+                              </label>
+                            </div>
+                          </dd>
+                        </dl>
+                      </div>
+                      <!-- // -->
+                    </div>
+                    <!-- //model group -->
+                    <!-- model group -->
+                    <div class="model-group">
+                      <div class="model-title">
+                        Flux 1.1 Pro
+                        <button type="button" class="model-del"></button>
+                      </div>
+                      <!--  -->
+                      <div class="dl-form">
+                        <dl class="dl-form-item column">
+                          <dt>Number of images</dt>
+                          <dd>
+                            <select class="custom-select size-sm">
+                              <option value="1">1</option>
+                              <option value="1">2</option>
+                              <option value="1">3</option>
+                              <option value="1">4</option>
+                            </select>
+                          </dd>
+                        </dl>
+
+                        <dl class="dl-form-item column">
+                          <dt>Sample Image Size</dt>
+                          <dd>
+                            <select class="custom-select size-sm">
+                              <option value="1">1K</option>
+                              <option value="1">2K</option>
+                              <option value="1">3K</option>
+                              <option value="1">4K</option>
+                            </select>
+                          </dd>
+                        </dl>
+
+                        <dl class="dl-form-item column">
+                          <dt>Aspect Ratio</dt>
+                          <dd>
+                            <select class="custom-select size-sm">
+                              <option value="1">1:1</option>
+                              <option value="1">1:2</option>
+                              <option value="1">1:3</option>
+                              <option value="1">1:4</option>
+                            </select>
+                          </dd>
+                        </dl>
+
+                        <div class="model-row">
+                          <div class="model-col">
+                            <dl class="dl-form-item column">
+                              <dt>Width</dt>
+                              <dd>
+                                <input type="text" class="input-text size-sm" value="1024" />
+                              </dd>
+                            </dl>
+                          </div>
+                          <div class="model-col">
+                            <dl class="dl-form-item column">
+                              <dt>Height</dt>
+                              <dd>
+                                <input type="text" class="input-text size-sm" value="768" />
+                              </dd>
+                            </dl>
+                          </div>
+                        </div>
+
+                        <dl class="dl-form-item column">
+                          <dt>Output Format</dt>
+                          <dd>
+                            <select class="custom-select size-sm">
+                              <option value="1">Jpeg</option>
+                              <option value="1">Png</option>
+                            </select>
+                          </dd>
+                        </dl>
+
+                        <dl class="dl-form-item column">
+                          <dt>Safety tolerance</dt>
+                          <dd>
+                            <!-- slide -->
+                            <div id="ModelImagesSlider" class="custom-slider"></div>
+                            <input type="text" class="input-text size-sm" id="ModelImagesVal" value="3" style="max-width: 4.2rem; padding: 0 1.2rem" autocomplete="off" />
+                            <script>
+                              $(function () {
+                                const $slider = $('#ModelImagesSlider');
+                                const $input = $('#ModelImagesVal');
+
+                                // 슬라이더 초기화
+                                $slider.slider({
+                                  value: 3,
+                                  range: 'min',
+                                  min: 1,
+                                  max: 10,
+                                  animate: true,
+                                  slide: function (event, ui) {
+                                    $input.val(ui.value);
+                                  },
+                                });
+
+                                // input 변경 → 슬라이더 갱신
+                                $input.on('input change', function () {
+                                  const val = parseInt($(this).val(), 10);
+                                  if (!isNaN(val) && val >= 1 && val <= 10) {
+                                    $slider.slider('value', val);
+                                  }
+                                });
+                              });
+                            </script>
+                            <!-- //slide -->
+                          </dd>
+                        </dl>
+
+                        <dl class="dl-form-item column">
+                          <dt>Prompt upsampling</dt>
+                          <dd>
+                            <label class="toggle-switch size-sm">
+                              <input type="checkbox" name="checkbox1" checked />
+
+                              <div class="val"></div>
+
+                              <div class="toogle-text">
+                                <span class="on">True</span>
+                                <span class="off">False</span>
+                              </div>
+                            </label>
+                          </dd>
+                        </dl>
+                      </div>
+                      <!-- // -->
+                    </div>
+                    <!-- //model group -->
+                    <!-- model group -->
+                    <div class="model-group">
+                      <div class="model-title">
+                        Flux 1 Kontext Pro/Max
+                        <button type="button" class="model-del"></button>
+                      </div>
+                      <!--  -->
+                      <div class="dl-form">
+                        <dl class="dl-form-item column">
+                          <dt>Omni Reference</dt>
+                          <dd>
+                            <div class="upload-drag-box">
+                              <i class="icon-meia-image-plus"></i>
+                              <div class="text-center">
+                                Drag & dropup to 4 images <br />
+                                <span class="light">
+                                  Use up to 4 Backgrounds, <br />
+                                  characters or items, and combine them freely</span
+                                >
+                              </div>
+                            </div>
+                          </dd>
+                        </dl>
+
+                        <dl class="dl-form-item column">
+                          <dt>Number of images</dt>
+                          <dd>
+                            <select class="custom-select size-sm">
+                              <option value="1">1</option>
+                              <option value="1">2</option>
+                              <option value="1">3</option>
+                              <option value="1">4</option>
+                            </select>
+                          </dd>
+                        </dl>
+                      </div>
+                      <!-- // -->
+                    </div>
+                    <!-- //model group -->
+                    <!-- btn -->
+                    <button type="button" class="btn-style outline size-rg">Add Model</button>
+                    <!-- //btn -->
+                  </div>
+                </div>
+              </div>
+              <!-- //lob-menu -->
+            </div>
+          </div>
+          <div class="lob-footer">
+            <button type="button" class="btn-style size-rg">Create Image</button>
+          </div>
+        </div>
+        <!-- //lob -->
+        <!-- contents -->
+        <div class="contents">
+          <!--  -->
+          <ul class="tab">
+            <li><a href="#" class="active">Generation</a></li>
+            <li><a href="#">Albums</a></li>
+          </ul>
+          <div class="inner-content">
+            <!-- inner-content -->
+            <div class="title-wrap">
+              <h3 class="title-17">Today</h3>
+              <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_acc')"></button>
+            </div>
+            <div id="sec_acc" style="display: block">
+              <!-- group-flex progress -->
+              <div class="group-flex progress">
+                <div class="progress-noti"><i class="icon-progress-noti"></i>Your image is being generated. This may take a few seconds.</div>
+                <div class="cont-body">
+                  <!-- image-list -->
+                  <ul class="image-list">
+                    <li>
+                      <!-- progress-item -->
+                      <div class="progress-item">
+                        <div class="progress-info">
+                          <div class="text">10% Complete</div>
+                          <div class="val-box">
+                            <div class="val" style="width: 10%"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //progress-item -->
+                    </li>
+                    <li>
+                      <!-- progress-item -->
+                      <div class="progress-item">
+                        <div class="progress-info">
+                          <div class="text">50% Complete</div>
+                          <div class="val-box">
+                            <div class="val" style="width: 50%"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //progress-item -->
+                    </li>
+                    <li>
+                      <!-- progress-item -->
+                      <div class="progress-item">
+                        <div class="progress-info">
+                          <div class="text">50% Complete</div>
+                          <div class="val-box">
+                            <div class="val" style="width: 50%"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //progress-item -->
+                    </li>
+                    <li>
+                      <!-- progress-item -->
+                      <div class="progress-item">
+                        <div class="progress-info">
+                          <div class="text">50% Complete</div>
+                          <div class="val-box">
+                            <div class="val" style="width: 50%"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //progress-item -->
+                    </li>
+                  </ul>
+                  <!-- //image-list -->
+                </div>
+                <div class="text-info">
+                  <div class="text-sec">
+                    <p class="text" id="infoText01_pro">
+                      A glowing blue and pink flower with green leaves, in the style of anime, fantasy background, glowing lights, sparkles, water droplets, digital art, simple, cartoon, cute, colorful, neon colors, magical, fantasy world.A glowing blue and pink flower with green leaves, in the
+                      style of anime, fantasy background, glowing lights, sparkles, water droplets, digital art, simple, cartoon, cute, colorful, neon colors, magical, fantasy world.
+                    </p>
+                    <button type="button" class="copy">Copy</button>
+                    <button type="button" class="more" onclick="viewFullText(this, '#infoText01_pro')"><i class="icon-plus-circle-solid"></i>more</button>
+                  </div>
+                  <div class="tags">
+                    <span class="tag">Ratio 1:1</span>
+                    <span class="tag">1280px</span>
+                  </div>
+                </div>
+              </div>
+              <!-- //group-flex progress -->
+
+              <!-- group-flex -->
+              <div class="group-flex">
+                <div class="cont-body">
+                  <!-- image-list -->
+                  <ul class="image-list">
+                    <li>
+                      <div class="in-box">
+                        <div class="img"><img src="../assets/img/img_imagelist00.png" alt="" /></div>
+                        <div class="tag-name">name</div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="in-box">
+                        <div class="img"><img src="../assets/img/img_imagelist00.png" alt="" /></div>
+                        <div class="tag-name">name</div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="in-box">
+                        <div class="img"><img src="../assets/img/img_imagelist00.png" alt="" /></div>
+                        <div class="tag-name">name</div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="in-box">
+                        <div class="img"><img src="../assets/img/img_imagelist00.png" alt="" /></div>
+                        <div class="tag-name">name</div>
+                      </div>
+                    </li>
+                  </ul>
+                  <!-- //image-list -->
+                </div>
+                <div class="text-info">
+                  <div class="text-sec">
+                    <p class="text" id="infoText01">
+                      A glowing blue and pink flower with green leaves, in the style of anime, fantasy background, glowing lights, sparkles, water droplets, digital art, simple, cartoon, cute, colorful, neon colors, magical, fantasy world.A glowing blue and pink flower with green leaves, in the
+                      style of anime, fantasy background, glowing lights, sparkles, water droplets, digital art, simple, cartoon, cute, colorful, neon colors, magical, fantasy world.
+                    </p>
+                    <button type="button" class="copy">Copy</button>
+                    <button type="button" class="more" onclick="viewFullText(this, '#infoText01')"><i class="icon-plus-circle-solid"></i>more</button>
+                  </div>
+                  <div class="tags">
+                    <span class="tag">Ratio 1:1</span>
+                    <span class="tag">1280px</span>
+                  </div>
+                </div>
+              </div>
+              <!-- //group-flex -->
+            </div>
+
+            <div class="title-wrap">
+              <h3 class="title-17">Yesterday</h3>
+              <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_acc2')"></button>
+            </div>
+            <div id="sec_acc2" style="display: block">
+              <!-- group-flex -->
+              <div class="group-flex">
+                <div class="cont-body">
+                  <!-- image-list -->
+                  <ul class="image-list">
+                    <li>
+                      <div class="in-box">
+                        <div class="img"><img src="../assets/img/img_imagelist00.png" alt="" /></div>
+                        <div class="tag-name">name</div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="in-box">
+                        <div class="img"><img src="../assets/img/img_imagelist00.png" alt="" /></div>
+                        <div class="tag-name">name</div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="in-box">
+                        <div class="img"><img src="../assets/img/img_imagelist00.png" alt="" /></div>
+                        <div class="tag-name">name</div>
+                      </div>
+                    </li>
+                  </ul>
+                  <!-- //image-list -->
+                </div>
+                <div class="text-info">
+                  <div class="text-sec">
+                    <p class="text" id="infoText02">
+                      A glowing blue and pink flower with green leaves, in the style of anime, fantasy background, glowing lights, sparkles, water droplets, digital art, simple, cartoon, cute, colorful, neon colors, magical, fantasy world.A glowing blue and pink flower with green leaves, in the
+                      style of anime, fantasy background, glowing lights, sparkles, water droplets, digital art, simple, cartoon, cute, colorful, neon colors, magical, fantasy world.
+                    </p>
+                    <button type="button" class="copy">Copy</button>
+                    <button type="button" class="more" onclick="viewFullText(this, '#infoText02')"><i class="icon-plus-circle-solid"></i>more</button>
+                  </div>
+                  <div class="tags">
+                    <span class="tag">Ratio 1:1</span>
+                    <span class="tag">1280px</span>
+                  </div>
+                </div>
+              </div>
+              <!-- //group-flex -->
+            </div>
+            <!-- //inner-content -->
+          </div>
+          <!-- // -->
+        </div>
+        <!-- //contents -->
+      </div>
+      <!-- //컨테이너 영역 -->
+    </div>
+
+    <!-- pop, layer -->
+    <div id="head_drop_notify" class="ui-dropdown">
+      <ul class="notify-list">
+        <li>
+          <a href="#">
+            <div class="tit">Announce Title</div>
+            <div class="desc">DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</div>
+            <div class="date">2025-08-08</div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="tit">Announce Title</div>
+            <div class="desc">DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</div>
+            <div class="date">2025-08-08</div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="tit">Announce Title</div>
+            <div class="desc">DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</div>
+            <div class="date">2025-08-08</div>
+          </a>
+        </li>
+      </ul>
+      <div class="notify-btns">
+        <button type="button" class="btn-style outline size-sm">Close</button>
+        <button type="button" class="btn-style size-sm">Go to Announce</button>
+      </div>
+    </div>
+
+    <div id="head_drop_user" class="ui-dropdown">
+      <ul class="drop-menu">
+        <li>
+          <a href="#"><i class="icon icon-profile-circle"></i>Account Setting</a>
+        </li>
+        <li>
+          <a href="#"><i class="icon icon-badge-check"></i>Manage Subscription</a>
+        </li>
+        <li>
+          <a href="#"><i class="icon icon-help-circle"></i>Help Center</a>
+        </li>
+        <li class="mt-08">
+          <a href="#"><i class="icon icon-log-out"></i>Log Out</a>
+        </li>
+      </ul>
+    </div>
+    <!-- //pop, layer -->
+  </body>
+</html>

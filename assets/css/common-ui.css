@@ -1264,7 +1264,8 @@ body .ui-widget * {
 .upload-drag-box:not(.success):hover,
 .upload-drag-box:not(.success):active,
 .upload-drag-box:not(.success).active {
-  border: 0.2rem solid #171719;
+  border: 0.1rem solid #171719;
+  box-shadow: inset 0 0 0 0.1rem #171719;
   background: var(--color-white);
   cursor: pointer;
 }
@@ -1294,6 +1295,11 @@ body .ui-widget * {
   right: 0;
   width: 2.8rem;
   height: 2.8rem;
+}
+.upload-drag-box .light {
+  display: block;
+  margin-top: 0.4rem;
+  color: #37383C29;
 }
 
 .model-wrap {
@@ -1414,6 +1420,26 @@ body .ui-widget * {
 }
 .dl-form-item dd > * {
   flex: 1;
+}
+.dl-form-item dd > .toggle-switch {
+  flex: none;
+}
+
+.dl-form-item.column {
+  flex-direction: column;
+}
+.dl-form-item.column + .dl-form-item.column,
+.model-row + .dl-form-item.column,
+.dl-form-item.column + .model-row {
+  margin-top: 0.4rem;
+}
+.dl-form-item.column dt {
+  width: 100%;
+  margin-bottom: 0.4rem;
+}
+.dl-form-item.column dd {
+  justify-content: flex-start;
+  width: 100%;
 }
 
 .contents {
@@ -1830,6 +1856,7 @@ textarea.input-text {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  position: relative;
 }
 .toggle-switch input {
   position: absolute !important;
@@ -4047,4 +4074,35 @@ textarea.input-text {
   display: flex;
   align-self: center;
   color: #37383c9c;
+}
+
+/* new */
+.model-group {
+  margin-bottom: 0.8rem;
+  padding: 0.4rem 1.6rem;
+  box-shadow: inset 0 0 0 0.1rem #f2f2f2;
+  border-radius: 0.4rem;
+}
+.model-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+  color: #171719;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  font-weight: 700;
+}
+.model-del {
+  display: inline-flex;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: url(../img/icon/icon_xmark_circle_solid.svg) no-repeat center/contain;
+}
+.model-row {
+  display: flex;
+  gap: 0.8rem;
+}
+.model-col {
+  flex: 1;
 }
