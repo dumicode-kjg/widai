@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image | Widai</title>
+
+    <!-- <link rel="icon" type="image/png" href="/">
+  <link rel="apple-touch-icon" href="/"> -->
+
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../assets/css/common-ui.css" />
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/common-ui.js"></script>
+  </head>
+
+  <body>
+    <div id="wrap" class="g-wrap">
+      <!-- 헤더 영역 -->
+      <header id="header">
+        <!-- 헤더 컨텐츠 영역 -->
+        <div class="header-in">
+          <h1 class="logo">
+            <a href="#" class="beta">
+              <i class="logo-img"></i>
+              <span class="logo-text"></span>
+            </a>
+          </h1>
+        </div>
+        <!-- //헤더 컨텐츠 영역 -->
+      </header>
+      <!-- //헤더 영역 -->
+      <!-- 컨테이너 영역 -->
+      <div id="container">
+        <!-- lnb -->
+        <div class="lnb">
+          <div class="top-toggle">
+            <button type="button" class="btn-toggle" onclick="lnbToggle()"><span class="sr-only">메뉴 확장/축소</span></button>
+          </div>
+          <ul class="lnb-menu">
+            <li>
+              <a href="#">
+                <i class="icon icon-home"></i>
+                <span class="text">Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="active">
+                <i class="icon icon-image"></i>
+                <span class="text">Image</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-video"></i>
+                <span class="text">Video</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-shorts"></i>
+                <span class="text">Shorts</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-k-art"></i>
+                <span class="text">K-Art</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-others"></i>
+                <span class="text">Others</span>
+              </a>
+            </li>
+          </ul>
+          <a href="#" class="lnb-like">
+            <i class="icon icon-heart"></i>
+            <span class="text">Liked</span>
+          </a>
+        </div>
+        <!-- //lnb -->
+        <!-- lob -->
+        <div class="lob">
+          <div class="lob-container">
+            <div class="lob-head">
+              <h2 class="lob-title">Create Image</h2>
+            </div>
+            <div class="lob-body">
+              <!-- lob-menu -->
+              <div class="lob-menu">
+                <div class="lob-menu-item">
+                  <div class="lob-menu-item-head">
+                    <div class="lob-menu-item-title">Prompt</div>
+                    <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_2_3')"></button>
+                  </div>
+                  <div class="lob-menu-item-body" id="sec_lob_2_3" style="display: block">
+                    <textarea class="input-text" placeholder="e.g, A cat is sitting ona table. We support all languages.">e.g, A cat is sitting ona table. We support all languages.</textarea>
+                    <div class="ctrl-switch">
+                      <div class="switch-col">
+                        <div class="switch-tit">Auto Enhance</div>
+                        <label class="toggle-switch size-sm">
+                          <input type="checkbox" name="checkbox1" />
+                          <div class="toogle-text">
+                            <span class="on">On</span>
+                            <span class="off">OFF</span>
+                          </div>
+                          <div class="val"></div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="lob-menu-item">
+                  <div class="lob-menu-item-head">
+                    <div class="lob-menu-item-title">Model</div>
+                    <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_2_10')"></button>
+                  </div>
+                  <div class="lob-menu-item-body" id="sec_lob_2_10" style="display: block">
+                    <!-- model group -->
+                    <div class="model-group">
+                      <div class="model-title">
+                        Imagen 4 Ultra
+                        <button type="button" class="model-del"></button>
+                      </div>
+                      <!--  -->
+                      <div class="dl-form">
+                        <dl class="dl-form-item column">
+                          <dt>Number of images</dt>
+                          <dd>
+                            <select class="custom-select size-sm">
+                              <option value="1">1</option>
+                              <option value="1">2</option>
+                              <option value="1">3</option>
+                              <option value="1">4</option>
+                            </select>
+                          </dd>
+                        </dl>
+
+                        <dl class="dl-form-item column">
+                          <dt>Aspect Ratio</dt>
+                          <dd>
+                            <select class="custom-select size-sm">
+                              <option value="1">1:1</option>
+                              <option value="1">1:1</option>
+                              <option value="1">1:1</option>
+                              <option value="1">1:1</option>
+                            </select>
+                          </dd>
+                        </dl>
+
+                        <dl class="dl-form-item column">
+                          <dt>Output resolution</dt>
+                          <dd>
+                            <select class="custom-select size-sm">
+                              <option value="1">1K</option>
+                              <option value="1">1K</option>
+                              <option value="1">1K</option>
+                              <option value="1">1K</option>
+                            </select>
+                          </dd>
+                        </dl>
+                      </div>
+                      <!-- // -->
+                    </div>
+                    <!-- //model group -->
+
+                    <!-- btn -->
+                    <button type="button" class="btn-style outline size-rg">Add Model</button>
+                    <!-- //btn -->
+                  </div>
+                </div>
+              </div>
+              <!-- //lob-menu -->
+            </div>
+          </div>
+          <div class="lob-footer">
+            <button type="button" class="btn-style size-rg">Create Image</button>
+          </div>
+        </div>
+        <!-- //lob -->
+        <!-- contents -->
+        <div class="contents">
+          <!--  -->
+
+          <!-- // -->
+        </div>
+        <!-- //contents -->
+      </div>
+      <!-- //컨테이너 영역 -->
+    </div>
+
+    <!-- pop, layer -->
+    <!-- //pop, layer -->
+  </body>
+</html>

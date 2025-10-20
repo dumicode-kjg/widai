@@ -715,6 +715,14 @@ button {
   justify-content: space-evenly !important;
 }
 
+/* width, height */
+.max-width-60 {
+  max-width: 6rem !important;
+}
+.max-width-76 {
+  max-width: 7.6rem !important;
+}
+
 /* font-family */
 body .ui-widget,
 body .ui-widget * {
@@ -1306,7 +1314,7 @@ body .ui-widget * {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  padding: 0.4rem;
+  padding-bottom: 0.4rem;
 }
 .model-wrap .btn-add {
   display: inline-flex;
@@ -1315,6 +1323,9 @@ body .ui-widget * {
   border-radius: 100%;
   background: url(../img/icon/icon_plus.svg) no-repeat center/2.4rem;
   box-shadow: 1px 0 0 0 rgba(0, 0, 0, 0.13) inset, -1px 0 0 0 rgba(0, 0, 0, 0.13) inset, 0 -1px 0 0 rgba(0, 0, 0, 0.17) inset, 0 1px 0 0 rgba(204, 204, 204, 0.5) inset, 0 3px 1px -1px rgba(26, 26, 26, 0.07);
+}
+.model-wrap .custom-select {
+  margin-bottom: 0.4rem;
 }
 .model-wrap .btn-add:disabled {
   opacity: 0.5;
@@ -1417,6 +1428,11 @@ body .ui-widget * {
   align-items: center;
   gap: 0.8rem;
   min-width: 0;
+}
+.dl-form-item dd .between-text {
+  flex: none;
+  margin: 0 -0.4rem;
+  color: #000;
 }
 .dl-form-item dd > * {
   flex: 1;
@@ -1960,6 +1976,7 @@ textarea.input-text {
   align-items: center;
   position: relative;
   width: 100%;
+  min-width: 0;
   height: 3.2rem;
   padding: 0 1.5rem;
   margin: 0;
@@ -2036,7 +2053,7 @@ textarea.input-text {
 }
 .custom-select.size-sm {
   height: 2.8rem;
-  padding: 0 1.1rem;
+  padding: 0 2.8rem 0 1.1rem;
   font-size: 1.2rem;
   line-height: 1.33;
   letter-spacing: 0.0252em;
@@ -2432,6 +2449,13 @@ textarea.input-text {
   height: 1.2rem;
   background: url(../img/icon/icon_nav_arrow_right.svg) no-repeat center/contain;
 }
+.icon-nav-arrow-down {
+  flex: none;
+  display: inline-flex;
+  width: 1.6rem;
+  height: 1.6rem;
+  background: url(../img/icon/icon_nav_arrow_down.svg) no-repeat center/contain;
+}
 .icon-align-justify {
   flex: none;
   display: inline-flex;
@@ -2452,6 +2476,13 @@ textarea.input-text {
   width: 2.4rem;
   height: 2.4rem;
   background: url(../img/icon/icon_xmark.svg) no-repeat center/contain;
+}
+.icon-xmark-black {
+  flex: none;
+  display: inline-flex;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url(../img/icon/icon_xmark_black.svg) no-repeat center/contain;
 }
 .icon-xmark-black {
   flex: none;
@@ -4105,4 +4136,84 @@ textarea.input-text {
 }
 .model-col {
   flex: 1;
+}
+
+.add-setting {
+  
+}
+.add-setting--head {
+  position: relative;
+  margin-top: 0.4rem;
+  padding: 0.4rem 0;
+}
+.add-setting--head::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 0.1rem;
+  background-color: #70737C38;
+}
+.btn-add-setting-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  position: relative;
+  width: 15.5rem;
+  height: 2.4rem;
+  margin: 0 auto;
+  border: 0.1rem solid #70737C38;
+  border-radius: 0.4rem;
+  background: #fff;
+  color: #000;
+  font-size: 1.2rem;
+  line-height: 1.33;
+  font-weight: 500;
+}
+.btn-add-setting-toggle i {
+  transition: var(--transition-base);
+}
+.btn-add-setting-toggle.active i {
+  transform: rotate(180deg);
+}
+.add-setting--body {
+  display: none;
+}
+
+.sel-colors {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+.sel-colors .color-item {
+  position: relative;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 0.1rem solid #70737C38;
+  border-radius: 0.4rem;
+}
+.sel-colors .color-item .btn-del {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: none;
+  border-radius: 50%;
+  background-color: #fff;
+  mask-image: url(../img/icon/icon_xmark_circle_solid.svg);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+.sel-colors .btn-add {
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 0.1rem solid #70737C38;
+  border-radius: 0.4rem;
+  background: url(../img/icon/icon_plus.svg) no-repeat center/1.6rem;
 }

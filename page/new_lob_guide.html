@@ -128,6 +128,20 @@
                 </div>
                 <div class="lob-menu-item">
                   <div class="lob-menu-item-head">
+                    <div class="lob-menu-item-title">Prompt</div>
+                    <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_2_4')"></button>
+                  </div>
+                  <div class="lob-menu-item-body" id="sec_lob_2_4" style="display: block">
+                    <textarea class="input-text" placeholder="e.g, A cat is sitting ona table. We support all languages.">e.g, A cat is sitting ona table. We support all languages.</textarea>
+                    <div class="ctrl-switch">
+                      <div class="switch-col">
+                        <div class="switch-tit">Auto Enhance : OFF</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="lob-menu-item">
+                  <div class="lob-menu-item-head">
                     <div class="lob-menu-item-title">Model</div>
                     <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_2_10')"></button>
                   </div>
@@ -153,30 +167,6 @@
                         </dl>
 
                         <dl class="dl-form-item column">
-                          <dt>Sample Image Size</dt>
-                          <dd>
-                            <select class="custom-select size-sm">
-                              <option value="1">1K</option>
-                              <option value="1">1K</option>
-                              <option value="1">1K</option>
-                              <option value="1">1K</option>
-                            </select>
-                          </dd>
-                        </dl>
-
-                        <dl class="dl-form-item column">
-                          <dt>Aspect Ratio</dt>
-                          <dd>
-                            <select class="custom-select size-sm">
-                              <option value="1">1:1</option>
-                              <option value="1">1:1</option>
-                              <option value="1">1:1</option>
-                              <option value="1">1:1</option>
-                            </select>
-                          </dd>
-                        </dl>
-
-                        <dl class="dl-form-item column">
                           <dt>Person Generation</dt>
                           <dd>
                             <div class="radio-group">
@@ -195,51 +185,17 @@
                             </div>
                           </dd>
                         </dl>
-                      </div>
-                      <!-- // -->
-                    </div>
-                    <!-- //model group -->
-                    <!-- model group -->
-                    <div class="model-group">
-                      <div class="model-title">
-                        Flux 1.1 Pro
-                        <button type="button" class="model-del"></button>
-                      </div>
-                      <!--  -->
-                      <div class="dl-form">
-                        <dl class="dl-form-item column">
-                          <dt>Number of images</dt>
-                          <dd>
-                            <select class="custom-select size-sm">
-                              <option value="1">1</option>
-                              <option value="1">2</option>
-                              <option value="1">3</option>
-                              <option value="1">4</option>
-                            </select>
-                          </dd>
-                        </dl>
 
                         <dl class="dl-form-item column">
-                          <dt>Sample Image Size</dt>
+                          <dt>Image Size</dt>
                           <dd>
                             <select class="custom-select size-sm">
-                              <option value="1">1K</option>
-                              <option value="1">1K</option>
-                              <option value="1">1K</option>
-                              <option value="1">1K</option>
+                              <option value="1">Square</option>
+                              <option value="1">Square</option>
                             </select>
-                          </dd>
-                        </dl>
-
-                        <dl class="dl-form-item column">
-                          <dt>Aspect Ratio</dt>
-                          <dd>
-                            <select class="custom-select size-sm">
-                              <option value="1">1:1</option>
-                              <option value="1">1:1</option>
-                              <option value="1">1:1</option>
-                              <option value="1">1:1</option>
-                            </select>
+                            <input type="text" class="input-text size-sm flex-none" value="512" style="width: 5.8rem" />
+                            <div class="between-text">×</div>
+                            <input type="text" class="input-text size-sm flex-none" value="512" style="width: 5.8rem" />
                           </dd>
                         </dl>
 
@@ -261,18 +217,6 @@
                             </dl>
                           </div>
                         </div>
-
-                        <dl class="dl-form-item column">
-                          <dt>Output Format</dt>
-                          <dd>
-                            <select class="custom-select size-sm">
-                              <option value="1">Jpeg</option>
-                              <option value="1">Jpeg</option>
-                              <option value="1">Jpeg</option>
-                              <option value="1">Jpeg</option>
-                            </select>
-                          </dd>
-                        </dl>
 
                         <dl class="dl-form-item column">
                           <dt>Safety tolerance</dt>
@@ -309,121 +253,12 @@
                             <!-- //slide -->
                           </dd>
                         </dl>
-                      </div>
-                      <!-- // -->
-                    </div>
-                    <!-- //model group -->
-                    <!-- model group -->
-                    <div class="model-group">
-                      <div class="model-title">
-                        Flux 1.1 Ultra/Raw
-                        <button type="button" class="model-del"></button>
-                      </div>
-                      <!--  -->
-                      <div class="dl-form">
-                        <dl class="dl-form-item column">
-                          <dt>Number of images</dt>
-                          <dd>
-                            <select class="custom-select size-sm">
-                              <option value="1">1</option>
-                              <option value="1">2</option>
-                              <option value="1">3</option>
-                              <option value="1">4</option>
-                            </select>
-                          </dd>
-                        </dl>
 
                         <dl class="dl-form-item column">
-                          <dt>Sample Image Size</dt>
-                          <dd>
-                            <select class="custom-select size-sm">
-                              <option value="1">1K</option>
-                              <option value="1">1K</option>
-                              <option value="1">1K</option>
-                              <option value="1">1K</option>
-                            </select>
-                          </dd>
-                        </dl>
-
-                        <dl class="dl-form-item column">
-                          <dt>Aspect Ratio</dt>
-                          <dd>
-                            <select class="custom-select size-sm">
-                              <option value="1">1:1</option>
-                              <option value="1">1:1</option>
-                              <option value="1">1:1</option>
-                              <option value="1">1:1</option>
-                            </select>
-                          </dd>
-                        </dl>
-
-                        <dl class="dl-form-item column">
-                          <dt>Output Format</dt>
-                          <dd>
-                            <select class="custom-select size-sm">
-                              <option value="1">Jpeg</option>
-                              <option value="1">Jpeg</option>
-                              <option value="1">Jpeg</option>
-                              <option value="1">Jpeg</option>
-                            </select>
-                          </dd>
-                        </dl>
-
-                        <dl class="dl-form-item column">
-                          <dt>Have a seed</dt>
-                          <dd>
-                            <input type="text" class="input-text size-sm" value="42" />
-                          </dd>
-                        </dl>
-
-                        <dl class="dl-form-item column">
-                          <dt>Image prompt strength</dt>
-                          <dd>
-                            <input type="text" class="input-text size-sm" value="0.1" />
-                          </dd>
-                        </dl>
-
-                        <dl class="dl-form-item column">
-                          <dt>Safety tolerance</dt>
-                          <dd>
-                            <!-- slide -->
-                            <div id="ModelImagesSlider2" class="custom-slider"></div>
-                            <input type="text" class="input-text size-sm" id="ModelImagesVal2" value="3" style="max-width: 4.2rem; padding: 0 1.2rem" autocomplete="off" />
-                            <script>
-                              $(function () {
-                                const $slider = $('#ModelImagesSlider2');
-                                const $input = $('#ModelImagesVal2');
-
-                                // 슬라이더 초기화
-                                $slider.slider({
-                                  value: 3,
-                                  range: 'min',
-                                  min: 1,
-                                  max: 10,
-                                  animate: true,
-                                  slide: function (event, ui) {
-                                    $input.val(ui.value);
-                                  },
-                                });
-
-                                // input 변경 → 슬라이더 갱신
-                                $input.on('input change', function () {
-                                  const val = parseInt($(this).val(), 10);
-                                  if (!isNaN(val) && val >= 1 && val <= 10) {
-                                    $slider.slider('value', val);
-                                  }
-                                });
-                              });
-                            </script>
-                            <!-- //slide -->
-                          </dd>
-                        </dl>
-
-                        <dl class="dl-form-item column">
-                          <dt>Raw</dt>
+                          <dt>Prompt upsampling</dt>
                           <dd>
                             <label class="toggle-switch size-sm">
-                              <input type="checkbox" name="checkbox2" checked />
+                              <input type="checkbox" name="checkbox1" checked />
 
                               <div class="val"></div>
 
@@ -434,18 +269,7 @@
                             </label>
                           </dd>
                         </dl>
-                      </div>
-                      <!-- // -->
-                    </div>
-                    <!-- //model group -->
-                    <!-- model group -->
-                    <div class="model-group">
-                      <div class="model-title">
-                        Flux 1 Kontext Pro/Max
-                        <button type="button" class="model-del"></button>
-                      </div>
-                      <!--  -->
-                      <div class="dl-form">
+
                         <dl class="dl-form-item column">
                           <dt>Omni Reference</dt>
                           <dd>
@@ -462,124 +286,40 @@
                           </dd>
                         </dl>
 
-                        <dl class="dl-form-item column">
-                          <dt>Number of images</dt>
+                        <dl class="dl-form-item">
+                          <dt style="width: 14rem">Aspect Ratio</dt>
                           <dd>
                             <select class="custom-select size-sm">
-                              <option value="1">1</option>
-                              <option value="1">2</option>
-                              <option value="1">3</option>
-                              <option value="1">4</option>
+                              <option value="1">8s</option>
+                              <option value="1">8s</option>
                             </select>
                           </dd>
                         </dl>
 
-                        <dl class="dl-form-item column">
-                          <dt>Sample Image Size</dt>
-                          <dd>
-                            <select class="custom-select size-sm">
-                              <option value="1">1K</option>
-                              <option value="1">1K</option>
-                              <option value="1">1K</option>
-                              <option value="1">1K</option>
-                            </select>
-                          </dd>
-                        </dl>
-
-                        <dl class="dl-form-item column">
+                        <dl class="dl-form-item">
                           <dt>Aspect Ratio</dt>
                           <dd>
                             <select class="custom-select size-sm">
-                              <option value="1">1:1</option>
-                              <option value="1">1:1</option>
-                              <option value="1">1:1</option>
-                              <option value="1">1:1</option>
+                              <option value="1">8s</option>
+                              <option value="1">8s</option>
                             </select>
                           </dd>
                         </dl>
 
                         <dl class="dl-form-item column">
-                          <dt>Have a seed</dt>
+                          <dt>Colors</dt>
                           <dd>
-                            <input type="text" class="input-text size-sm" value="42" />
-                          </dd>
-                        </dl>
-
-                        <dl class="dl-form-item column">
-                          <dt>Aspect Ratio</dt>
-                          <dd>
-                            <input type="text" class="input-text size-sm" value="42" />
-                          </dd>
-                        </dl>
-
-                        <dl class="dl-form-item column">
-                          <dt>Output Format</dt>
-                          <dd>
-                            <select class="custom-select size-sm">
-                              <option value="1">Jpeg</option>
-                              <option value="1">Jpeg</option>
-                              <option value="1">Jpeg</option>
-                              <option value="1">Jpeg</option>
-                            </select>
-                          </dd>
-                        </dl>
-
-                        <dl class="dl-form-item column">
-                          <dt>Prompt upsampling</dt>
-                          <dd>
-                            <label class="toggle-switch size-sm">
-                              <input type="checkbox" name="checkbox3" checked />
-
-                              <div class="val"></div>
-
-                              <div class="toogle-text">
-                                <span class="on">True</span>
-                                <span class="off">False</span>
-                              </div>
-                            </label>
-                          </dd>
-                        </dl>
-
-                        <dl class="dl-form-item column">
-                          <dt>Safety tolerance</dt>
-                          <dd>
-                            <!-- slide -->
-                            <div id="ModelImagesSlider3" class="custom-slider"></div>
-                            <input type="text" class="input-text size-sm" id="ModelImagesVal3" value="3" style="max-width: 4.2rem; padding: 0 1.2rem" autocomplete="off" />
-                            <script>
-                              $(function () {
-                                const $slider = $('#ModelImagesSlider3');
-                                const $input = $('#ModelImagesVal3');
-
-                                // 슬라이더 초기화
-                                $slider.slider({
-                                  value: 3,
-                                  range: 'min',
-                                  min: 1,
-                                  max: 10,
-                                  animate: true,
-                                  slide: function (event, ui) {
-                                    $input.val(ui.value);
-                                  },
-                                });
-
-                                // input 변경 → 슬라이더 갱신
-                                $input.on('input change', function () {
-                                  const val = parseInt($(this).val(), 10);
-                                  if (!isNaN(val) && val >= 1 && val <= 10) {
-                                    $slider.slider('value', val);
-                                  }
-                                });
-                              });
-                            </script>
-                            <!-- //slide -->
+                            <div class="sel-colors">
+                              <div class="color-item" style="background-color: #ff9191"><button type="button" class="btn-del"></button></div>
+                              <div class="color-item" style="background-color: #ff9191"><button type="button" class="btn-del"></button></div>
+                              <button type="button" class="btn-add"></button>
+                            </div>
                           </dd>
                         </dl>
                       </div>
                       <!-- // -->
                     </div>
                     <!-- //model group -->
-
                     <!-- btn -->
                     <button type="button" class="btn-style outline size-rg">Add Model</button>
                     <!-- //btn -->

@@ -146,6 +146,12 @@ $(function () {
     $(".custom-dialog:visible").fadeOut(200);
     $(".dialog-dim").fadeOut(200);
   }
+
+  // add setting
+  $('.btn-add-setting-toggle').on("click", function () {
+    $(this).toggleClass('active');
+    $(this).closest('.add-setting').find('.add-setting--body').stop().slideToggle();
+  })
 });
 
 function lnbToggle() {
