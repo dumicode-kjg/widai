@@ -1309,6 +1309,19 @@ body .ui-widget * {
   margin-top: 0.4rem;
   color: #37383C29;
 }
+.upload-drag-box .sel-imgbox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.upload-drag-box .sel-imgbox img {
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+}
 
 .model-wrap {
   display: flex;
@@ -1408,6 +1421,7 @@ body .ui-widget * {
 
 .dl-form-item {
   display: flex;
+  min-height: 3.6rem;
   padding: 0.4rem 0;
 }
 .dl-form-item dt {
@@ -1424,6 +1438,7 @@ body .ui-widget * {
 .dl-form-item dd {
   flex: 1;
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   align-items: center;
   gap: 0.8rem;
@@ -2193,6 +2208,7 @@ textarea.input-text {
   letter-spacing: 0.0096em;
 }
 .btn-style.size-sm {
+  padding: 0 0.8rem;
   height: 2.8rem;
   font-size: 1.3rem;
   line-height: 1.38;
@@ -2569,6 +2585,13 @@ textarea.input-text {
   width: 2.4rem;
   height: 2.4rem;
   background: url(../img/icon/icon_trash_white.svg) no-repeat center/contain;
+}
+.icon-data-transfer-both {
+  flex: none;
+  display: inline-flex;
+  width: 1.6rem;
+  height: 1.6rem;
+  background: url(../img/icon/icon_data_transfer_both.svg) no-repeat center/contain;
 }
 
 /* cont */

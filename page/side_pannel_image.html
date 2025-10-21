@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video | Widai</title>
+
+    <!-- <link rel="icon" type="image/png" href="/">
+  <link rel="apple-touch-icon" href="/"> -->
+
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../assets/css/common-ui.css" />
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/common-ui.js"></script>
+  </head>
+
+  <body>
+    <div id="wrap" class="g-wrap">
+      <!-- 헤더 영역 -->
+      <header id="header">
+        <!-- 헤더 컨텐츠 영역 -->
+        <div class="header-in">
+          <h1 class="logo">
+            <a href="#" class="beta">
+              <i class="logo-img"></i>
+              <span class="logo-text"></span>
+            </a>
+          </h1>
+
+          <div class="utilbox">
+            <button type="button" class="btn-style size-sm outline">Login</button>
+            <button type="button" class="btn-style size-sm">Sign Up</button>
+          </div>
+        </div>
+        <!-- //헤더 컨텐츠 영역 -->
+      </header>
+      <!-- //헤더 영역 -->
+      <!-- 컨테이너 영역 -->
+      <div id="container">
+        <!-- lnb -->
+        <div class="lnb">
+          <div class="top-toggle">
+            <button type="button" class="btn-toggle" onclick="lnbToggle()"><span class="sr-only">메뉴 확장/축소</span></button>
+          </div>
+          <ul class="lnb-menu">
+            <li>
+              <a href="#">
+                <i class="icon icon-home"></i>
+                <span class="text">Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-image"></i>
+                <span class="text">Image</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="active">
+                <i class="icon icon-video"></i>
+                <span class="text">Video</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-shorts"></i>
+                <span class="text">Shorts</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-k-art"></i>
+                <span class="text">K-Art</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-others"></i>
+                <span class="text">Others</span>
+              </a>
+            </li>
+          </ul>
+          <a href="#" class="lnb-like">
+            <i class="icon icon-heart"></i>
+            <span class="text">Liked</span>
+          </a>
+        </div>
+        <!-- //lnb -->
+        <!-- lob -->
+        <div class="lob">
+          <div class="lob-container">
+            <div class="lob-head">
+              <h2 class="lob-title">Create Video</h2>
+            </div>
+            <div class="lob-body">
+              <!-- tabs -->
+              <div id="lobTabs" class="lob-tabs">
+                <ul>
+                  <li><a href="#tabs-1">Text</a></li>
+                  <li><a href="#tabs-2">Image</a></li>
+                  <li><a href="#tabs-3">Element</a></li>
+                  <li><a href="#tabs-4">Audio</a></li>
+                </ul>
+                <div id="tabs-1">
+                  <!-- lob-menu -->
+                  <div class="lob-menu">
+                    <div class="lob-menu-item">
+                      <div class="lob-menu-item-head">
+                        <div class="lob-menu-item-title">Select Model</div>
+                        <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_3_1_1')"></button>
+                      </div>
+                      <div class="lob-menu-item-body" id="sec_lob_3_1_1" style="display: block">
+                        <select class="custom-select size-sm">
+                          <option value="">Select Model</option>
+                          <option value="">Select Model2</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="lob-menu-item">
+                      <div class="lob-menu-item-head">
+                        <div class="lob-menu-item-title">Prompt</div>
+                        <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_3_1_2')"></button>
+                      </div>
+                      <div class="lob-menu-item-body" id="sec_lob_3_1_2" style="display: block">
+                        <textarea class="input-text">
+Swedish male model, late 20s, youthful but intense masculine features, platinum blonde hair styled in slicked-back pomade, sharp narrow nose, defined cheekbones, chiseled jawline, symmetrical and refined face, clear skin, no freckles, faintly raised corners of the mouth, subtle enigmatic expression, intense gaze, inspired by Penn Badgley in YOU, front-facing ID photo style, head level, squared shoulders, looking directly at the camera, no tilt, no movement, white background, studio lighting, in full natural color, realistic skin tone, no black and w</textarea
+                        >
+                        <div class="ctrl-switch">
+                          <div class="switch-col">
+                            <div class="switch-tit">Auto Sound</div>
+                            <label class="toggle-switch size-sm">
+                              <input type="checkbox" name="checkbox1" />
+                              <div class="val"></div>
+                            </label>
+                          </div>
+                          <div class="switch-col">
+                            <div class="switch-tit">Auto Speech</div>
+                            <label class="toggle-switch size-sm">
+                              <input type="checkbox" name="checkbox2" />
+                              <div class="val"></div>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="lob-menu-item">
+                      <div class="lob-menu-item-head">
+                        <div class="lob-menu-item-title">Settings</div>
+                        <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_3_1_3')"></button>
+                      </div>
+                      <div class="lob-menu-item-body" id="sec_lob_3_1_3" style="display: block">
+                        <div class="dl-form">
+                          <dl class="dl-form-item">
+                            <dt>Quality Mode</dt>
+                            <dd>
+                              <div class="radio-group">
+                                <label class="radio-label">
+                                  <input type="radio" name="qMode" checked="" />
+                                  <span class="radio-text">Lite</span>
+                                </label>
+                                <label class="radio-label">
+                                  <input type="radio" name="qMode" />
+                                  <span class="radio-text">Pro</span>
+                                </label>
+                              </div>
+                            </dd>
+                          </dl>
+                          <dl class="dl-form-item">
+                            <dt>Duration</dt>
+                            <dd>
+                              <div class="radio-group">
+                                <label class="radio-label">
+                                  <input type="radio" name="Duration" checked="" />
+                                  <span class="radio-text">5s</span>
+                                </label>
+                                <label class="radio-label">
+                                  <input type="radio" name="Duration" />
+                                  <span class="radio-text">10s</span>
+                                </label>
+                              </div>
+                            </dd>
+                          </dl>
+                          <dl class="dl-form-item">
+                            <dt>Resolution</dt>
+                            <dd>
+                              <div class="radio-group">
+                                <label class="radio-label">
+                                  <input type="radio" name="Resolution" checked="" />
+                                  <span class="radio-text">480p</span>
+                                </label>
+                                <label class="radio-label">
+                                  <input type="radio" name="Resolution" />
+                                  <span class="radio-text">720p</span>
+                                </label>
+                                <label class="radio-label">
+                                  <input type="radio" name="Resolution" />
+                                  <span class="radio-text">1080p</span>
+                                </label>
+                              </div>
+                            </dd>
+                          </dl>
+                          <dl class="dl-form-item">
+                            <dt>Resolution</dt>
+                            <dd>
+                              <select class="custom-select size-sm">
+                                <option value="">Cinema (16:9)</option>
+                                <option value="">Cinema (16:9)</option>
+                              </select>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //lob-menu -->
+                </div>
+                <div id="tabs-2">
+                  <!-- lob-menu -->
+                  <div class="lob-menu">
+                    <div class="lob-menu-item">
+                      <div class="lob-menu-item-head">
+                        <div class="lob-menu-item-title">Select Model</div>
+                        <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_3_2_1')"></button>
+                      </div>
+                      <div class="lob-menu-item-body" id="sec_lob_3_2_1" style="display: block">
+                        <select class="custom-select size-sm">
+                          <option value="">Select Model</option>
+                          <option value="">Select Model2</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="lob-menu-item">
+                      <div class="lob-menu-item-head">
+                        <div class="lob-menu-item-title">Image</div>
+                        <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_3_2_2')"></button>
+                      </div>
+                      <div class="lob-menu-item-body" id="sec_lob_3_2_2" style="display: block">
+                        <div class="upload-drag-box">
+                          <i class="icon-meia-image-plus"></i>
+                          Drag & drop a image Or <br />from Generation History
+                        </div>
+
+                        <!-- success -->
+                        <div class="upload-drag-box success">
+                          <div class="imgbox">
+                            <img src="../assets/img/img_imagelist00.png" alt="" />
+                          </div>
+                          <button type="button" class="del">
+                            <i class="icon-bin-full"></i>
+                          </button>
+                        </div>
+                        <!-- //success -->
+                      </div>
+                    </div>
+                    <div class="lob-menu-item">
+                      <div class="lob-menu-item-head">
+                        <div class="lob-menu-item-title">Settings</div>
+                        <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_3_2_3')"></button>
+                      </div>
+                      <div class="lob-menu-item-body" id="sec_lob_3_2_3" style="display: block">
+                        <div class="dl-form">
+                          <dl class="dl-form-item">
+                            <dt>Quality Mode</dt>
+                            <dd>
+                              <div class="radio-group">
+                                <label class="radio-label">
+                                  <input type="radio" name="qMode2" checked="" />
+                                  <span class="radio-text">Lite</span>
+                                </label>
+                                <label class="radio-label">
+                                  <input type="radio" name="qMode2" />
+                                  <span class="radio-text">Pro</span>
+                                </label>
+                              </div>
+                            </dd>
+                          </dl>
+                          <dl class="dl-form-item">
+                            <dt>Duration</dt>
+                            <dd>
+                              <div class="radio-group">
+                                <label class="radio-label">
+                                  <input type="radio" name="Duration2" checked="" />
+                                  <span class="radio-text">5s</span>
+                                </label>
+                                <label class="radio-label">
+                                  <input type="radio" name="Duration2" />
+                                  <span class="radio-text">10s</span>
+                                </label>
+                              </div>
+                            </dd>
+                          </dl>
+                          <dl class="dl-form-item">
+                            <dt>Resolution</dt>
+                            <dd>
+                              <div class="radio-group">
+                                <label class="radio-label">
+                                  <input type="radio" name="Resolution2" checked="" />
+                                  <span class="radio-text">480p</span>
+                                </label>
+                                <label class="radio-label">
+                                  <input type="radio" name="Resolution2" />
+                                  <span class="radio-text">720p</span>
+                                </label>
+                                <label class="radio-label">
+                                  <input type="radio" name="Resolution2" />
+                                  <span class="radio-text">1080p</span>
+                                </label>
+                              </div>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //lob-menu -->
+                </div>
+                <div id="tabs-3">
+                  <!-- lob-menu -->
+                  <div class="lob-menu">
+                    <div class="lob-menu-item">
+                      <div class="lob-menu-item-head">
+                        <div class="lob-menu-item-title">Select Model</div>
+                        <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_3_3_1')"></button>
+                      </div>
+                      <div class="lob-menu-item-body" id="sec_lob_3_3_1" style="display: block">
+                        <select class="custom-select size-sm">
+                          <option value="">Select Model</option>
+                          <option value="">Select Model2</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="lob-menu-item">
+                      <div class="lob-menu-item-head">
+                        <div class="lob-menu-item-title">Image</div>
+                        <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_3_3_2')"></button>
+                      </div>
+                      <div class="lob-menu-item-body" id="sec_lob_3_3_2" style="display: block">
+                        <div class="upload-drag-box">
+                          <i class="icon-meia-image-plus"></i>
+                          Drag & drag up to 4 images
+                        </div>
+                      </div>
+                    </div>
+                    <div class="lob-menu-item">
+                      <div class="lob-menu-item-head">
+                        <div class="lob-menu-item-title">Prompt</div>
+                        <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_3_3_3')"></button>
+                      </div>
+                      <div class="lob-menu-item-body" id="sec_lob_3_3_3" style="display: block">
+                        <textarea class="input-text">
+Swedish male model, late 20s, youthful but intense masculine features, platinum blonde hair styled in slicked-back pomade, sharp narrow nose, defined cheekbones, chiseled jawline, symmetrical and refined face, clear skin, no freckles, faintly raised corners of the mouth, subtle enigmatic expression, intense gaze, inspired by Penn Badgley in YOU, front-facing ID photo style, head level, squared shoulders, looking directly at the camera, no tilt, no movement, white background, studio lighting, in full natural color, realistic skin tone, no black and w</textarea
+                        >
+                        <div class="ctrl-switch">
+                          <div class="switch-col">
+                            <div class="switch-tit">Auto Sound</div>
+                            <label class="toggle-switch size-sm">
+                              <input type="checkbox" name="checkbox3" />
+                              <div class="val"></div>
+                            </label>
+                          </div>
+                          <div class="switch-col">
+                            <div class="switch-tit">Auto Speech</div>
+                            <label class="toggle-switch size-sm">
+                              <input type="checkbox" name="checkbox4" />
+                              <div class="val"></div>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="lob-menu-item">
+                      <div class="lob-menu-item-head">
+                        <div class="lob-menu-item-title">Settings</div>
+                        <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_3_3_4')"></button>
+                      </div>
+                      <div class="lob-menu-item-body" id="sec_lob_3_3_4" style="display: block">
+                        <div class="dl-form">
+                          <dl class="dl-form-item">
+                            <dt>Duration</dt>
+                            <dd>
+                              <div class="radio-group">
+                                <label class="radio-label">
+                                  <input type="radio" name="Duration3" checked="" />
+                                  <span class="radio-text">5s</span>
+                                </label>
+                                <label class="radio-label">
+                                  <input type="radio" name="Duration3" />
+                                  <span class="radio-text">10s</span>
+                                </label>
+                              </div>
+                            </dd>
+                          </dl>
+                          <dl class="dl-form-item">
+                            <dt>Quality Mode</dt>
+                            <dd>
+                              <div class="radio-group">
+                                <label class="radio-label">
+                                  <input type="radio" name="qMode3" checked="" />
+                                  <span class="radio-text">Standard</span>
+                                </label>
+                                <label class="radio-label">
+                                  <input type="radio" name="qMode3" />
+                                  <span class="radio-text">Pro</span>
+                                </label>
+                              </div>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="lob-menu-item">
+                      <div class="lob-menu-item-head">
+                        <div class="lob-menu-item-title">Negative Prompt</div>
+                        <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_3_3_5')"></button>
+                      </div>
+                      <div class="lob-menu-item-body" id="sec_lob_3_3_5" style="display: block">
+                        <textarea class="input-text">
+Swedish male model, late 20s, youthful but intense masculine features, platinum blonde hair styled in slicked-back pomade, sharp narrow nose, defined cheekbones, chiseled jawline, symmetrical and refined face, clear skin, no freckles, faintly raised corners of the mouth, subtle enigmatic expression, intense gaze, inspired by Penn Badgley in YOU, front-facing ID photo style, head level, squared shoulders, looking directly at the camera, no tilt, no movement, white background, studio lighting, in full natural color, realistic skin tone, no black and w</textarea
+                        >
+                        <div class="ctrl-switch">
+                          <div class="switch-col">
+                            <div class="switch-tit">Auto Sound</div>
+                            <!-- <label class="toggle-switch size-sm">
+                              <input type="checkbox" name="checkbox6" />
+                              <div class="val"></div>
+                            </label> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //lob-menu -->
+                </div>
+                <div id="tabs-4">
+                  <!-- lob-menu -->
+                  <div class="lob-menu">
+                    <div class="lob-menu-item">
+                      <div class="lob-menu-item-head">
+                        <div class="lob-menu-item-title">Select Model</div>
+                        <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_3_4_1')"></button>
+                      </div>
+                      <div class="lob-menu-item-body" id="sec_lob_3_4_1" style="display: block">
+                        <select class="custom-select size-sm">
+                          <option value="">Select Model</option>
+                          <option value="">Select Model2</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="lob-menu-item">
+                      <div class="lob-menu-item-head">
+                        <div class="lob-menu-item-title">Image</div>
+                        <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_3_4_2')"></button>
+                      </div>
+                      <div class="lob-menu-item-body" id="sec_lob_3_4_2" style="display: block">
+                        <div class="upload-drag-box">
+                          <i class="icon-meia-image-plus"></i>
+                          Drag & drop a video
+                        </div>
+                      </div>
+                    </div>
+                    <div class="lob-menu-item">
+                      <div class="lob-menu-item-head">
+                        <div class="lob-menu-item-title">Lip Sync</div>
+                        <label class="toggle-switch size-sm">
+                          <input type="checkbox" name="checkbox_ls" />
+                          <div class="val"></div>
+                        </label>
+                        <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_3_4_3')"></button>
+                      </div>
+                      <div class="lob-menu-item-body" id="sec_lob_3_4_3" style="display: block">
+                        <div class="upload-drag-box">Upload Audio</div>
+                      </div>
+                    </div>
+                    <div class="lob-menu-item">
+                      <div class="lob-menu-item-head">
+                        <div class="lob-menu-item-title">Auto Sound</div>
+                        <label class="toggle-switch size-sm">
+                          <input type="checkbox" name="checkbox_as" />
+                          <div class="val"></div>
+                        </label>
+                        <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_3_4_4')"></button>
+                      </div>
+                      <div class="lob-menu-item-body" id="sec_lob_3_4_4" style="display: block">
+                        <div class="upload-drag-box">Upload Audio</div>
+                      </div>
+                    </div>
+                    <div class="lob-menu-item">
+                      <div class="lob-menu-item-head">
+                        <div class="lob-menu-item-title">Auto Speech</div>
+                        <label class="toggle-switch size-sm">
+                          <input type="checkbox" name="checkbox_as2" />
+                          <div class="val"></div>
+                        </label>
+                        <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_3_4_5')"></button>
+                      </div>
+                      <div class="lob-menu-item-body" id="sec_lob_3_4_5" style="display: block">
+                        <textarea class="input-text">
+Swedish male model, late 20s, youthful but intense masculine features, platinum blonde hair styled in slicked-back pomade, sharp narrow nose, defined cheekbones, chiseled jawline, symmetrical and refined face, clear skin, no freckles, faintly raised corners of the mouth, subtle enigmatic expression, intense gaze, inspired by Penn Badgley in YOU, front-facing ID photo style, head level, squared shoulders, looking directly at the camera, no tilt, no movement, white background, studio lighting, in full natural color, realistic skin tone, no black and w</textarea
+                        >
+                        <div class="ctrl-switch">
+                          <div class="switch-col">
+                            <label for="Sync" class="input-checkbox size-sm">
+                              <input type="checkbox" id="Sync" />
+                              <span class="text">Lip-Sync</span>
+                            </label>
+                          </div>
+                        </div>
+
+                        <div class="dl-form">
+                          <dl class="dl-form-item">
+                            <dt>Duration</dt>
+                            <dd>
+                              <select class="custom-select size-sm">
+                                <option value="">Heart</option>
+                                <option value="">Heart2</option>
+                              </select>
+                            </dd>
+                          </dl>
+                          <dl class="dl-form-item">
+                            <dt>Speed</dt>
+                            <dd>
+                              <!-- slide -->
+                              <div id="SpeedSlider" class="custom-slider"></div>
+                              <input type="text" class="input-text size-sm" id="SpeedVal" value="5.0" style="max-width: 4.2rem; padding: 0; text-align: center" autocomplete="off" />
+                              <script>
+                                $(function () {
+                                  const $slider = $('#SpeedSlider');
+                                  const $input = $('#SpeedVal');
+
+                                  // 슬라이더 초기화
+                                  $slider.slider({
+                                    value: 5.0,
+                                    range: 'min',
+                                    min: 0.0,
+                                    max: 10.0,
+                                    step: 0.1,
+                                    animate: true,
+                                    slide: function (event, ui) {
+                                      $input.val(ui.value.toFixed(1));
+                                    },
+                                  });
+
+                                  // input 입력 중: 정수만 반영 (toFixed 없이)
+                                  $input.on('input', function () {
+                                    const val = parseInt($(this).val(), 10);
+                                    if (!isNaN(val) && val >= 1 && val <= 10) {
+                                      $slider.slider('value', val);
+                                    }
+                                  });
+
+                                  // 포커스 나갈 때 (blur): 소수점 1자리로 정리
+                                  $input.on('blur', function () {
+                                    let val = parseFloat($(this).val());
+                                    if (!isNaN(val)) {
+                                      val = Math.min(10, Math.max(1, val));
+                                      $slider.slider('value', val);
+                                      $input.val(val.toFixed(1)); // 소수점으로 보정
+                                    }
+                                  });
+
+                                  // 초기화 시 값 정리
+                                  $input.val(parseFloat($slider.slider('value')).toFixed(1));
+                                });
+                              </script>
+                              <!-- //slide -->
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //lob-menu -->
+                </div>
+              </div>
+              <script>
+                $(function () {
+                  $('#lobTabs').tabs({
+                    active: 1, // 0부터 시작
+                  });
+                });
+              </script>
+              <!-- //tabs -->
+            </div>
+          </div>
+          <div class="lob-footer">
+            <button type="button" class="btn-style size-rg" disabled>Create Video</button>
+          </div>
+        </div>
+        <!-- //lob -->
+        <!-- contents -->
+        <div class="contents">
+          <!--  -->
+          <ul class="tab">
+            <li><a href="#" class="active">Generation</a></li>
+            <li><a href="#">Albums</a></li>
+          </ul>
+          <div class="inner-content">
+            <!-- inner-content -->
+            <div class="title-wrap">
+              <h3 class="title-17">Today</h3>
+              <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_acc')"></button>
+            </div>
+            <div id="sec_acc" style="display: block">
+              <!-- group-flex progress -->
+              <div class="group-flex progress">
+                <div class="progress-noti"><i class="icon-progress-noti"></i>Your image is being generated. This may take a few seconds.</div>
+                <div class="cont-body">
+                  <!-- video-list -->
+                  <ul class="video-list">
+                    <li>
+                      <!-- progress-item -->
+                      <div class="progress-item">
+                        <div class="progress-info">
+                          <div class="text">10% Complete</div>
+                          <div class="val-box">
+                            <div class="val" style="width: 10%"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //progress-item -->
+                    </li>
+                    <li>
+                      <!-- progress-item -->
+                      <div class="progress-item">
+                        <div class="progress-info">
+                          <div class="text">50% Complete</div>
+                          <div class="val-box">
+                            <div class="val" style="width: 50%"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //progress-item -->
+                    </li>
+                    <li>
+                      <!-- progress-item -->
+                      <div class="progress-item">
+                        <div class="progress-info">
+                          <div class="text">50% Complete</div>
+                          <div class="val-box">
+                            <div class="val" style="width: 50%"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //progress-item -->
+                    </li>
+                  </ul>
+                  <!-- //video-list -->
+                </div>
+                <div class="text-info">
+                  <div class="text-sec">
+                    <p class="text" id="infoTextVideo01_pro">
+                      A glowing blue and pink flower with green leaves, in the style of anime, fantasy background, glowing lights, sparkles, water droplets, digital art, simple, cartoon, cute, colorful, neon colors, magical, fantasy world.A glowing blue and pink flower with green leaves, in the
+                      style of anime, fantasy background, glowing lights, sparkles, water droplets, digital art, simple, cartoon, cute, colorful, neon colors, magical, fantasy world.
+                    </p>
+                    <button type="button" class="copy">Copy</button>
+                    <button type="button" class="more" onclick="viewFullText(this, '#infoTextVideo01_pro')"><i class="icon-plus-circle-solid"></i>more</button>
+                  </div>
+                  <div class="tags">
+                    <span class="tag">5s</span>
+                    <span class="tag">480p</span>
+                    <span class="tag">Standard</span>
+                  </div>
+                </div>
+              </div>
+              <!-- //group-flex progress -->
+
+              <!-- group-flex -->
+              <div class="group-flex">
+                <div class="cont-body">
+                  <!-- video-list -->
+                  <ul class="video-list">
+                    <li>
+                      <div class="in-box">
+                        <div class="img"><img src="../assets/img/img_videolist00.png" alt="" /></div>
+                        <div class="tag-name">name</div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="in-box">
+                        <div class="img"><img src="../assets/img/img_videolist00.png" alt="" /></div>
+                        <div class="tag-name">name</div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="in-box">
+                        <div class="img"><img src="../assets/img/img_videolist00.png" alt="" /></div>
+                        <div class="tag-name">name</div>
+                      </div>
+                    </li>
+                  </ul>
+                  <!-- //video-list -->
+                </div>
+                <div class="text-info">
+                  <div class="text-sec">
+                    <p class="text" id="infoText01">
+                      A glowing blue and pink flower with green leaves, in the style of anime, fantasy background, glowing lights, sparkles, water droplets, digital art, simple, cartoon, cute, colorful, neon colors, magical, fantasy world.A glowing blue and pink flower with green leaves, in the
+                      style of anime, fantasy background, glowing lights, sparkles, water droplets, digital art, simple, cartoon, cute, colorful, neon colors, magical, fantasy world.
+                    </p>
+                    <button type="button" class="copy">Copy</button>
+                    <button type="button" class="more" onclick="viewFullText(this, '#infoText01')"><i class="icon-plus-circle-solid"></i>more</button>
+                  </div>
+                  <div class="tags">
+                    <span class="tag">5s</span>
+                    <span class="tag">480p</span>
+                    <span class="tag">Standard</span>
+                  </div>
+                </div>
+              </div>
+              <!-- //group-flex -->
+            </div>
+            <!-- //inner-content -->
+          </div>
+          <!-- // -->
+        </div>
+        <!-- //contents -->
+      </div>
+      <!-- //컨테이너 영역 -->
+    </div>
+
+    <!-- pop, layer -->
+    <!-- //pop, layer -->
+  </body>
+</html>

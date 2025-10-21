@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Image | Widai</title>
+    <title>Video | Widai</title>
 
     <!-- <link rel="icon" type="image/png" href="/">
   <link rel="apple-touch-icon" href="/"> -->
@@ -27,6 +27,11 @@
               <span class="logo-text"></span>
             </a>
           </h1>
+
+          <div class="utilbox">
+            <button type="button" class="btn-style size-sm outline">Login</button>
+            <button type="button" class="btn-style size-sm">Sign Up</button>
+          </div>
         </div>
         <!-- //헤더 컨텐츠 영역 -->
       </header>
@@ -46,13 +51,13 @@
               </a>
             </li>
             <li>
-              <a href="#" class="active">
+              <a href="#">
                 <i class="icon icon-image"></i>
                 <span class="text">Image</span>
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="#" class="active">
                 <i class="icon icon-video"></i>
                 <span class="text">Video</span>
               </a>
@@ -86,109 +91,104 @@
         <div class="lob">
           <div class="lob-container">
             <div class="lob-head">
-              <h2 class="lob-title">Create Image</h2>
+              <h2 class="lob-title">Create Video</h2>
             </div>
             <div class="lob-body">
-              <!-- lob-menu -->
-              <div class="lob-menu">
-                <div class="lob-menu-item">
-                  <div class="lob-menu-item-head">
-                    <div class="lob-menu-item-title">Prompt</div>
-                    <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_2_3')"></button>
-                  </div>
-                  <div class="lob-menu-item-body" id="sec_lob_2_3" style="display: block">
-                    <textarea class="input-text" placeholder="e.g, A cat is sitting ona table. We support all languages.">e.g, A cat is sitting ona table. We support all languages.</textarea>
-                  </div>
-                </div>
-                <div class="lob-menu-item">
-                  <div class="lob-menu-item-head">
-                    <div class="lob-menu-item-title">Model</div>
-                    <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_2_10')"></button>
-                  </div>
-                  <div class="lob-menu-item-body" id="sec_lob_2_10" style="display: block">
-                    <!-- model group -->
-                    <div class="model-group">
-                      <div class="model-title">
-                        Nano Banana
-                        <button type="button" class="model-del"></button>
+              <!-- tabs -->
+              <div id="lobTabs" class="lob-tabs">
+                <ul>
+                  <li><a href="#tabs-1">Text</a></li>
+                  <li><a href="#tabs-2">Image</a></li>
+                </ul>
+                <div id="tabs-1">
+                  <!-- lob-menu -->
+                  <div class="lob-menu">
+                    <div class="lob-menu-item">
+                      <div class="lob-menu-item-head">
+                        <div class="lob-menu-item-title">Prompt</div>
+                        <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_2_3')"></button>
                       </div>
-                      <!--  -->
-                      <div class="dl-form">
-                        <dl class="dl-form-item column">
-                          <dt>Number of Images</dt>
-                          <dd>
-                            <select class="custom-select size-sm">
-                              <option value="1">2</option>
-                              <option value="1">2</option>
-                            </select>
-                          </dd>
-                        </dl>
+                      <div class="lob-menu-item-body" id="sec_lob_2_3" style="display: block">
+                        <!--  -->
+                        <textarea class="input-text" placeholder="e.g, A cat is sitting ona table. We support all languages.">e.g, A cat is sitting ona table. We support all languages.</textarea>
 
-                        <div class="add-setting">
-                          <div class="add-setting--head">
-                            <button type="button" class="btn-add-setting-toggle active">
-                              <i class="icon-nav-arrow-down"></i>
-                              Additional Setting
-                            </button>
+                        <!-- // -->
+                      </div>
+                    </div>
+                    <div class="lob-menu-item">
+                      <div class="lob-menu-item-head">
+                        <div class="lob-menu-item-title">Model</div>
+                        <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_2_10')"></button>
+                      </div>
+                      <div class="lob-menu-item-body" id="sec_lob_2_10" style="display: block">
+                        <!-- model group -->
+                        <div class="model-group">
+                          <div class="model-title">
+                            Hailuo 02
+                            <button type="button" class="model-del"></button>
                           </div>
-                          <div class="add-setting--body" style="display: block">
+                          <div class="dl-form">
                             <dl class="dl-form-item">
-                              <dt style="width: 13.6rem">Output Format</dt>
+                              <dt style="width: 13.6rem">Duration</dt>
                               <dd>
                                 <select class="custom-select size-sm">
-                                  <option value="1">Jpeg</option>
-                                  <option value="1">Jpeg</option>
+                                  <option value="1">8s</option>
+                                  <option value="1">8s</option>
                                 </select>
                               </dd>
                             </dl>
 
                             <dl class="dl-form-item">
-                              <dt style="width: 13.6rem">Aspect Ratio</dt>
+                              <dt style="width: 13.6rem">Quantity</dt>
                               <dd>
                                 <select class="custom-select size-sm">
-                                  <option value="1">720</option>
-                                  <option value="1">720</option>
+                                  <option value="1">4</option>
+                                  <option value="1">4</option>
                                 </select>
                               </dd>
                             </dl>
 
                             <dl class="dl-form-item">
-                              <dt style="width: 13.6rem">Sync Mode</dt>
+                              <dt style="width: 13.6rem">Resolution</dt>
                               <dd>
-                                <label class="toggle-switch size-sm">
-                                  <input type="checkbox" name="checkbox" checked />
-
-                                  <div class="val"></div>
-                                </label>
+                                <select class="custom-select size-sm">
+                                  <option value="1">768p</option>
+                                  <option value="1">768p</option>
+                                </select>
                               </dd>
                             </dl>
-
-                            <!--  -->
                           </div>
                         </div>
-                      </div>
-                      <!-- // -->
-                    </div>
-                    <!-- //model group -->
+                        <!-- //model group -->
 
-                    <!-- btn -->
-                    <button type="button" class="btn-style outline size-rg">Add Model</button>
-                    <!-- //btn -->
+                        <!-- btn -->
+                        <button type="button" class="btn-style outline size-rg">Add Model</button>
+                        <!-- //btn -->
+                      </div>
+                    </div>
                   </div>
+                  <!-- //lob-menu -->
                 </div>
+                <div id="tabs-2">Image</div>
               </div>
-              <!-- //lob-menu -->
+              <script>
+                $(function () {
+                  $('#lobTabs').tabs({
+                    active: 0, // 0부터 시작
+                  });
+                });
+              </script>
+              <!-- //tabs -->
             </div>
           </div>
           <div class="lob-footer">
-            <button type="button" class="btn-style size-rg">Create Image</button>
+            <button type="button" class="btn-style size-rg">Create Video</button>
           </div>
         </div>
         <!-- //lob -->
         <!-- contents -->
         <div class="contents">
           <!--  -->
-
           <!-- // -->
         </div>
         <!-- //contents -->
