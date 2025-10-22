@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video | Widai</title>
+
+    <!-- <link rel="icon" type="image/png" href="/">
+  <link rel="apple-touch-icon" href="/"> -->
+
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../assets/css/common-ui.css" />
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/common-ui.js"></script>
+  </head>
+
+  <body>
+    <div id="wrap" class="g-wrap">
+      <!-- 헤더 영역 -->
+      <header id="header">
+        <!-- 헤더 컨텐츠 영역 -->
+        <div class="header-in">
+          <h1 class="logo">
+            <a href="#" class="beta">
+              <i class="logo-img"></i>
+              <span class="logo-text"></span>
+            </a>
+          </h1>
+
+          <div class="utilbox">
+            <button type="button" class="btn-style size-sm outline">Login</button>
+            <button type="button" class="btn-style size-sm">Sign Up</button>
+          </div>
+        </div>
+        <!-- //헤더 컨텐츠 영역 -->
+      </header>
+      <!-- //헤더 영역 -->
+      <!-- 컨테이너 영역 -->
+      <div id="container">
+        <!-- lnb -->
+        <div class="lnb">
+          <div class="top-toggle">
+            <button type="button" class="btn-toggle" onclick="lnbToggle()"><span class="sr-only">메뉴 확장/축소</span></button>
+          </div>
+          <ul class="lnb-menu">
+            <li>
+              <a href="#">
+                <i class="icon icon-home"></i>
+                <span class="text">Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-image"></i>
+                <span class="text">Image</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="active">
+                <i class="icon icon-video"></i>
+                <span class="text">Video</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-shorts"></i>
+                <span class="text">Shorts</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-k-art"></i>
+                <span class="text">K-Art</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-others"></i>
+                <span class="text">Others</span>
+              </a>
+            </li>
+          </ul>
+          <a href="#" class="lnb-like">
+            <i class="icon icon-heart"></i>
+            <span class="text">Liked</span>
+          </a>
+        </div>
+        <!-- //lnb -->
+        <!-- lob -->
+        <div class="lob">
+          <div class="lob-container">
+            <div class="lob-head">
+              <h2 class="lob-title">Create Video</h2>
+            </div>
+            <div class="lob-body">
+              <!-- tabs -->
+              <div id="lobTabs" class="lob-tabs">
+                <ul>
+                  <li><a href="#tabs-1">Text</a></li>
+                  <li><a href="#tabs-2">Image</a></li>
+                </ul>
+                <div id="tabs-1">Text</div>
+                <div id="tabs-2">
+                  <!-- lob-menu -->
+                  <div class="lob-menu">
+                    <div class="lob-menu-item">
+                      <div class="lob-menu-item-head">
+                        <div class="lob-menu-item-title">Reference</div>
+                        <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_2_2')"></button>
+                      </div>
+                      <div class="lob-menu-item-body" id="sec_lob_2_2" style="display: block">
+                        <!--  -->
+                        <div class="upload-drag-box">
+                          <i class="icon-meia-image-plus"></i>
+                          <div class="text-center">
+                            Drag & dropup <br />
+                            <span class="light"> Use up to 4 Backgrounds, characters or items, and combine them freely</span>
+                          </div>
+                          <div class="flex items-center gap-08">
+                            <label class="btn-style outline size-sm">
+                              <span>Start image</span>
+                              <input type="file" class="sr-only" />
+                            </label>
+                            <i class="icon-data-transfer-both"></i>
+                            <label class="btn-style outline size-sm">
+                              <span>End image</span>
+                              <input type="file" class="sr-only" />
+                            </label>
+                          </div>
+                        </div>
+
+                        <div class="upload-drag-box">
+                          <div class="flex items-center gap-08">
+                            <div class="sel-imgbox">
+                              <div class="img"><img src="../assets/img/bg_image.png" alt="" /></div>
+                              <button type="button" class="btn-style outline size-sm">Delete</button>
+                            </div>
+                            <i class="icon-data-transfer-both"></i>
+                            <div class="sel-imgbox">
+                              <div class="img"><img src="../assets/img/bg_image.png" alt="" /></div>
+                              <button type="button" class="btn-style outline size-sm">Delete</button>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- // -->
+                      </div>
+                    </div>
+                    <div class="lob-menu-item">
+                      <div class="lob-menu-item-head">
+                        <div class="lob-menu-item-title">Prompt</div>
+                        <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_2_3')"></button>
+                      </div>
+                      <div class="lob-menu-item-body" id="sec_lob_2_3" style="display: block">
+                        <!--  -->
+                        <textarea class="input-text" placeholder="e.g, A cat is sitting ona table. We support all languages.">e.g, A cat is sitting ona table. We support all languages.</textarea>
+                        <!-- // -->
+                      </div>
+                    </div>
+                    <div class="lob-menu-item">
+                      <div class="lob-menu-item-head">
+                        <div class="lob-menu-item-title">Model</div>
+                        <button type="button" class="btn-toggle-acc open" onclick="toggleAcc(this, '#sec_lob_2_10')"></button>
+                      </div>
+                      <div class="lob-menu-item-body" id="sec_lob_2_10" style="display: block">
+                        <!-- model group -->
+                        <div class="model-group">
+                          <div class="model-title">
+                            Video 1.6
+                            <button type="button" class="model-del"></button>
+                          </div>
+                          <div class="dl-form">
+                            <dl class="dl-form-item">
+                              <dt style="width: 13.6rem">Duration</dt>
+                              <dd>
+                                <select class="custom-select size-sm">
+                                  <option value="1">8s</option>
+                                  <option value="1">8s</option>
+                                </select>
+                              </dd>
+                            </dl>
+                            <dl class="dl-form-item">
+                              <dt style="width: 13.6rem">Number of Video</dt>
+                              <dd>
+                                <select class="custom-select size-sm">
+                                  <option value="1">4</option>
+                                  <option value="1">4</option>
+                                </select>
+                              </dd>
+                            </dl>
+                            <dl class="dl-form-item">
+                              <dt style="width: 13.6rem">Aspect Ratio</dt>
+                              <dd>
+                                <select class="custom-select size-sm">
+                                  <option value="1">16:9</option>
+                                  <option value="1">16:9</option>
+                                </select>
+                              </dd>
+                            </dl>
+                            <dl class="dl-form-item">
+                              <dt style="width: 13.6rem">고품질 모드</dt>
+                              <dd>
+                                <select class="custom-select size-sm">
+                                  <option value="1">고품질</option>
+                                  <option value="1">고품질</option>
+                                </select>
+                              </dd>
+                            </dl>
+                            <dl class="dl-form-item">
+                              <dt style="width: 13.6rem">Sound Effect</dt>
+                              <dd>
+                                <label class="toggle-switch size-sm">
+                                  <input type="checkbox" name="checkbox2" checked />
+
+                                  <div class="val"></div>
+                                </label>
+                              </dd>
+                            </dl>
+
+                            <div class="add-setting">
+                              <div class="add-setting--head">
+                                <button type="button" class="btn-add-setting-toggle active">
+                                  <i class="icon-nav-arrow-down"></i>
+                                  Additional Setting
+                                </button>
+                              </div>
+                              <div class="add-setting--body" style="display: block">
+                                <dl class="dl-form-item column">
+                                  <dt>Sound Effect Prompt</dt>
+                                  <dd>
+                                    <textarea class="input-text" placeholder="e.g, A cat is sitting ona table. We support all languages.">e.g, A cat is sitting ona table. We support all languages.</textarea>
+                                  </dd>
+                                </dl>
+
+                                <dl class="dl-form-item column">
+                                  <dt>BGM Prompt</dt>
+                                  <dd>
+                                    <textarea class="input-text" placeholder="e.g, A cat is sitting ona table. We support all languages.">e.g, A cat is sitting ona table. We support all languages.</textarea>
+                                  </dd>
+                                </dl>
+
+                                <dl class="dl-form-item">
+                                  <dt style="width: 13.6rem">ASMR Mode</dt>
+                                  <dd>
+                                    <label class="toggle-switch size-sm">
+                                      <input type="checkbox" name="checkbox3" checked />
+
+                                      <div class="val"></div>
+                                    </label>
+                                  </dd>
+                                </dl>
+                                <!--  -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- //model group -->
+
+                        <!-- btn -->
+                        <button type="button" class="btn-style outline size-rg">Add Model</button>
+                        <!-- //btn -->
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //lob-menu -->
+                </div>
+              </div>
+              <script>
+                $(function () {
+                  $('#lobTabs').tabs({
+                    active: 1, // 0부터 시작
+                  });
+                });
+              </script>
+              <!-- //tabs -->
+            </div>
+          </div>
+          <div class="lob-footer">
+            <button type="button" class="btn-style size-rg">Create Video</button>
+          </div>
+        </div>
+        <!-- //lob -->
+        <!-- contents -->
+        <div class="contents">
+          <!--  -->
+          <!-- // -->
+        </div>
+        <!-- //contents -->
+      </div>
+      <!-- //컨테이너 영역 -->
+    </div>
+
+    <!-- pop, layer -->
+    <!-- //pop, layer -->
+  </body>
+</html>
