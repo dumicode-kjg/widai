@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>K-Arts | Widai</title>
+
+    <!-- <link rel="icon" type="image/png" href="/">
+  <link rel="apple-touch-icon" href="/"> -->
+
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="../assets/css/common-ui.css" />
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/common-ui.js"></script>
+  </head>
+
+  <body>
+    <div id="wrap" class="g-wrap">
+      <!-- 헤더 영역 -->
+      <header id="header">
+        <!-- 헤더 컨텐츠 영역 -->
+        <div class="header-in">
+          <h1 class="logo">
+            <a href="#" class="beta">
+              <i class="logo-img"></i>
+              <span class="logo-text"></span>
+            </a>
+          </h1>
+
+          <div class="utilbox">
+            <button type="button" class="btn-style size-sm outline">Create</button>
+            <button type="button" class="btn-style size-sm">Upgrade</button>
+            <div class="user-on">
+              <button type="button" class="notify ui-dropper" data-drop="head_drop_notify">
+                <span class="sr-only">알림글</span>
+              </button>
+              <button type="button" class="user ui-dropper" data-drop="head_drop_user">
+                <span class="sr-only">mypage</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- //헤더 컨텐츠 영역 -->
+      </header>
+      <!-- //헤더 영역 -->
+      <!-- 컨테이너 영역 -->
+      <div id="container">
+        <!-- lnb -->
+        <div class="lnb">
+          <div class="top-toggle">
+            <button type="button" class="btn-toggle" onclick="lnbToggle()"><span class="sr-only">메뉴 확장/축소</span></button>
+          </div>
+          <ul class="lnb-menu">
+            <li>
+              <a href="#">
+                <i class="icon icon-home"></i>
+                <span class="text">Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-image"></i>
+                <span class="text">Image</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-video"></i>
+                <span class="text">Video</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-shorts"></i>
+                <span class="text">Shorts</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="active">
+                <i class="icon icon-k-art"></i>
+                <span class="text">K-Art</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icon icon-others"></i>
+                <span class="text">Others</span>
+              </a>
+            </li>
+          </ul>
+          <a href="#" class="lnb-like">
+            <i class="icon icon-heart"></i>
+            <span class="text">Liked</span>
+          </a>
+        </div>
+        <!-- //lnb -->
+        <!-- contents -->
+        <div class="contents">
+          <!--  -->
+          <div class="inner-content">
+            <!-- inner-content -->
+            <div class="title-wrap">
+              <h3 class="title-20">K-Arts</h3>
+            </div>
+            <!-- image-list -->
+            <ul class="image-list mt-08">
+              <li>
+                <div class="in-box">
+                  <div class="img"><img src="../assets/img/img_kartslist00.png" alt="" /></div>
+                  <div class="txtbox">
+                    <div class="tit">Video Frame Interpolation</div>
+                    <div class="desc">DescriptionDescriptionDescriptionDescriptionDescription</div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="in-box">
+                  <div class="img"><img src="../assets/img/img_kartslist00.png" alt="" /></div>
+                  <div class="txtbox">
+                    <div class="tit">Style Transfer Video</div>
+                    <div class="desc">DescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescriptionDescription</div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="in-box">
+                  <div class="img"><img src="../assets/img/img_kartslist00.png" alt="" /></div>
+                  <div class="txtbox">
+                    <div class="tit">Text to Video</div>
+                    <div class="desc">DescriptionDescriptionDescriptionDescriptionDescription</div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="in-box">
+                  <div class="img"><img src="../assets/img/img_kartslist00.png" alt="" /></div>
+                  <div class="txtbox">
+                    <div class="tit">Image to Video</div>
+                    <div class="desc">DescriptionDescriptionDescriptionDescriptionDescription</div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="in-box">
+                  <div class="img"><img src="../assets/img/img_kartslist00.png" alt="" /></div>
+                  <div class="txtbox">
+                    <div class="tit">Video to Video</div>
+                    <div class="desc">DescriptionDescriptionDescriptionDescriptionDescription</div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="in-box">
+                  <div class="img"><img src="../assets/img/img_kartslist00.png" alt="" /></div>
+                  <div class="txtbox">
+                    <div class="tit">Upscale Video</div>
+                    <div class="desc">DescriptionDescriptionDescriptionDescriptionDescription</div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="in-box">
+                  <div class="img"><img src="../assets/img/img_kartslist00.png" alt="" /></div>
+                  <div class="txtbox">
+                    <div class="tit">Video Outpainting</div>
+                    <div class="desc">DescriptionDescriptionDescriptionDescriptionDescription</div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="in-box">
+                  <div class="img"><img src="../assets/img/img_kartslist00.png" alt="" /></div>
+                  <div class="txtbox">
+                    <div class="tit">Video Denoise</div>
+                    <div class="desc">DescriptionDescriptionDescriptionDescriptionDescription</div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="in-box">
+                  <div class="img"><img src="../assets/img/img_kartslist00.png" alt="" /></div>
+                  <div class="txtbox">
+                    <div class="tit">Video Color Transfer</div>
+                    <div class="desc">DescriptionDescriptionDescriptionDescriptionDescription</div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="in-box">
+                  <div class="img"><img src="../assets/img/img_kartslist00.png" alt="" /></div>
+                  <div class="txtbox">
+                    <div class="tit">유사도 평가 점수</div>
+                    <div class="desc">DescriptionDescriptionDescriptionDescriptionDescription</div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="in-box">
+                  <div class="img"><img src="../assets/img/img_kartslist00.png" alt="" /></div>
+                  <div class="txtbox">
+                    <div class="tit">커스텀 학습</div>
+                    <div class="desc">DescriptionDescriptionDescriptionDescriptionDescription</div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <!-- //image-list -->
+            <!-- //inner-content -->
+          </div>
+          <!-- // -->
+        </div>
+        <!-- //contents -->
+      </div>
+      <!-- //컨테이너 영역 -->
+    </div>
+
+    <!-- pop, layer -->
+    <!-- //pop, layer -->
+  </body>
+</html>

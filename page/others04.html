@@ -199,22 +199,7 @@
                       </div>
                       <!-- //Motion Sequence -->
                     </div>
-                    <script>
-                      $(function () {
-                        $('.square-image-wrap').on('click', '.square-image-item', function () {
-                          const $clicked = $(this);
-
-                          if ($clicked.hasClass('active')) {
-                            // 이미 active면 제거
-                            $clicked.removeClass('active');
-                          } else {
-                            // 다른 항목의 active 제거 후 자신에게 추가
-                            $('.square-image-item').removeClass('active');
-                            $clicked.addClass('active');
-                          }
-                        });
-                      });
-                    </script>
+                    
                     <!-- //square-image-wrap -->
                   </div>
                 </div>

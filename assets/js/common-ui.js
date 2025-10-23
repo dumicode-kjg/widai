@@ -152,6 +152,33 @@ $(function () {
     $(this).toggleClass('active');
     $(this).closest('.add-setting').find('.add-setting--body').stop().slideToggle();
   })
+
+  // url file
+  $('.square-image-wrap').on('click', '.square-image-item', function () {
+    const $clicked = $(this);
+    const $wrap = $clicked.closest('.square-image-wrap'); // 자신이 속한 wrap만 선택
+
+    if ($clicked.hasClass('active')) {
+      $clicked.removeClass('active');
+    } else {
+      // wrap 내부의 다른 item만 active 해제
+      $wrap.find('.square-image-item').removeClass('active');
+      $clicked.addClass('active');
+    }
+  });
+
+  // url file 삭제 버튼 클릭 시 처리
+  $('.square-image-wrap').on('click', '.btn-del', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const $item = $(this).closest('.square-image-item');
+    const $wrap = $(this).closest('.square-image-wrap'); // 필요 시 wrap도 접근 가능
+
+    alert('삭제 클릭됨!');
+    // 실제 삭제: $item.remove();
+  });
+
 });
 
 function lnbToggle() {
@@ -167,4 +194,3 @@ function viewFullText(btn, targetSelector) {
   $(btn).remove();
   $(targetSelector).addClass('view-full');
 }
-
